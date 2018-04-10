@@ -12,8 +12,7 @@ public class Stock {
 	}
 	
 	public boolean stockVacio() {
-		System.out.println(stock.size()==0);
-		return stock.size()==0;
+		return stock.isEmpty();
 	}
 	
 	public void agregarPieza(Pieza p) {
@@ -24,12 +23,14 @@ public class Stock {
 		stock.remove(p);
 	}
 	
-	public void agregarPiezas(List<Pieza> l) {
-		stock.addAll(l);
+	public void agregarPiezas(List<Pieza> piezas) {
+		stock.addAll(piezas);
 	}
 		
-	public void quitarPiezas(List<Pieza> l) {
-		stock.removeAll(l);
+	public void quitarPiezas(List<Pieza> piezas) {
+		for(Pieza p: piezas) {
+			stock.remove(p);
+		}
 	}
 	
 	public int getCantidadPiezas() {

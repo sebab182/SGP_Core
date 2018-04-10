@@ -30,4 +30,13 @@ public class Pedido {
 		return listaPedido.size();
 	}
 
+	@Override
+	public String toString() {
+		String ret = "Pedido:\n";
+		for(Pieza p: listaPedido) {
+			ret = ret+""+p.getNombrePieza()+"\n";			
+		}
+		return ret;
+	}	
+
 }

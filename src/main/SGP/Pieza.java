@@ -20,5 +20,10 @@ public class Pieza {
 	public String toString() {
 		return this.nombrePieza;
 	}
+
+	@Override
+	public boolean equals(Object p) {
+		return this.getNombrePieza().equals(((Pieza) p).getNombrePieza());
+	}	
 	
 }

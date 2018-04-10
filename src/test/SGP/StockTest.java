@@ -46,8 +46,8 @@ public class StockTest extends TestCase {
 
 	public void testQuitarPiezas() {
 		s.agregarPiezas(l);
-		s.quitarPiezas(l);
 		s.agregarPieza(p1);
+		s.quitarPiezas(l);
 		assertEquals(s.getCantidadPiezas(), 1);
 	}
 
