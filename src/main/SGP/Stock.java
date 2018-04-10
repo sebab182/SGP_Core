@@ -24,16 +24,12 @@ public class Stock {
 		stock.remove(p);
 	}
 	
-	public void agregarPiezas(List<Pieza> stock) {
-		for(Pieza p: stock) {
-			agregarPieza(p);
-		}
+	public void agregarPiezas(List<Pieza> l) {
+		stock.addAll(l);
 	}
 		
-	public void quitarPiezas(List<Pieza> stock) {
-		for(Pieza p: stock) {
-			quitarPieza(p);
-		}
+	public void quitarPiezas(List<Pieza> l) {
+		stock.removeAll(l);
 	}
 	
 	public int getCantidadPiezas() {
@@ -46,7 +42,6 @@ public class Stock {
 	
 	public List<Pieza>getStock(){
 		return stock;
-		
 	}
 
 }

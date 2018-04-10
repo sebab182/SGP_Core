@@ -65,5 +65,10 @@ public class StockTest extends TestCase {
 		s.vaciarStock();
 		assertTrue(s.stockVacio());
 	}
+	
+	public void testGetStock() {
+		s.agregarPieza(p1);
+		assertEquals(s.getStock().size(),1);
+	}
 
 }
