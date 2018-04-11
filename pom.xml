@@ -15,4 +15,49 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+    <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
+  
+  <build>
+	  <extensions>
+		  <extension>
+			<groupId>org.kuali.maven.wagons</groupId>
+			<artifactId>maven-s3-wagon</artifactId>
+		  </extension>
+	  </extensions>
+	<plugins>  
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>2.4</version>
+			<configuration>
+				<archive>
+					<manifest>
+						<addClasspath>true</addClasspath>
+						<classpathPrefix>lib/</classpathPrefix>
+					</manifest>
+				</archive>
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
+  
+  <distributionManagement>
+	 <site>
+	  <id>ungs.sgp</id>
+	  <url>s3://ungs.sgp/site</url>
+	 </site>
+	 <repository>
+	  <id>s3.release</id>
+	  <url>s3://ungs.sgp/release</url>
+	 </repository>
+	 <snapshotRepository>
+	  <id>s3.snapshot</id>
+	  <url>s3://ungs.sgp/snapshot</url>
+	 </snapshotRepository>
+  </distributionManagement>
+  
 </project>
