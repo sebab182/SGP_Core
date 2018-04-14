@@ -1,29 +1,28 @@
 package main.SGP;
 
-public class Pieza {
-	
-	private String nombrePieza;
-	
-	public Pieza(String nombrePieza) {
-		this.nombrePieza=nombrePieza;
-	}
+import java.io.Serializable;
+import java.util.Date;
 
-	public String getNombrePieza() {
-		return nombrePieza;
-	}
+public class Pieza implements Serializable {
+	
+private	String nombre;
+private Date fechaVencimiento; 
 
-	public void setNombrePieza(String nombrePieza) {
-		this.nombrePieza = nombrePieza;
+	public Pieza(String nombre) {
+		this.nombre= nombre;
+	}
+	
+	public String getNombre() {
+		return this.nombre;
 	}
 
 	@Override
 	public String toString() {
-		return this.nombrePieza;
+		return nombre;
 	}
 
-	@Override
-	public boolean equals(Object p) {
-		return this.getNombrePieza().equals(((Pieza) p).getNombrePieza());
-	}	
-	
+	public boolean equals(Pieza obj) {
+		return this.nombre.equals(obj.getNombre());
+	}
 }
+
