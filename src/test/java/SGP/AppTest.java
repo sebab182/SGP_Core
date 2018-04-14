@@ -1,4 +1,4 @@
-package test.SGP;
+package test.java.SGP;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

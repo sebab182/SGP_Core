@@ -1,4 +1,4 @@
-package main.SGP;
+package main.java.SGP;
 
 import java.util.List;
 import java.util.Map;

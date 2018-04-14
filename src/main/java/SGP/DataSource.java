@@ -1,4 +1,4 @@
-package main.SGP;
+package main.java.SGP;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

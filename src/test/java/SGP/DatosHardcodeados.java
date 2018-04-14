@@ -1,13 +1,13 @@
-package test.SGP;
+package test.java.SGP;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import main.SGP.AbstractFactory;
-import main.SGP.GestordeStock;
-import main.SGP.Pieza;
+import main.java.SGP.AbstractFactory;
+import main.java.SGP.GestordeStock;
+import main.java.SGP.Pieza;
 
 public class DatosHardcodeados implements AbstractFactory {
 	
