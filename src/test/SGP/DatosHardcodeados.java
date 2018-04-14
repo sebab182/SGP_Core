@@ -10,6 +10,9 @@ import main.SGP.GestordeStock;
 import main.SGP.Pieza;
 
 public class DatosHardcodeados implements AbstractFactory {
+	
+	public DatosHardcodeados(){
+	}
 
 	public List<Pieza> cargarPiezas() {
 		List<Pieza>piezas= new LinkedList<Pieza>();

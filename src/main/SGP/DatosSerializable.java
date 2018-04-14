@@ -11,7 +11,8 @@ import java.util.Map;
 
 public class DatosSerializable implements AbstractFactory {
 	
-	public DatosSerializable() {}
+	public DatosSerializable() throws ClassNotFoundException {
+	}
 	
 	private void guardarDatos() {
 		try
