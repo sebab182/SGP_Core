@@ -10,7 +10,7 @@ public class GestordeStock {
 	private Map<Pieza,Integer>stock;
 	
 	public GestordeStock() {
-		vacasaFaenar =0;
+		vacasaFaenar = 0;
 		vacasExistentes = 0;
 		stock = new HashMap<Pieza,Integer>();
 	}
@@ -60,7 +60,7 @@ public class GestordeStock {
 		for(Entry<Pieza, Integer>mapaStock: stock.entrySet()) {
 			//Recorro el stock, busco la pieza de la cual que disminuir stock y le bajo la cantidad solicitda.
 			if(pieza.equals(mapaStock.getKey())) {
-				mapaStock.setValue(cantidad);
+				mapaStock.setValue(mapaStock.getValue()-cantidad);
 			}
 		}
 	}
