@@ -46,6 +46,7 @@ public class DatosHardcodeados implements AbstractFactory {
 		Map<Pieza, Integer>pedido2 = new HashMap<Pieza,Integer>();
     	pedido2.put(new Pieza("pata2"), 2);
     	pedido2.put(new Pieza("vacio"), 2);
+    	pedido2.put(new Pieza("pata1"), 2);
     	pedidos.add(pedido2);
 		return pedidos;
 	}

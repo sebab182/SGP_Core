@@ -15,8 +15,10 @@ public class Distribuidor {
 		List<Map<Pieza, Integer>>distribuciones = new LinkedList<Map<Pieza, Integer>>();
 		for(Map<Pieza,Integer> pedido: pedidos) {
 			HashMap<Pieza, Integer>distribucion = new HashMap<Pieza, Integer>();
-			resolverPedido(pedido, distribucion, stock);
-			distribuciones.add(distribucion);
+			if(pedido!=null) {
+				resolverPedido(pedido, distribucion, stock);
+				distribuciones.add(distribucion);
+			}
 		}
 		return distribuciones;
 	}
