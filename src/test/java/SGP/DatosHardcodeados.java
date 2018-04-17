@@ -55,7 +55,8 @@ public class DatosHardcodeados implements AbstractFactory {
 	public GestordeStock cargarGestordeStock() {
 		GestordeStock gs = new GestordeStock();
 		gs.setVacasExistentes(10);
-		return null;
+		gs.setStock(cargarStock());
+		return gs;
 	}
 
 }

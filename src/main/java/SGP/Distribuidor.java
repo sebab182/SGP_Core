@@ -49,7 +49,7 @@ public class Distribuidor {
 		//Agrego la pieza al pedido con su cantidad
 		distribucion.put(mapaPedido.getKey(), cantPedida);
 		//Disminuyo la cantidad de stock
-		stock.disminuirStock(mapaPedido.getKey(),cantActual-cantPedida);		
+		stock.disminuirStock(mapaPedido.getKey(),cantPedida);		
 	}
 
 	}
