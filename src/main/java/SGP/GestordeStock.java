@@ -47,7 +47,6 @@ public class GestordeStock implements Serializable {
 	public void solicitarVacas(){
 		//Tenemos vacas infinitas!
 		//Mando a faenar una vaca y aumento en 1 todos los elementos de mi stock.
-		System.out.println("SOLICITANDO VACAS A FAENAR");
 		vacasaFaenar++;
 		for(Entry<Pieza, Integer> mapaStock: stock.entrySet()) {
 			Integer cantidad = mapaStock.getValue();

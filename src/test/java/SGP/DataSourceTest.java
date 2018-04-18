@@ -9,11 +9,12 @@ public class DataSourceTest extends TestCase {
 	public void testDataSource() {
 		ds = new DataSource("datasource.txt");
 		String lecturaTXT = ds.getSource();
-		assertEquals(lecturaTXT, "test");
+		assertEquals("test", lecturaTXT);
 	}
 
 	public void testGetFactory() {
 		ds = new DataSource("datasource.txt");
+		ds.setSource("test");
 		String clase = ds.getFactory();
 		assertEquals(clase, "test.java.SGP.DatosHardcodeados");
 		
