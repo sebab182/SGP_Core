@@ -25,17 +25,6 @@ public class DatosHardcodeados implements AbstractFactory {
 		return piezas;
 	}
 
-	public Map<Pieza, Integer> cargarStock() {
-		Map<Pieza, Integer>stock = new HashMap<Pieza,Integer>();
-		stock.put(new Pieza("pata1"), 8);
-		stock.put(new Pieza("pata2"), 5);
-		stock.put(new Pieza("muslo"), 3);
-		stock.put(new Pieza("pata3"), 2);
-		stock.put(new Pieza("vacio"), 7);
-		stock.put(new Pieza("pata4"), 4);
-		return stock;
-	}
-
 	public List<Map<Pieza, Integer>> cargarPedidos() {
 		List<Map<Pieza,Integer>>pedidos= new LinkedList<Map<Pieza,Integer>>();
 		Map<Pieza, Integer>pedido1 = new HashMap<Pieza,Integer>();
@@ -54,8 +43,15 @@ public class DatosHardcodeados implements AbstractFactory {
 	@Override
 	public GestordeStock cargarGestordeStock() {
 		GestordeStock gs = new GestordeStock();
+		Map<Pieza, Integer>stock = new HashMap<Pieza,Integer>();
+		stock.put(new Pieza("pata1"), 8);
+		stock.put(new Pieza("pata2"), 5);
+		stock.put(new Pieza("muslo"), 3);
+		stock.put(new Pieza("pata3"), 2);
+		stock.put(new Pieza("vacio"), 7);
+		stock.put(new Pieza("pata4"), 4);
 		gs.setVacasExistentes(10);
-		gs.setStock(cargarStock());
+		gs.setStock(stock);
 		return gs;
 	}
 

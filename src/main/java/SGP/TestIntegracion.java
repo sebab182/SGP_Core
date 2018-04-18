@@ -12,9 +12,11 @@ public class TestIntegracion {
 		Class cls = Class.forName(ds.getFactory());
 		AbstractFactory af = (AbstractFactory) cls.newInstance();
 		
+		List<Pieza>piezas = af.cargarPiezas();
+		System.out.println(piezas);
+		
 		System.out.println("STOCK");
-		GestordeStock stock = new GestordeStock();
-		stock.setStock(af.cargarStock());
+		GestordeStock stock = af.cargarGestordeStock();
 		System.out.println(stock.getStock());
 		
 		System.out.println("PEDIDOS");
@@ -29,7 +31,7 @@ public class TestIntegracion {
 		
 		System.out.println("VACAS FAENADAS: "+stock.getVacasaFaenar());
 		System.out.println("STOCK LUEGO DE DISTRIBUCIÓN");
-		System.out.println(stock.getStock());
+		//System.out.println(stock.getStock());
 		
 		AgrupadordePiezas ap = new AgrupadordePiezas();
 		System.out.println("AGRUPACIÓN PEDIDOS");

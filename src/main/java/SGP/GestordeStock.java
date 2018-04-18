@@ -1,10 +1,11 @@
 package main.java.SGP;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class GestordeStock {
+public class GestordeStock implements Serializable {
 	private int vacasaFaenar;
 	private int vacasExistentes;
 	private Map<Pieza,Integer>stock;
