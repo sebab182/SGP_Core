@@ -42,7 +42,7 @@ public class Distribuidor {
 		Integer cantActual = mapaStock.getValue();
 		while(cantActual<cantPedida){
 			//Asumimos que tenemos infinitas vacas...
-			System.out.println("NO ALCANZAN LAS VACAS PARA CUBRIR: "+mapaPedido+ " > STOCK ACTUAL: "+mapaStock);
+			//System.out.println("NO ALCANZAN LAS VACAS PARA CUBRIR: "+mapaPedido+ " > STOCK ACTUAL: "+mapaStock);
 			stock.solicitarVacas();
 			cantActual = mapaStock.getValue();
 		}
