@@ -5,37 +5,49 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public abstract class Distribuidor {
-	
-public abstract boolean puedoResolverPedido(Map<Pieza, Integer> pedido, Map<Pieza, Integer> stock);
-	
-	public abstract void solicitarVaca(Map<Pieza, Integer> stock);
-	
-	public abstract Map<Pieza, Integer> resolverPedido(Map<Pieza, Integer> pedido, Map<Pieza, Integer> stock);
-	
-	public List<Map<Pieza, Integer>> resolverPedidos(List<Map<Pieza, Integer>> listaPedidos, Map<Pieza, Integer> stock) {
-		List<Map<Pieza, Integer>> listaDistribuciones = new LinkedList<Map<Pieza, Integer>>();
+public class DistribuidorConcreto extends Distribuidor{
+
+	@Override
+	public boolean puedoResolverPedido(Map<Pieza, Integer> pedido, Map<Pieza, Integer> stock) {
+		boolean ret = true;
 		
-		for (Map<Pieza, Integer> pedido: listaPedidos) {
-			
-			while ( !puedoResolverPedido(pedido, stock) )
-				solicitarVaca(stock);
-			
-			listaDistribuciones.add(resolverPedido(pedido, stock));
+		for(Entry<Pieza, Integer> pedidoEntry: pedido.entrySet()) {
+			Integer value = stock.get(pedidoEntry.getKey());
+			if (value == null) {
+				ret = false;
+				break;
+			}
+			else
+			ret = ret && pedidoEntry.getValue() <= value;		
 		}
-		
-		return listaDistribuciones;
+		return ret;
 	}
-	
-	/*Map<Pieza, Integer>stock;
-	int cantVacas;
-	
-	Distribuidor(Map<Pieza, Integer> stock){
-		this.stock=stock;
-		cantVacas=0;
+
+	@Override
+	public void solicitarVaca(Map<Pieza, Integer> stock) {
+		for(Entry<Pieza, Integer> mapaStock: stock.entrySet()) {
+			Integer cantidad = mapaStock.getValue();
+			cantidad = cantidad +1;
+			mapaStock.setValue(cantidad);
+		}
 	}
+
+	@Override
+	public Map<Pieza, Integer> resolverPedido(Map<Pieza, Integer> pedido, Map<Pieza, Integer> stock) {
+		Map<Pieza, Integer> distribucion = new HashMap<Pieza, Integer>();
+
+		for(Entry<Pieza, Integer> pedidoEntry: pedido.entrySet()) {
+			// Agrego la pieza del pedido con su cantidad.
+			distribucion.put(pedidoEntry.getKey(), pedidoEntry.getValue());
+			// Disminuyo la cantidad del stock.
+			stock.put(pedidoEntry.getKey(), stock.get(pedidoEntry.getKey()) - pedidoEntry.getValue());
+		}
+			
+		return distribucion;
+	}
+
 	
-	public List<HashMap<Pieza, Integer>> resolverPedidos(List<HashMap<Pieza, Integer>> pedidos) {
+	/*public List<HashMap<Pieza, Integer>> resolverPedidos(List<HashMap<Pieza, Integer>> pedidos) {
 		List<HashMap<Pieza, Integer>>distribuciones = new LinkedList<HashMap<Pieza, Integer>>();
 		for(HashMap<Pieza,Integer> pedido: pedidos) {
 			HashMap<Pieza, Integer>distribucion = new HashMap<Pieza, Integer>();
@@ -85,4 +97,4 @@ public abstract boolean puedoResolverPedido(Map<Pieza, Integer> pedido, Map<Piez
 	}
 		cantVacas++;
 }*/
-	}
+}
