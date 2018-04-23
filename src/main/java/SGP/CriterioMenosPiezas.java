@@ -19,8 +19,8 @@ public class CriterioMenosPiezas implements Criterio {
 	* al pedido que mas piezas tiene.
 	*/
 	@Override
-	public int puntuar(List<Pieza> pedido) {
-		return -pedido.size() * this.prioridad;
+	public int puntuar(Pedido pedido) {
+		return -pedido.getPiezas().size() * this.prioridad;
 	}
 	
 }

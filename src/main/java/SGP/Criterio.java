@@ -1,10 +1,8 @@
 package main.java.SGP;
 
-import java.util.List;
-
 public interface Criterio {
 	
-	int puntuar(List<Pieza> pedido);
+	int puntuar(Pedido pedido);
 	
 	//int sumar(ICriterio otro);
 	

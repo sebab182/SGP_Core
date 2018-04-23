@@ -13,7 +13,7 @@ public class CriterioCompuesto implements Criterio{
 	}
 	
 	@Override
-	public int puntuar(List<Pieza> pedido) {
+	public int puntuar(Pedido pedido) {
 		int ret = 0;
 		
 		// Suma el puntaje que le da cada criterio.
