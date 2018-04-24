@@ -3,6 +3,7 @@ package test.java.SGP;
 import junit.framework.TestCase;
 import main.java.SGP.DataSource;
 
+
 public class DataSourceTest extends TestCase {
 	private DataSource ds;
 	
@@ -22,6 +23,4 @@ public class DataSourceTest extends TestCase {
 		clase = ds.getFactory();
 		assertEquals(clase, "main.java.SGP.DatosSerializable");
 	}
-	
-
 }

@@ -1,6 +1,4 @@
-package main.java.SGP.Pedido;
-import java.util.Map;
-import java.util.Set;
+package main.java.SGP.Pedidos;
 
 /*Interface para mediador de pedidos*/
 public interface IntGestorPedidos<T> {

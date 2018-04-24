@@ -12,10 +12,10 @@ public class Main {
 		
 		//Cargamos stock y pedidos
 		GestordeStock gestorStock = af.cargarGestordeStock();
-		List<Map<Pieza,Integer>>pedidos=af.cargarPedidos();
+		List<Map<Tipo,Integer>>pedidos=af.cargarPedidos();
 		
 		//Creamos distribuidor y resolvemos los pedidos
 		Distribuidor d = new Distribuidor();
-		List<Map<Pieza,Integer>>distribuciones = d.resolverPedidos(pedidos, gestorStock);
+		//List<Map<Pieza,Integer>>distribuciones = d.resolverPedidos(pedidos, gestorStock);
 	}
 }

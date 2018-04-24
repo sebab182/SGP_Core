@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class Distribuidor {
-	
+	//DISTRIBUIDOR VIEJO
 	Distribuidor(){
 		
 	}
@@ -28,7 +28,7 @@ public class Distribuidor {
 		for(Entry<Pieza, Integer> mapaPedido: pedido.entrySet()) {
 			Pieza piezaPedida = mapaPedido.getKey();
 			
-			for(Entry<Pieza, Integer>mapaStock: stock.getStock().entrySet()) {
+			for(Entry<Pieza, Integer>mapaStock: ((Map<Pieza, Integer>) stock.getStock()).entrySet()) {
 				//Si las piezas son iguales ahora necesito ver cantidad en stock y repartir.
 				if(piezaPedida.equals(mapaStock.getKey())) {
 					distribuirPiezas(mapaPedido, mapaStock, distribucion, stock);
@@ -49,7 +49,7 @@ public class Distribuidor {
 		//Agrego la pieza al pedido con su cantidad
 		distribucion.put(mapaPedido.getKey(), cantPedida);
 		//Disminuyo la cantidad de stock
-		stock.disminuirStock(mapaPedido.getKey(),cantPedida);		
+		//stock.disminuirStock(mapaPedido.getKey(),cantPedida);		
 	}
 
 	}

@@ -1,6 +1,9 @@
-package main.java.SGP;
+package main.java.SGP.Criterios;
 
 import java.util.List;
+
+import main.java.SGP.Cliente;
+import main.java.SGP.Pedido;
 
 public class CriterioClienteFavorito implements Criterio {
 

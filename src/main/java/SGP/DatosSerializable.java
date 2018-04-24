@@ -15,7 +15,7 @@ public class DatosSerializable implements AbstractFactory {
 	}
 	
 	public List<Pieza> cargarPiezas() {
-		List<Pieza>piezas = new LinkedList<Pieza>();		
+		List<Pieza>piezas = new LinkedList<Pieza>();
 		try {
 			FileInputStream fis = new FileInputStream("piezas.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
@@ -28,12 +28,12 @@ public class DatosSerializable implements AbstractFactory {
 		return piezas;
 	}
 
-	public List<Map<Pieza, Integer>> cargarPedidos() {
-		List<Map<Pieza,Integer>>pedidos = new LinkedList<Map<Pieza,Integer>>();
+	public List<Map<Tipo, Integer>> cargarPedidos() {
+		List<Map<Tipo,Integer>>pedidos = new LinkedList<Map<Tipo,Integer>>();   	
 		try {
 			FileInputStream fis = new FileInputStream("pedidos.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
-			pedidos = (List<Map<Pieza,Integer>>) in.readObject();
+			pedidos = (List<Map<Tipo,Integer>>) in.readObject();
 			in.close();
 		}
 		catch(Exception e) {
@@ -44,7 +44,7 @@ public class DatosSerializable implements AbstractFactory {
 
 	@Override
 	public GestordeStock cargarGestordeStock() {
-		GestordeStock gestorStock = new GestordeStock();
+		GestordeStock gestorStock = new GestordeStock();		
 		try {
 			FileInputStream fis = new FileInputStream("gestorStock.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
