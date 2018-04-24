@@ -1,11 +1,8 @@
-package main.java.SGP.Pedido;
+package main.java.SGP.Pedidos;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
-
 import main.java.SGP.Pieza;
 
 /*Gestor de Pedidos, actua de mediador entre "pedidos" para realizar operaciones entre ellos*/

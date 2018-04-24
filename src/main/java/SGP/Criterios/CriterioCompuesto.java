@@ -1,8 +1,10 @@
-package main.java.SGP;
+package main.java.SGP.Criterios;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+
+import main.java.SGP.Pedido;
 
 public class CriterioCompuesto implements Criterio{
 	

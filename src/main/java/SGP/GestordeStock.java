@@ -1,19 +1,20 @@
 package main.java.SGP;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
+@SuppressWarnings("serial")
 public class GestordeStock implements Serializable {
 	private int vacasaFaenar;
 	private int vacasExistentes;
-	private Map<Pieza,Integer>stock;
+	private List<Pieza> stock;
 	
 	public GestordeStock() {
 		vacasaFaenar = 0;
-		vacasExistentes = 0;
-		stock = new HashMap<Pieza,Integer>();
+		vacasExistentes = 10;
+		stock = new LinkedList<Pieza>();
 	}
 	
 	public int getVacasaFaenar() {
@@ -31,37 +32,56 @@ public class GestordeStock implements Serializable {
 	public void setVacasExistentes(int vacasExistentes) {
 		this.vacasExistentes = vacasExistentes;
 	}
-	
-	public Map<Pieza, Integer> getStock() {
-		return stock;
+		
+	public void setStock(List<Pieza> nuevoStock) {
+		this.stock = nuevoStock;
 	}
 
-	public void setStock(Map<Pieza, Integer> stock) {
-		this.stock = stock;
-	}
-	
 	public int getCantidadVacasRestantes() {
 		return vacasExistentes - vacasaFaenar;
 	}
 
 	public void solicitarVacas(){
-		//Tenemos vacas infinitas!
-		//Mando a faenar una vaca y aumento en 1 todos los elementos de mi stock.
-		vacasaFaenar++;
-		for(Entry<Pieza, Integer> mapaStock: stock.entrySet()) {
-			Integer cantidad = mapaStock.getValue();
-			cantidad = cantidad +1;
-			mapaStock.setValue(cantidad);
+		
+		if(vacasExistentes>0) {
+			vacasExistentes--;
+			vacasaFaenar++;
+			//Mando a faenar una vaca y aumento en 1 todos los elementos de mi stock. Asumimos vacas infinitas.
+			//Bajo la cantidad de vacas existentes.
+			//La lista vaca tiene todas las piezas que obtengo de una vaca
+			List<Pieza>vaca = new LinkedList<Pieza>();
+			vaca.add(new Pieza(new Tipo("pata1"),new Date()));
+			vaca.add(new Pieza(new Tipo("pata2"),new Date()));
+			vaca.add(new Pieza(new Tipo("pata3"),new Date()));
+			vaca.add(new Pieza(new Tipo("pata4"),new Date()));
+			vaca.add(new Pieza(new Tipo("muslo"),new Date()));
+			vaca.add(new Pieza(new Tipo("vacio"),new Date()));
+			//Agrego la vaca al stock
+			agregarPiezas(vaca);
 			}
 	}
+	
+	public void agregarPieza(Pieza pieza) {
+		stock.add(pieza);
+	}
+	
+	public void quitarPieza(Pieza pieza) {
+		stock.remove(pieza);
+	}
+	
+	public void agregarPiezas(List<Pieza>piezas) {
+		stock.addAll(piezas);
+	}
 
-	public void disminuirStock(Pieza pieza, int cantidad) {
-		//En una futura implementación debemos tener en cuenta las vacas existentes y la cantidad de vacas
-		for(Entry<Pieza, Integer>mapaStock: stock.entrySet()) {
-			//Recorro el stock, busco la pieza de la cual que disminuir stock y le bajo la cantidad solicitda.
-			if(pieza.equals(mapaStock.getKey())) {
-				mapaStock.setValue(mapaStock.getValue()-cantidad);
-			}
-		}
+	public void quitarPiezas(List<Pieza> piezas) {
+		stock.removeAll(piezas);
+	}
+
+	public List<Pieza> getStock() {
+		return stock;
+	}
+	
+	public boolean hayVacasDisponibles() {
+		return vacasExistentes!=0;
 	}
 }

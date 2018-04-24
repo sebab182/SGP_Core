@@ -5,10 +5,10 @@ import java.util.List;
 
 import junit.framework.TestCase;
 import main.java.SGP.Cliente;
-import main.java.SGP.Criterio;
-import main.java.SGP.CriterioClienteFavorito;
 import main.java.SGP.Pedido;
 import main.java.SGP.Pieza;
+import main.java.SGP.Criterios.Criterio;
+import main.java.SGP.Criterios.CriterioClienteFavorito;
 
 public class CriterioClienteFavoritoTest extends TestCase {
 

@@ -1,5 +1,6 @@
 package test.java.SGP;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Map;
 import main.java.SGP.AbstractFactory;
 import main.java.SGP.GestordeStock;
 import main.java.SGP.Pieza;
+import main.java.SGP.Tipo;
 
 public class DatosHardcodeados implements AbstractFactory {
 	
@@ -16,26 +18,28 @@ public class DatosHardcodeados implements AbstractFactory {
 
 	public List<Pieza> cargarPiezas() {
 		List<Pieza>piezas= new LinkedList<Pieza>();
-		piezas.add(new Pieza("pata1"));
-		piezas.add(new Pieza("pata2"));
-		piezas.add(new Pieza("pata3"));
-		piezas.add(new Pieza("pata4"));
-		piezas.add(new Pieza("muslo"));
-		piezas.add(new Pieza("vacio"));
+		//date(año= 1900+años, mes<0 a 11>, día)
+		piezas.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
+		piezas.add(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
+		piezas.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
+		piezas.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
+		piezas.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
+		piezas.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
+		piezas.add(new Pieza(new Tipo("falda"),new Date(118,2,23)));
 		return piezas;
 	}
 
-	public List<Map<Pieza, Integer>> cargarPedidos() {
-		List<Map<Pieza,Integer>>pedidos= new LinkedList<Map<Pieza,Integer>>();
-		Map<Pieza, Integer>pedido1 = new HashMap<Pieza,Integer>();
-    	pedido1.put(new Pieza("pata1"), 3);
-    	pedido1.put(new Pieza("muslo"), 4);
+	public List<Map<Tipo, Integer>> cargarPedidos() {
+		List<Map<Tipo,Integer>>pedidos= new LinkedList<Map<Tipo,Integer>>();
+		Map<Tipo, Integer>pedido1 = new HashMap<Tipo,Integer>();
+    	pedido1.put(new Tipo("pata1"), 3);
+    	pedido1.put(new Tipo("muslo"), 4);
     	pedidos.add(pedido1);
     	
-		Map<Pieza, Integer>pedido2 = new HashMap<Pieza,Integer>();
-    	pedido2.put(new Pieza("pata2"), 2);
-    	pedido2.put(new Pieza("vacio"), 2);
-    	pedido2.put(new Pieza("pata1"), 2);
+		Map<Tipo, Integer>pedido2 = new HashMap<Tipo,Integer>();
+    	pedido2.put(new Tipo("pata2"), 2);
+    	pedido2.put(new Tipo("vacio"), 2);
+    	pedido2.put(new Tipo("pata1"), 2);
     	pedidos.add(pedido2);
 		return pedidos;
 	}
@@ -43,16 +47,16 @@ public class DatosHardcodeados implements AbstractFactory {
 	@Override
 	public GestordeStock cargarGestordeStock() {
 		GestordeStock gs = new GestordeStock();
-		Map<Pieza, Integer>stock = new HashMap<Pieza,Integer>();
-		stock.put(new Pieza("pata1"), 8);
-		stock.put(new Pieza("pata2"), 5);
-		stock.put(new Pieza("muslo"), 3);
-		stock.put(new Pieza("pata3"), 2);
-		stock.put(new Pieza("vacio"), 7);
-		stock.put(new Pieza("pata4"), 4);
+		List<Pieza>stock = new LinkedList<Pieza>();
+		stock.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
+		stock.add(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
+		stock.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
+		stock.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
+		stock.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
+		stock.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
 		gs.setVacasExistentes(10);
 		gs.setStock(stock);
 		return gs;
-	}
+}
 
 }

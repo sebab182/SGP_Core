@@ -1,4 +1,4 @@
-package main.java.SGP.Pedido;
+package main.java.SGP.Pedidos;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -8,23 +8,24 @@ import java.util.Map;
 import java.util.Set;
 
 import main.java.SGP.Pieza;
+import main.java.SGP.Tipo;
 
-public class PedidoCarne extends Pedido<Pieza>{
+public class PedidoCarneTipo extends Pedido<Tipo>{
 
-	public PedidoCarne()
+	public PedidoCarneTipo()
 	{
 		super();
-		this._items=new HashMap<Pieza, Double>();
+		this._items=new HashMap<Tipo, Double>();
 	}
 	
 	@Override
-	public void agregarItem(Pieza item, Double cantidad) {
+	public void agregarItem(Tipo item, Double cantidad) {
 		// TODO Auto-generated method stub
 		super.agregarItem(item, cantidad);
 	}
 
 	@Override
-	public void quitarItem(Pieza item) {
+	public void quitarItem(Tipo item) {
 		// TODO Auto-generated method stub
 		super.quitarItem(item);
 	}
@@ -35,7 +36,7 @@ public class PedidoCarne extends Pedido<Pieza>{
 		super.vaciarPedido();
 	}
 	
-	public Map<Pieza, Double> itemsPedidos()
+	public Map<Tipo, Double> itemsPedidos()
 	{
 		return this._items;
 	}

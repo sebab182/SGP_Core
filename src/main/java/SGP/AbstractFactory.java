@@ -6,5 +6,5 @@ import java.util.Map;
 public interface AbstractFactory {
 	public List<Pieza>cargarPiezas();
 	public GestordeStock cargarGestordeStock();
-	public List<Map<Pieza,Integer>>cargarPedidos();
+	public List<Map<Tipo, Integer>> cargarPedidos();
 }

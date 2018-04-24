@@ -1,5 +1,8 @@
 package main.java.SGP;
-public class Tipo {
+
+import java.io.Serializable;
+
+public class Tipo implements Serializable {
 	private String tipoPieza;
 	
 	public Tipo(String tipoPieza) {
@@ -37,5 +40,10 @@ public class Tipo {
 		} else if (!tipoPieza.equals(other.tipoPieza))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return tipoPieza;
 	}
 }

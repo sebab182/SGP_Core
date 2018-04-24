@@ -1,35 +1,37 @@
 package test.java.SGP;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import junit.framework.TestCase;
 import main.java.SGP.Cliente;
-import main.java.SGP.Criterio;
-import main.java.SGP.CriterioMenosPiezas;
 import main.java.SGP.Pedido;
 import main.java.SGP.Pieza;
+import main.java.SGP.Tipo;
+import main.java.SGP.Criterios.Criterio;
+import main.java.SGP.Criterios.CriterioMenosPiezas;
 
 public class CriterioMenosPiezasTest extends TestCase {
 
 	public void testPuntuar() {
 
 		List<Pieza>pedido1 = new LinkedList<Pieza>();
-    	pedido1.add(new Pieza("pata1"));
-    	pedido1.add(new Pieza("pata1"));
-    	pedido1.add(new Pieza("pata1"));
-    	pedido1.add(new Pieza("muslo"));
-    	pedido1.add(new Pieza("muslo"));
-    	pedido1.add(new Pieza("muslo"));
-    	pedido1.add(new Pieza("muslo"));
+		pedido1.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
+		pedido1.add(new Pieza(new Tipo("pata1"),new Date(107,11,12)));
+		pedido1.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
+		pedido1.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
+		pedido1.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
+		pedido1.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
+		pedido1.add(new Pieza(new Tipo("vacio"),new Date(118,3,21)));	
     	Pedido p1 = new Pedido(new Cliente(""),pedido1);
     	
     	List<Pieza>pedido2 = new LinkedList<Pieza>();
-    	pedido2.add(new Pieza("pata2"));
-    	pedido2.add(new Pieza("pata2"));
-    	pedido2.add(new Pieza("vacio"));
-    	pedido2.add(new Pieza("vacio"));
-    	pedido2.add(new Pieza("pata1"));
-    	pedido2.add(new Pieza("pata1"));
+    	pedido2.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
+		pedido2.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
+		pedido2.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
+		pedido2.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
+		pedido2.add(new Pieza(new Tipo("vacio"),new Date(118,3,21)));	
+		pedido2.add(new Pieza(new Tipo("vacio"),new Date(118,3,21)));	
     	Pedido p2 = new Pedido(new Cliente(""),pedido2);
     	
     	Criterio c = new CriterioMenosPiezas(2);

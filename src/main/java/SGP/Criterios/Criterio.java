@@ -1,4 +1,6 @@
-package main.java.SGP;
+package main.java.SGP.Criterios;
+
+import main.java.SGP.Pedido;
 
 public interface Criterio {
 	
