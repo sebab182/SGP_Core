@@ -14,7 +14,7 @@ public class AgrupadordePiezasTest extends TestCase {
 
 	public void testAgruparPedidos() {
 		DatosHardcodeados dh = new DatosHardcodeados();
-		List<Pedido> pedidos = dh.cargarPedidos();
+		List<Pedido<Tipo>> pedidos = dh.cargarPedidos();
 		ap = new AgrupadordePiezas();
 		/*Map<Tipo,Integer>agrupacion = ap.agruparPedidos(pedidos);
 		assertEquals(agrupacion.get(new Tipo("pata1")),new Integer(5));

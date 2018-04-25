@@ -8,25 +8,26 @@ import main.java.SGP.Tipo;
 import main.java.SGP.Pedidos.Pedido;
 //TODO: Rehacer esto!
 public class AgrupadordePiezas {
-	private Map<Tipo,Integer>agrupacion;
+	private Map<Tipo,Double>agrupacion;
 	
 	public AgrupadordePiezas() {
-		agrupacion = new HashMap<Tipo,Integer>();
+		agrupacion = new HashMap<Tipo,Double>();
 	}
 	
-	public Map<Tipo,Integer> agruparPedidos(List<Pedido<Tipo>>listaPedidos) {
+	public Map<Tipo,Double> agruparPedidos(List<Pedido<Tipo>>listaPedidos) {
 		for(Pedido<Tipo> pedido: listaPedidos) {
-			/*for(Entry<Tipo, Integer> entryPedido: pedido.entrySet()) {
+			Map<Tipo,Double> mapPedido = pedido.get_items();
+			for(Entry<Tipo, Double> entryPedido: mapPedido.entrySet()) {
 				agruparPedido(entryPedido);
 			}
-	}*/
-		}
+	}
 		return agrupacion;
 }
 
-	private void agruparPedido(Entry<Tipo, Integer> entryPedido) {
+
+	private void agruparPedido(Entry<Tipo, Double> entryPedido) {
 		Tipo tipoPedido = entryPedido.getKey();
-		Integer cantPedido = entryPedido.getValue();
+		Double cantPedido = entryPedido.getValue();
 		if(agrupacion.containsKey(tipoPedido)) {
 			agrupacion.put(tipoPedido, agrupacion.get(tipoPedido)+cantPedido);
 		}

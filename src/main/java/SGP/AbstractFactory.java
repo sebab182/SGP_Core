@@ -6,5 +6,5 @@ import main.java.SGP.Pedidos.*;
 public interface AbstractFactory {
 	public List<Pieza>cargarPiezas();
 	public GestordeStock cargarGestordeStock();
-	public List<Pedido> cargarPedidos();
+	public List<Pedido<Tipo>> cargarPedidos();
 }

@@ -22,5 +22,12 @@ public abstract class Pedido<T>{
 	{
 		this._items.clear();
 	}
-	
+
+	public Map<T, Double> get_items() {
+		return _items;
+	}
+
+	public void set_items(Map<T, Double> _items) {
+		this._items = _items;
+	}
 }
