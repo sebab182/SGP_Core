@@ -2,13 +2,13 @@ package main.java.SGP;
 
 import java.util.List;
 
-public class Pedido {
+public class PedidoA {
 	
 	private List<Pieza> piezas;
 	private Cliente cliente;
 	private int puntaje;
 	
-	public Pedido(Cliente cliente, List<Pieza> piezas) {
+	public PedidoA(Cliente cliente, List<Pieza> piezas) {
 		this.piezas = piezas;
 		this.cliente = cliente;
 		this.puntaje = 0;

@@ -10,6 +10,8 @@ import main.java.SGP.AbstractFactory;
 import main.java.SGP.GestordeStock;
 import main.java.SGP.Pieza;
 import main.java.SGP.Tipo;
+import main.java.SGP.Pedidos.Pedido;
+import main.java.SGP.Pedidos.PedidoCarneTipo;
 
 public class DatosHardcodeados implements AbstractFactory {
 	
@@ -29,18 +31,18 @@ public class DatosHardcodeados implements AbstractFactory {
 		return piezas;
 	}
 
-	public List<Map<Tipo, Integer>> cargarPedidos() {
-		List<Map<Tipo,Integer>>pedidos= new LinkedList<Map<Tipo,Integer>>();
-		Map<Tipo, Integer>pedido1 = new HashMap<Tipo,Integer>();
-    	pedido1.put(new Tipo("pata1"), 3);
-    	pedido1.put(new Tipo("muslo"), 4);
-    	pedidos.add(pedido1);
-    	
-		Map<Tipo, Integer>pedido2 = new HashMap<Tipo,Integer>();
-    	pedido2.put(new Tipo("pata2"), 2);
-    	pedido2.put(new Tipo("vacio"), 2);
-    	pedido2.put(new Tipo("pata1"), 2);
-    	pedidos.add(pedido2);
+	public List<Pedido<Tipo>> cargarPedidos() {
+		List<Pedido<Tipo>>pedidos= new LinkedList<Pedido<Tipo>>();
+		Pedido<Tipo> a = new PedidoCarneTipo();
+		a.agregarItem(new Tipo("muslo"), 3.0);
+		a.agregarItem(new Tipo("pata"), 5.0);
+		pedidos.add(a);
+		
+		Pedido<Tipo> b = new PedidoCarneTipo();
+		b.agregarItem(new Tipo("vacio"), 4.0);
+		b.agregarItem(new Tipo("muslo"), 7.0);
+		b.agregarItem(new Tipo("pata"), 3.0);
+		pedidos.add(b);		
 		return pedidos;
 	}
 

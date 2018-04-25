@@ -2,7 +2,7 @@ package main.java.SGP.Criterios;
 
 import java.util.List;
 
-import main.java.SGP.Pedido;
+import main.java.SGP.Pedidos.Pedido;
 
 public class CriterioMenosPiezas implements Criterio {
 
@@ -22,7 +22,8 @@ public class CriterioMenosPiezas implements Criterio {
 	*/
 	@Override
 	public int puntuar(Pedido pedido) {
-		return -pedido.getPiezas().size() * this.prioridad;
+		return 0; //TODO: Rever implementacion
+		//return -pedido.getPiezas().size() * this.prioridad;
 	}
 	
 }

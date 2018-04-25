@@ -40,6 +40,13 @@ public class PedidoCarneTipo extends Pedido<Tipo>{
 	{
 		return this._items;
 	}
+
+	@Override
+	public String toString() {
+		return this._items.toString();
+	}
+	
+	
 	
 
 }

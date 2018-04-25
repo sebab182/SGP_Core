@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import main.java.SGP.Pedido;
+import main.java.SGP.Pedidos.Pedido;
 
 public class CriterioCompuesto implements Criterio{
 	

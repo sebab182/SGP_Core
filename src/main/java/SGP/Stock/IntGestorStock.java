@@ -1,16 +1,17 @@
 package main.java.SGP.Stock;
 
+import java.util.List;
 import java.util.Map;
 
 import main.java.SGP.Pieza;
 
 public abstract class IntGestorStock<T> {
-	Map<T, Double> _Stock;
+	List<T> _Stock;
 	
-	public void agregarItem(T item, Double valor)
+	public void agregarItem(T item)
 	{
 		//TODO controlar
-		this._Stock.put(item, valor);
+		this._Stock.add(item);
 	}
 	
 	public void quitarItem(T item)
@@ -21,6 +22,10 @@ public abstract class IntGestorStock<T> {
 	public void vaciarStock()
 	{
 		this._Stock.clear();
+	}
+	
+	public List<T> getStock(){
+		return this._Stock;
 	}
 	
 }

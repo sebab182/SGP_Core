@@ -3,7 +3,7 @@ package main.java.SGP.Criterios;
 import java.util.List;
 
 import main.java.SGP.Cliente;
-import main.java.SGP.Pedido;
+import main.java.SGP.Pedidos.Pedido;
 
 public class CriterioClienteFavorito implements Criterio {
 
@@ -17,11 +17,12 @@ public class CriterioClienteFavorito implements Criterio {
 	
 	@Override
 	public int puntuar(Pedido pedido) {
-		Cliente cliente = pedido.getCliente();
+		//TODO: Rever implementacion
+		/*Cliente cliente = pedido.getCliente();
 		
 		if (this.clientes.contains(cliente))
 			return this.puntaje;
-		
+		*/
 		return 0;
 	}
 
