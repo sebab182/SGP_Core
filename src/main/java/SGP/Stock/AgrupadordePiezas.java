@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import main.java.SGP.Tipo;
 import main.java.SGP.Pedidos.Pedido;
-//TODO: Rehacer esto!
+
 public class AgrupadordePiezas {
 	private Map<Tipo,Double>agrupacion;
 	
@@ -23,7 +23,6 @@ public class AgrupadordePiezas {
 	}
 		return agrupacion;
 }
-
 
 	private void agruparPedido(Entry<Tipo, Double> entryPedido) {
 		Tipo tipoPedido = entryPedido.getKey();
