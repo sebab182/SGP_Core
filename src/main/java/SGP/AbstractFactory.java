@@ -1,10 +1,10 @@
 package main.java.SGP;
 
 import java.util.List;
-import java.util.Map;
+import main.java.SGP.Pedidos.*;
 
 public interface AbstractFactory {
 	public List<Pieza>cargarPiezas();
 	public GestordeStock cargarGestordeStock();
-	public List<Map<Tipo, Integer>> cargarPedidos();
+	public List<Pedido> cargarPedidos();
 }

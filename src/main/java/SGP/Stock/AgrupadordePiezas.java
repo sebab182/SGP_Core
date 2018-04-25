@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import main.java.SGP.Tipo;
-
+import main.java.SGP.Pedidos.Pedido;
+//TODO: Rehacer esto!
 public class AgrupadordePiezas {
 	private Map<Tipo,Integer>agrupacion;
 	
@@ -13,12 +14,13 @@ public class AgrupadordePiezas {
 		agrupacion = new HashMap<Tipo,Integer>();
 	}
 	
-	public Map<Tipo,Integer> agruparPedidos(List<Map<Tipo,Integer>>listaPedidos) {
-		for(Map<Tipo,Integer> pedido: listaPedidos) {
-			for(Entry<Tipo, Integer> entryPedido: pedido.entrySet()) {
+	public Map<Tipo,Integer> agruparPedidos(List<Pedido<Tipo>>listaPedidos) {
+		for(Pedido<Tipo> pedido: listaPedidos) {
+			/*for(Entry<Tipo, Integer> entryPedido: pedido.entrySet()) {
 				agruparPedido(entryPedido);
 			}
-	}
+	}*/
+		}
 		return agrupacion;
 }
 

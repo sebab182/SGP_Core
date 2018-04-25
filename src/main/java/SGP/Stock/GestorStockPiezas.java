@@ -1,13 +1,15 @@
 package main.java.SGP.Stock;
 
+import java.util.List;
+
 import main.java.SGP.Pieza;
 
 public class GestorStockPiezas extends IntGestorStock<Pieza> {
 
 	@Override
-	public void agregarItem(Pieza item, Double valor) {
+	public void agregarItem(Pieza item) {
 		// TODO Auto-generated method stub
-		super.agregarItem(item, valor);
+		super.agregarItem(item);
 	}
 
 	@Override
@@ -21,6 +23,10 @@ public class GestorStockPiezas extends IntGestorStock<Pieza> {
 		// TODO Auto-generated method stub
 		super.vaciarStock();
 	}
-	
 
+	@Override
+	public List<Pieza> getStock() {
+		// TODO Auto-generated method stub
+		return super.getStock();
+	}
 }

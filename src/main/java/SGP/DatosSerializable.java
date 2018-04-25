@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import main.java.SGP.Pedidos.Pedido;
+
 public class DatosSerializable implements AbstractFactory {
 	
 	public DatosSerializable() throws ClassNotFoundException {
@@ -28,12 +30,12 @@ public class DatosSerializable implements AbstractFactory {
 		return piezas;
 	}
 
-	public List<Map<Tipo, Integer>> cargarPedidos() {
-		List<Map<Tipo,Integer>>pedidos = new LinkedList<Map<Tipo,Integer>>();   	
+	public List<Pedido> cargarPedidos() {
+		List<Pedido>pedidos = new LinkedList<Pedido>();   	
 		try {
 			FileInputStream fis = new FileInputStream("pedidos.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
-			pedidos = (List<Map<Tipo,Integer>>) in.readObject();
+			pedidos = (List<Pedido>) in.readObject();
 			in.close();
 		}
 		catch(Exception e) {

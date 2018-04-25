@@ -2,6 +2,8 @@ package main.java.SGP;
 import java.util.List;
 import java.util.Map;
 
+import main.java.SGP.Pedidos.Pedido;
+
 public class Main {
 
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
@@ -12,7 +14,8 @@ public class Main {
 		
 		//Cargamos stock y pedidos
 		GestordeStock gestorStock = af.cargarGestordeStock();
-		List<Map<Tipo,Integer>>pedidos=af.cargarPedidos();
+		System.out.println(gestorStock.getStock());
+		List<Pedido>pedidos=af.cargarPedidos();
 		
 		//Creamos distribuidor y resolvemos los pedidos
 		Distribuidor d = new Distribuidor();
