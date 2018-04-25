@@ -30,12 +30,12 @@ public class DatosSerializable implements AbstractFactory {
 		return piezas;
 	}
 
-	public List<Pedido> cargarPedidos() {
-		List<Pedido>pedidos = new LinkedList<Pedido>();   	
+	public List<Pedido<Tipo>> cargarPedidos() {
+		List<Pedido<Tipo>>pedidos = new LinkedList<Pedido<Tipo>>();   	
 		try {
 			FileInputStream fis = new FileInputStream("pedidos.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
-			pedidos = (List<Pedido>) in.readObject();
+			pedidos = (List<Pedido<Tipo>>) in.readObject();
 			in.close();
 		}
 		catch(Exception e) {
