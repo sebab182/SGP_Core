@@ -1,19 +1,21 @@
 package SGP.Criterios;
 
 import java.util.List;
+import java.util.Map.Entry;
 
+import SGP.Tipo;
 import SGP.Pedidos.Pedido;
 
 public class CriterioMenosPiezas implements Criterio {
 
-	private int prioridad;
+	private int puntos_pieza;
 	
 	public CriterioMenosPiezas() {
-		this.prioridad = 1;
+		this.puntos_pieza = 1;
 	}
 	
-	public CriterioMenosPiezas(int prioridad) {
-		this.prioridad = prioridad;
+	public CriterioMenosPiezas(int puntos_pieza) {
+		this.puntos_pieza = puntos_pieza;
 	}
 	
 	/* Si queda negativo no importa?
@@ -21,9 +23,16 @@ public class CriterioMenosPiezas implements Criterio {
 	* al pedido que mas piezas tiene.
 	*/
 	@Override
-	public int puntuar(Pedido pedido) {
-		return 0; //TODO: Rever implementacion
-		//return -pedido.getPiezas().size() * this.prioridad;
+	public int puntuar(PedidoPuntuable pedido) {
+		int cantidad_piezas = 0;
+		
+		// Sumo la cantidad de piezas de cada tipo.
+		for (Entry<Tipo, Double> e: pedido.getPedido().get_items().entrySet())
+			
+			// conviene int ???
+			cantidad_piezas = cantidad_piezas + e.getValue().intValue();
+		
+		return -cantidad_piezas * this.puntos_pieza;
 	}
 	
 }

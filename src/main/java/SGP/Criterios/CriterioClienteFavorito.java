@@ -10,21 +10,21 @@ import SGP.Pedidos.Pedido;
 public class CriterioClienteFavorito implements Criterio {
 
 	private int puntaje;
-	List<Cliente> clientes;
+	List<Integer> locales;
 	
-	public CriterioClienteFavorito(List<Cliente> clientes) {
+	public CriterioClienteFavorito(List<Integer> locales) {
 		this.puntaje = 45;
-		this.clientes = clientes;
+		this.locales = locales;
 	}
 	
 	@Override
-	public int puntuar(Pedido pedido) {
-		//TODO: Rever implementacion
-		/*Cliente cliente = pedido.getCliente();
+	public int puntuar(PedidoPuntuable pedido) {
 		
-		if (this.clientes.contains(cliente))
+		int local = pedido.getPedido().getLocal();
+		
+		if (this.locales.contains(local))
 			return this.puntaje;
-		*/
+		
 		return 0;
 	}
 

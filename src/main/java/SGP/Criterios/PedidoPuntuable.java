@@ -1,33 +1,39 @@
-package SGP;
+package SGP.Criterios;
 
-import java.util.List;
+import SGP.Tipo;
+import SGP.Pedidos.Pedido;
 
-public class PedidoA {
+public class PedidoPuntuable implements Comparable<PedidoPuntuable>{
 	
-	private List<Pieza> piezas;
-	private Cliente cliente;
+	private Pedido<Tipo> pedido;
 	private int puntaje;
 	
-	public PedidoA(Cliente cliente, List<Pieza> piezas) {
-		this.piezas = piezas;
-		this.cliente = cliente;
+	public PedidoPuntuable(Pedido<Tipo> pedido) {
+		this.pedido = pedido;
 		this.puntaje = 0;
 	}
 	
-	public List<Pieza> getPiezas() {
-		return this.piezas;
-	}
-	
-	public Cliente getCliente() {
-		return this.cliente;
+	public Pedido<Tipo> getPedido() {
+		return this.pedido;
 	}
 	
 	public int getPuntaje() {
 		return this.puntaje;
 	}
 	
-	public void setPuntage(int p) {
-		this.puntaje = p;
+	public void setPuntaje(Criterio criterio) {
+		this.puntaje = criterio.puntuar(this);
 	}
+
+	@Override
+	public int compareTo(PedidoPuntuable o) {
+		if (this.getPuntaje() > o.getPuntaje())
+			return -1;
+		else if (this.getPuntaje() < o.getPuntaje())
+			return 1;
+		return 0;
+	}
+	
+	
 
 }

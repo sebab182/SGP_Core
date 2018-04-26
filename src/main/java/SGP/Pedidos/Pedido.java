@@ -23,6 +23,10 @@ public abstract class Pedido<T>{
 		this._items.clear();
 	}
 
+	public int getLocal() {
+		return this._nroLocal;
+	}
+	
 	public Map<T, Double> get_items() {
 		return _items;
 	}

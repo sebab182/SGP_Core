@@ -6,6 +6,8 @@ import java.util.List;
 
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioMenosPiezas;
+import SGP.Criterios.PedidoPuntuable;
+import SGP.Pedidos.Pedido;
 import junit.framework.TestCase;
 
 
@@ -21,7 +23,7 @@ public class CriterioMenosPiezasTest extends TestCase {
 		pedido1.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
 		pedido1.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
 		pedido1.add(new Pieza(new Tipo("vacio"),new Date(118,3,21)));	
-    	//Pedido p1 = new Pedido(new Cliente(""),pedido1);
+		//PedidoPuntuable p1 = new PedidoPuntuable(new Pedido<Tipo>(1,pedido1);
     	
     	List<Pieza>pedido2 = new LinkedList<Pieza>();
     	pedido2.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));

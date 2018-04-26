@@ -1,10 +1,8 @@
 package SGP.Criterios;
 
-import SGP.Pedidos.Pedido;
-
 public interface Criterio {
 	
-	int puntuar(Pedido pedido);
+	int puntuar(PedidoPuntuable pedido);
 	
 	//int sumar(ICriterio otro);
 	
