@@ -35,15 +35,15 @@ public class DataSource {
 	}
 
 	public String getFactory() {
-		//Aca mandamos la ubicación de la clase del factory! :)
+		//Aca mandamos la ubicaciÃ³n de la clase del factory! :)
 		String factory ="";
 		String clase = "";
 		if(source.equals("test")) {
 			//Cargando datos hardcodeados
 			//TODO: Aca tenemos el problema! No carga datos hardcodeados por que no esta en el mismo src
-			factory = DatosHardcodeados.class.getPackage().toString();
-			factory.substring(8); //Eliminamos "package"
-			clase = "DatosHardcodeados";
+			factory = DatosSerializable.class.getPackage().toString();
+			factory.substring(8);
+			clase = "DatosSerializable";
 			factory = factory+"."+clase;
 		}
 		else {
