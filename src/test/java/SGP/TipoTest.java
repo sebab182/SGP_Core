@@ -8,7 +8,8 @@ public class TipoTest extends TestCase {
 		Tipo a = new Tipo("pata1");
 		Tipo b = new Tipo("pata1");
 		assertEquals(a,b);
-		b.setTipoPieza("muslo");
+		
+		b= new Tipo("muslo");
 		assertNotSame(a,b);
 	}
 

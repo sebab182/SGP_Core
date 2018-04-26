@@ -14,11 +14,15 @@ public class PiezaTest extends TestCase {
 
 	public void testEqualsObject() {
 		Pieza aux = new Pieza(new Tipo("muslo"),new Date());
-		assertEquals(aux,p);
+		assertNotSame(aux,p);
 	}
 
 	public void testToString() {
 		assertEquals("muslo",p.toString());
+	}
+	
+	public void testGetFechaVencimiento() {
+		assertNotSame(p.getFechaVencimiento(),new Date());
 	}
 
 }
