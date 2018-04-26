@@ -1,10 +1,7 @@
 package SGP.Datos;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
-import SGP.DatosHardcodeados;
 
 public class DataSource {
 	private String ruta; //Nombre del archivo a leer
@@ -42,18 +39,17 @@ public class DataSource {
 			//Cargando datos hardcodeados
 			//TODO: Aca tenemos el problema! No carga datos hardcodeados por que no esta en el mismo src
 			factory = DatosHardcodeados.class.getPackage().toString();
-			factory.substring(8); //Eliminamos "package"
+			factory = factory.substring(8); //Eliminamos "package"
 			clase = "DatosHardcodeados";
 			factory = factory+"."+clase;
 		}
 		else {
 			//Cargando datos serializados
 			factory = DatosSerializable.class.getPackage().toString();
-			factory.substring(8);
+			factory = factory.substring(8); 
 			clase = "DatosSerializable";
 			factory = factory+"."+clase;
 		}
-		
 		return factory;
 	}
 

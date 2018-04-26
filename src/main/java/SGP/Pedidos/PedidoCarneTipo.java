@@ -1,5 +1,6 @@
 package SGP.Pedidos;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -11,7 +12,7 @@ import SGP.Tipo;
 
 
 
-public class PedidoCarneTipo extends Pedido<Tipo>{
+public class PedidoCarneTipo extends Pedido<Tipo> implements Serializable{
 
 	public PedidoCarneTipo()
 	{
@@ -46,8 +47,4 @@ public class PedidoCarneTipo extends Pedido<Tipo>{
 	public String toString() {
 		return this._items.toString();
 	}
-	
-	
-	
-
 }
