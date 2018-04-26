@@ -7,6 +7,7 @@ import junit.framework.TestCase;
 
 public class AnalizadordeVencimientoTest extends TestCase {
 
+	@SuppressWarnings("deprecation")
 	public void testAnalizarVencimientoPiezas() {
 		AnalizadordeVencimiento av = new AnalizadordeVencimiento();
 		GestordeStock gestorStock = new GestordeStock();
@@ -21,4 +22,5 @@ public class AnalizadordeVencimientoTest extends TestCase {
 		av.analizarVencimientoPiezas(gestorStock);
 		assertEquals(gestorStock.getStock().size(),1);
 	}
+	
 }
