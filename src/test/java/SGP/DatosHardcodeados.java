@@ -1,4 +1,4 @@
-package test.java.SGP;
+package SGP;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -6,12 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import main.java.SGP.AbstractFactory;
-import main.java.SGP.GestordeStock;
-import main.java.SGP.Pieza;
-import main.java.SGP.Tipo;
-import main.java.SGP.Pedidos.Pedido;
-import main.java.SGP.Pedidos.PedidoCarneTipo;
+import SGP.Pedidos.Pedido;
+import SGP.Pedidos.PedidoCarneTipo;
 
 public class DatosHardcodeados implements AbstractFactory {
 	

@@ -1,7 +1,6 @@
-package test.java.SGP;
+package SGP;
 
 import junit.framework.TestCase;
-import main.java.SGP.Tipo;
 
 public class TipoTest extends TestCase {
 

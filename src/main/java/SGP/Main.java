@@ -1,9 +1,8 @@
-package main.java.SGP;
+package SGP;
 import java.util.List;
 import java.util.Map;
 
-import main.java.SGP.Pedidos.Pedido;
-import main.java.SGP.Stock.AgrupadordePiezas;
+import SGP.Pedidos.Pedido;
 
 public class Main {
 
@@ -17,11 +16,6 @@ public class Main {
 		GestordeStock gestorStock = af.cargarGestordeStock();
 		System.out.println(gestorStock.getStock());
 		List<Pedido<Tipo>>pedidos=af.cargarPedidos();
-		System.out.println(pedidos);
-		
-		AgrupadordePiezas ap= new AgrupadordePiezas();
-		System.out.println(ap.agruparPedidos(pedidos));
-		
 		
 		//Creamos distribuidor y resolvemos los pedidos
 		Distribuidor d = new Distribuidor();

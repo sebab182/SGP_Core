@@ -1,15 +1,13 @@
-package main.java.SGP;
+package SGP;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-
-import main.java.SGP.Pedidos.Pedido;
+import SGP.AbstractFactory;
+import SGP.GestordeStock;
+import SGP.Pieza;
+import SGP.Pedidos.Pedido;
 
 public class DatosSerializable implements AbstractFactory {
 	

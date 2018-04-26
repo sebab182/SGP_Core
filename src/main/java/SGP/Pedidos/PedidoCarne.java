@@ -1,10 +1,10 @@
-package main.java.SGP.Pedidos;
+package SGP.Pedidos;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import main.java.SGP.Pieza;
-import main.java.SGP.Tipo;
+import SGP.Pieza;
+
 
 public class PedidoCarne extends Pedido<Pieza>{
 

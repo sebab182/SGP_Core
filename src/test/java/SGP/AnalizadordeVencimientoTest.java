@@ -1,11 +1,9 @@
-package test.java.SGP;
+package SGP;
 
 import java.util.Date;
+
+import SGP.Stock.AnalizadordeVencimiento;
 import junit.framework.TestCase;
-import main.java.SGP.GestordeStock;
-import main.java.SGP.Pieza;
-import main.java.SGP.Tipo;
-import main.java.SGP.Stock.AnalizadordeVencimiento;
 
 public class AnalizadordeVencimientoTest extends TestCase {
 

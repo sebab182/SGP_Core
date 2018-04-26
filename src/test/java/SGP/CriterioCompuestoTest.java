@@ -1,17 +1,11 @@
-package test.java.SGP;
+package SGP;
 
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
 import junit.framework.TestCase;
-import main.java.SGP.Cliente;
-import main.java.SGP.Pieza;
-import main.java.SGP.Tipo;
-import main.java.SGP.Criterios.Criterio;
-import main.java.SGP.Criterios.CriterioClienteFavorito;
-import main.java.SGP.Criterios.CriterioCompuesto;
-import main.java.SGP.Criterios.CriterioMenosPiezas;
+
 
 public class CriterioCompuestoTest extends TestCase {
 //TODO: Rehacer

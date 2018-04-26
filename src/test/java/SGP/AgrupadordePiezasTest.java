@@ -1,12 +1,11 @@
-package test.java.SGP;
+package SGP;
 
 import java.util.List;
 import java.util.Map;
 
+import SGP.Pedidos.Pedido;
+import SGP.Stock.AgrupadordePiezas;
 import junit.framework.TestCase;
-import main.java.SGP.Tipo;
-import main.java.SGP.Pedidos.Pedido;
-import main.java.SGP.Stock.AgrupadordePiezas;
 
 public class AgrupadordePiezasTest extends TestCase {
 	private AgrupadordePiezas ap;

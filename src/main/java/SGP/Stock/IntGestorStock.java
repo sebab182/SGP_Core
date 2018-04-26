@@ -1,9 +1,6 @@
-package main.java.SGP.Stock;
+package SGP.Stock;
 
 import java.util.List;
-import java.util.Map;
-
-import main.java.SGP.Pieza;
 
 public abstract class IntGestorStock<T> {
 	List<T> _Stock;

@@ -1,7 +1,8 @@
-package main.java.SGP;
+package SGP;
 
 import java.util.List;
-import main.java.SGP.Pedidos.*;
+import SGP.Pedidos.Pedido;
+
 
 public interface AbstractFactory {
 	public List<Pieza>cargarPiezas();

@@ -1,4 +1,4 @@
-package main.java.SGP;
+package SGP;
 
 public class Cliente {
 	

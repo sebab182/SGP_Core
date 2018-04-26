@@ -1,11 +1,12 @@
-package main.java.SGP.Stock;
+package SGP.Stock;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import main.java.SGP.Tipo;
-import main.java.SGP.Pedidos.Pedido;
+
+import SGP.Tipo;
+import SGP.Pedidos.Pedido;
 
 public class AgrupadordePiezas {
 	private Map<Tipo,Double>agrupacion;

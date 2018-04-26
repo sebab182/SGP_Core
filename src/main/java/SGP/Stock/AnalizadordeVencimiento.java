@@ -1,10 +1,10 @@
-package main.java.SGP.Stock;
+package SGP.Stock;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-import main.java.SGP.GestordeStock;
-import main.java.SGP.Pieza;
+import SGP.GestordeStock;
+import SGP.Pieza;
 
 public class AnalizadordeVencimiento{
 
