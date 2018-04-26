@@ -1,13 +1,13 @@
-package test.java.SGP;
+package SGP;
 
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+
+import SGP.Criterios.Criterio;
+import SGP.Criterios.CriterioMenosPiezas;
 import junit.framework.TestCase;
-import main.java.SGP.Pieza;
-import main.java.SGP.Tipo;
-import main.java.SGP.Criterios.Criterio;
-import main.java.SGP.Criterios.CriterioMenosPiezas;
+
 
 public class CriterioMenosPiezasTest extends TestCase {
 

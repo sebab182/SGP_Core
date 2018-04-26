@@ -1,10 +1,8 @@
-package test.java.SGP;
+package SGP;
 
 import java.util.Date;
 
 import junit.framework.TestCase;
-import main.java.SGP.Pieza;
-import main.java.SGP.Tipo;
 
 public class PiezaTest extends TestCase {
 	private Pieza p;

@@ -1,4 +1,4 @@
-package main.java.SGP.Pedidos;
+package SGP.Pedidos;
 
 import java.util.Map;
 import java.util.Set;

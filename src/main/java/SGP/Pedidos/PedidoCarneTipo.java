@@ -1,4 +1,4 @@
-package main.java.SGP.Pedidos;
+package SGP.Pedidos;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,8 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import main.java.SGP.Pieza;
-import main.java.SGP.Tipo;
+import SGP.Tipo;
+
+
 
 public class PedidoCarneTipo extends Pedido<Tipo>{
 

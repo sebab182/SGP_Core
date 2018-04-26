@@ -1,4 +1,4 @@
-package main.java.SGP.Pedidos;
+package SGP.Pedidos;
 
 /*Interface para mediador de pedidos*/
 public interface IntGestorPedidos<T> {

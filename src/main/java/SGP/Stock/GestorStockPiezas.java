@@ -1,8 +1,8 @@
-package main.java.SGP.Stock;
+package SGP.Stock;
 
 import java.util.List;
 
-import main.java.SGP.Pieza;
+import SGP.Pieza;
 
 public class GestorStockPiezas extends IntGestorStock<Pieza> {
 

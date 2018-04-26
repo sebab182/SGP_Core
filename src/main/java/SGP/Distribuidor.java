@@ -1,4 +1,4 @@
-package main.java.SGP;
+package SGP;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;

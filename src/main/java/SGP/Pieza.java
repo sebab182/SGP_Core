@@ -1,4 +1,4 @@
-package main.java.SGP;
+package SGP;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,10 +14,6 @@ private Date fechaVencimiento;
 
 	public Tipo getTipoPieza() {
 		return tipoPieza;
-	}
-
-	public void setTipoPieza(Tipo tipoPieza) {
-		this.tipoPieza = tipoPieza;
 	}
 
 	public Date getFechaVencimiento() {
