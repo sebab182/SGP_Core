@@ -4,7 +4,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class DataSource {
-	private String ruta; //Nombre del archivo a leer
 	private String source; //Path y nombre de la clase de Datos a cargar.
 	private String nombreTXT; //Nombre del archivo TXT
 	
@@ -21,14 +20,6 @@ public class DataSource {
 		BufferedReader in = new BufferedReader(new FileReader(nombreTXT));
 		source = in.readLine(); //Cargo el tipo de Factory
 		in.close(); //Cierro el archivo
-	}
-
-	public String getRuta() {
-		return ruta;
-	}
-
-	public void setRuta(String ruta) {
-		this.ruta = ruta;
 	}
 
 	public String getFactory() {

@@ -13,7 +13,7 @@ import SGP.GestordeStock;
 import SGP.Pieza;
 import SGP.Tipo;
 import SGP.Pedidos.Pedido;
-import SGP.Pedidos.PedidoCarneTipo;
+import SGP.Pedidos.PedidoCarne;
 
 public class DatosSerializable implements AbstractFactory {
 	
@@ -37,18 +37,18 @@ public class DatosSerializable implements AbstractFactory {
 
 	public List<Pedido<Tipo>> cargarPedidos() {
 		List<Pedido<Tipo>>pedidos= new LinkedList<Pedido<Tipo>>();
-		Pedido<Tipo> a = new PedidoCarneTipo();
+		Pedido<Tipo> a = new PedidoCarne();
 		a.agregarItem(new Tipo("muslo"), 3.0);
 		a.agregarItem(new Tipo("pata"), 5.0);
 		pedidos.add(a);
 		
-		Pedido<Tipo> b = new PedidoCarneTipo();
+		Pedido<Tipo> b = new PedidoCarne();
 		b.agregarItem(new Tipo("vacio"), 4.0);
 		b.agregarItem(new Tipo("muslo"), 7.0);
 		b.agregarItem(new Tipo("pata"), 3.0);
 		pedidos.add(b);	
 		
-		Pedido<Tipo> c = new PedidoCarneTipo();
+		Pedido<Tipo> c = new PedidoCarne();
 		c.agregarItem(new Tipo("lomo"), 8.0);
 		c.agregarItem(new Tipo("pata"), 2.0);
 		pedidos.add(c);

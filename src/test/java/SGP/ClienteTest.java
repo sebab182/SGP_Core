@@ -16,6 +16,7 @@ public class ClienteTest extends TestCase {
 		Cliente c = new Cliente("Pepe");
 		assertNotSame(a,b);
 		assertEquals(a,c);
+		assertEquals(a,a);
 	}
 
 }

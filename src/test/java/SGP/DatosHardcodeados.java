@@ -8,7 +8,7 @@ import java.util.Map;
 
 import SGP.Datos.AbstractFactory;
 import SGP.Pedidos.Pedido;
-import SGP.Pedidos.PedidoCarneTipo;
+import SGP.Pedidos.PedidoCarne;
 
 public class DatosHardcodeados implements AbstractFactory {
 	
@@ -30,12 +30,12 @@ public class DatosHardcodeados implements AbstractFactory {
 
 	public List<Pedido<Tipo>> cargarPedidos() {
 		List<Pedido<Tipo>>pedidos= new LinkedList<Pedido<Tipo>>();
-		Pedido<Tipo> a = new PedidoCarneTipo();
+		Pedido<Tipo> a = new PedidoCarne();
 		a.agregarItem(new Tipo("muslo"), 3.0);
 		a.agregarItem(new Tipo("pata"), 5.0);
 		pedidos.add(a);
 		
-		Pedido<Tipo> b = new PedidoCarneTipo();
+		Pedido<Tipo> b = new PedidoCarne();
 		b.agregarItem(new Tipo("vacio"), 4.0);
 		b.agregarItem(new Tipo("muslo"), 7.0);
 		b.agregarItem(new Tipo("pata"), 3.0);
