@@ -32,7 +32,12 @@ public class PiezaTest extends TestCase {
 		Pieza b = new Pieza(new Tipo("vacio"),null);
 		assertNotSame(b,p);
 		
+		Pieza c = new Pieza(new Tipo(null),new Date());
+		assertNotSame(c,p);
+		
 		assertNotSame(p,null);
+		
+		assertNotSame(p,new Pieza(null,null));
 	}
 
 	public void testToString() {
