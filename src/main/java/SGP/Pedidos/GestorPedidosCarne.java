@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
 
-import SGP.Pieza;
+import SGP.Tipo;
 
 /*Gestor de Pedidos, actua de mediador entre "pedidos" para realizar operaciones entre ellos*/
 /*Patron mediator*/
@@ -42,14 +42,14 @@ public class GestorPedidosCarne implements IntGestorPedidos<PedidoCarne> {
 		return ultimo;
 	}
 
-	public HashMap<Pieza, Double> totalPorPieza() {
+	public HashMap<Tipo, Double> totalPorPieza() {
 		
-		HashMap<Pieza, Double> totales=new HashMap<Pieza, Double>();
+		HashMap<Tipo, Double> totales=new HashMap<Tipo, Double>();
 		
 		//Calculo el total por cada pieza en TODOS los pedidos
 		for(PedidoCarne a:this._pedidos)
 		{
-			for(Entry<Pieza, Double> item: a._items.entrySet())
+			for(Entry<Tipo, Double> item: a._items.entrySet())
 			{
 				
 				if(totales.containsKey(item.getKey()))

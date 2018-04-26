@@ -13,10 +13,6 @@ public class Tipo implements Serializable {
 		return tipoPieza;
 	}
 
-	public void setTipoPieza(String tipoPieza) {
-		this.tipoPieza = tipoPieza;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;

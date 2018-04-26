@@ -1,6 +1,10 @@
-package SGP;
+package SGP.Datos;
 
 import java.util.List;
+
+import SGP.GestordeStock;
+import SGP.Pieza;
+import SGP.Tipo;
 import SGP.Pedidos.Pedido;
 
 

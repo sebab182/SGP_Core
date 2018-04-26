@@ -20,14 +20,11 @@ private Date fechaVencimiento;
 		return fechaVencimiento;
 	}
 
-	public void setFechaVencimiento(Date fechaVencimiento) {
-		this.fechaVencimiento = fechaVencimiento;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((fechaVencimiento == null) ? 0 : fechaVencimiento.hashCode());
 		result = prime * result + ((tipoPieza == null) ? 0 : tipoPieza.hashCode());
 		return result;
 	}
@@ -41,6 +38,11 @@ private Date fechaVencimiento;
 		if (getClass() != obj.getClass())
 			return false;
 		Pieza other = (Pieza) obj;
+		if (fechaVencimiento == null) {
+			if (other.fechaVencimiento != null)
+				return false;
+		} else if (!fechaVencimiento.equals(other.fechaVencimiento))
+			return false;
 		if (tipoPieza == null) {
 			if (other.tipoPieza != null)
 				return false;
@@ -54,4 +56,3 @@ private Date fechaVencimiento;
 		return this.tipoPieza.getTipoPieza();
 	}
 }
-

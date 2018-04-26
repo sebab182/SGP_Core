@@ -1,17 +1,18 @@
-package SGP;
+package SGP.Datos;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
+import SGP.GestordeStock;
+import SGP.Pieza;
+import SGP.Tipo;
 import SGP.Datos.AbstractFactory;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
 
 public class DatosHardcodeados implements AbstractFactory {
-	
+//TODO: Eliminar!
 	public DatosHardcodeados(){
 	}
 
@@ -57,5 +58,4 @@ public class DatosHardcodeados implements AbstractFactory {
 		gs.setStock(stock);
 		return gs;
 }
-
 }
