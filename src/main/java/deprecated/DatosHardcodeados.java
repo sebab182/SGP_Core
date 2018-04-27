@@ -1,4 +1,4 @@
-package SGP;
+package deprecated;
 
 import java.util.Date;
 import java.util.HashMap;

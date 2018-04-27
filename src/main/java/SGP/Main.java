@@ -22,8 +22,6 @@ public class Main {
 		
 		System.out.println(gestorStock.getStock());
 		
-	
-		
 		GestorPedidosCarne gp = new GestorPedidosCarne();
 		List<Pedido<Tipo>>pedidos=af.cargarPedidos();
 		

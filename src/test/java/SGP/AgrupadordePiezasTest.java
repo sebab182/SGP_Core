@@ -3,6 +3,7 @@ package SGP;
 import java.util.List;
 import java.util.Map;
 
+import SGP.Datos.DatosHardcodeados;
 import SGP.Pedidos.Pedido;
 import SGP.Stock.AgrupadordePiezas;
 import SGP.Stock.Tipo;
