@@ -22,13 +22,11 @@ public class GestorStockPiezas extends GestorStock<Pieza> {
 
 	@Override
 	public void agregarItem(Pieza item) {
-		// TODO Auto-generated method stub
 		super.agregarItem(item);
 	}
 
 	@Override
 	public void quitarItem(Pieza item) {
-		// TODO Auto-generated method stub
 		super.quitarItem(item);
 	}
 

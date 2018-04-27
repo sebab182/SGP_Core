@@ -32,8 +32,7 @@ public class GestorPedidosCarne implements IntGestorPedidos<Pedido<Tipo>> {
 
 	@Override
 	public Pedido<Tipo> menorPrioridad() {
-		// TODO Auto-generated method stub
-		//momentaneamente devuelvo el ultimo pedido
+		//momentaneamente devuelvo algun pedido
 		Pedido<Tipo> ultimo=null;
 		for(Pedido<Tipo> a:this._pedidos)
 		{

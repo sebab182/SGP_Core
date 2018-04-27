@@ -7,9 +7,6 @@ import SGP.Stock.Tipo;
 
 public class PedidoCarne extends Pedido<Tipo> implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public PedidoCarne()
@@ -20,19 +17,16 @@ public class PedidoCarne extends Pedido<Tipo> implements Serializable{
 	
 	@Override
 	public void agregarItem(Tipo item, Double cantidad) {
-		// TODO Auto-generated method stub
 		super.agregarItem(item, cantidad);
 	}
 
 	@Override
 	public void quitarItem(Tipo item) {
-		// TODO Auto-generated method stub
 		super.quitarItem(item);
 	}
 
 	@Override
 	public void vaciarPedido() {
-		// TODO Auto-generated method stub
 		super.vaciarPedido();
 	}
 	
