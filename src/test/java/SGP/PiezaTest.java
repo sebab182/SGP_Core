@@ -2,6 +2,8 @@ package SGP;
 
 import java.util.Date;
 
+import SGP.Stock.Pieza;
+import SGP.Stock.Tipo;
 import junit.framework.TestCase;
 
 public class PiezaTest extends TestCase {

@@ -1,7 +1,5 @@
 package SGP.Criterios;
 
-import java.util.List;
-
 import SGP.Pedidos.Pedido;
 
 public class CriterioMenosPiezas implements Criterio {

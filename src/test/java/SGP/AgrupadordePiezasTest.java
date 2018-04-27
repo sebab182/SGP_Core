@@ -5,11 +5,13 @@ import java.util.Map;
 
 import SGP.Pedidos.Pedido;
 import SGP.Stock.AgrupadordePiezas;
+import SGP.Stock.Tipo;
 import junit.framework.TestCase;
 
 public class AgrupadordePiezasTest extends TestCase {
 	private AgrupadordePiezas ap;
 	
+	@SuppressWarnings("deprecation")
 	public void testAgruparPedidos() {
 		DatosHardcodeados dh = new DatosHardcodeados();
 		List<Pedido<Tipo>> pedidos = dh.cargarPedidos();

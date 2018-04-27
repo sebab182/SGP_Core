@@ -1,6 +1,7 @@
 package SGP;
 
 import SGP.Pedidos.PedidoCarne;
+import SGP.Stock.Tipo;
 import junit.framework.TestCase;
 
 public class PedidoCarneTest extends TestCase {

@@ -1,8 +1,9 @@
-package SGP;
+package SGP.Stock;
 
 import java.io.Serializable;
 
 public class Tipo implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private String tipoPieza;
 	
 	public Tipo(String tipoPieza) {

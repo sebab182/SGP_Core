@@ -9,6 +9,8 @@ import java.util.Map;
 import SGP.Datos.AbstractFactory;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
+import SGP.Stock.Pieza;
+import SGP.Stock.Tipo;
 
 public class DatosHardcodeados implements AbstractFactory {
 	

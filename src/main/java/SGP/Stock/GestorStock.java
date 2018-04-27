@@ -2,7 +2,7 @@ package SGP.Stock;
 
 import java.util.List;
 
-public abstract class IntGestorStock<T> {
+public abstract class GestorStock<T> {
 	List<T> _Stock;
 	
 	public void agregarItem(T item)

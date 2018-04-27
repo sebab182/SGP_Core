@@ -1,9 +1,12 @@
-package SGP;
+package deprecated;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+
+import SGP.Stock.Pieza;
+import SGP.Stock.Tipo;
 
 @SuppressWarnings("serial")
 public class GestordeStock implements Serializable {

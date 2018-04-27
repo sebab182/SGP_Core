@@ -1,4 +1,4 @@
-package SGP;
+package SGP.Criterios;
 
 public class Cliente {
 	

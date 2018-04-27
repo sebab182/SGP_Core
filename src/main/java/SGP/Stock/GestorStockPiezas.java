@@ -1,10 +1,14 @@
 package SGP.Stock;
 
+import java.util.LinkedList;
 import java.util.List;
 
-import SGP.Pieza;
+public class GestorStockPiezas extends GestorStock<Pieza> {
 
-public class GestorStockPiezas extends IntGestorStock<Pieza> {
+	public GestorStockPiezas() {
+		super();
+		this._Stock=new LinkedList<Pieza>();
+	}
 
 	@Override
 	public void agregarItem(Pieza item) {
