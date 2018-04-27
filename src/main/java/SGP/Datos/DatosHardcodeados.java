@@ -1,6 +1,7 @@
 package SGP.Datos;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import SGP.Datos.AbstractFactory;
@@ -48,12 +49,25 @@ public class DatosHardcodeados implements AbstractFactory {
 	@Override
 	public void cargarGestordeStock(GestorStockPiezas a){
 		
-		a.agregarItem(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
-		a.agregarItem(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
-		a.agregarItem(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
-		a.agregarItem(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
-		a.agregarItem(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
-		a.agregarItem(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
+		LinkedList<Pieza> tmp=new LinkedList<Pieza>();
+		HashSet<Tipo> vaca=new HashSet<Tipo> ();
+		
+		tmp.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
+		tmp.add(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
+		tmp.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
+		tmp.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
+		tmp.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
+		tmp.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
+		
+		
+		for(Pieza p:tmp)
+		{
+			a.agregarItem(p);
+			vaca.add(p.getTipoPieza());
+		}
+		
+		a.setCortesVaca(vaca);
+		
 		//gs.setVacasExistentes(10);
 		//gs.setStock(stock);
 }

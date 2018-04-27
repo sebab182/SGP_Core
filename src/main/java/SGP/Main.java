@@ -31,10 +31,16 @@ public class Main {
 		}
 		
 		
-		System.out.println(gp);
+		//System.out.println(gp);
 		
 
 		System.out.println(gp.totalPorPieza());
+		
+		
+		ControlProduccion ControlProd = new ControlProduccion();
+		//Calculo total a Faenar
+		System.out.println(ControlProd.calcularFaena(gp, gestorStock));
+			
 		
 		//Creamos distribuidor y resolvemos los pedidos
 		//Distribuidor d = new Distribuidor();
