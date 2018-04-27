@@ -1,6 +1,7 @@
 package SGP;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -16,18 +17,20 @@ public class ControlProduccion implements IControladorProduccion {
 		Double faenar=0.0;
 		
 		HashMap<Tipo, Double> totalPedido= pedidos.totalPorPieza();
+		HashMap<Tipo, Double> PedidoFaltante= new HashMap<Tipo, Double>();
 		
 		for(Entry<Tipo, Double> item: totalPedido.entrySet())
 		{
 			Double saldo= reducirStock(item.getKey(), item.getValue(),stock);
-			totalPedido.put(item.getKey(), saldo);
+			PedidoFaltante.put(item.getKey(), saldo);
 		}
 	
-		for(Entry<Tipo, Double> item: totalPedido.entrySet())
+		for(Entry<Tipo, Double> item: PedidoFaltante.entrySet())
 		{
 			if(item.getValue()>faenar)
 				faenar=item.getValue();
 		}
+		
 		
 		return faenar;
 		
@@ -38,14 +41,20 @@ public class ControlProduccion implements IControladorProduccion {
 	
 	private Double reducirStock(Tipo tipo, Double cantidadPedida,  GestorStockPiezas stock)
 	{
+		LinkedList<Pieza> quitarS = new LinkedList<Pieza>();
+		
 		for(Pieza p: stock.getStock())
 		{
 			if(p.getTipoPieza().equals(tipo))
 			{
-				stock.quitarItem(p);
-				cantidadPedida--;
+				//stock.quitarItem(p);
+				if(cantidadPedida!=0.0) {
+					quitarS.add(p);
+					cantidadPedida--;
+				}
 			}
 		}
+		stock.getStock().removeAll(quitarS);
 		return cantidadPedida;
 	}
 	
