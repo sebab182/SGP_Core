@@ -1,6 +1,7 @@
 package SGP;
 
 import SGP.Datos.DatosSerializable;
+import SGP.Stock.GestorStockPiezas;
 import junit.framework.TestCase;
 
 public class DatosSerializableTest extends TestCase {
@@ -18,7 +19,9 @@ public class DatosSerializableTest extends TestCase {
 	}
 
 	public void testCargarGestordeStock() {
-		assertTrue(ds.cargarGestordeStock().getStock().isEmpty()==false);
+		GestorStockPiezas gs= new GestorStockPiezas();
+		ds.cargarGestordeStock(null);
+		assertTrue(gs.getStock().isEmpty()==false);
 	}
 
 }

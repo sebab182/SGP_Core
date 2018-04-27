@@ -9,6 +9,7 @@ import java.util.Map;
 import SGP.Datos.AbstractFactory;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
+import SGP.Stock.GestorStockPiezas;
 import SGP.Stock.Pieza;
 import SGP.Stock.Tipo;
 
@@ -46,18 +47,13 @@ public class DatosHardcodeados implements AbstractFactory {
 	}
 
 	@Override
-	public GestordeStock cargarGestordeStock() {
-		GestordeStock gs = new GestordeStock();
-		List<Pieza>stock = new LinkedList<Pieza>();
-		stock.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
-		stock.add(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
-		stock.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
-		stock.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
-		stock.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
-		stock.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
-		gs.setVacasExistentes(10);
-		gs.setStock(stock);
-		return gs;
+	public void cargarGestordeStock(GestorStockPiezas a) {
+		a.agregarItem(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
+		a.agregarItem(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
+		a.agregarItem(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
+		a.agregarItem(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
+		a.agregarItem(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
+		a.agregarItem(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
 }
 
 }
