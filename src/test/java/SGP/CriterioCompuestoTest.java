@@ -4,16 +4,18 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import SGP.Criterios.Cliente;
+import SGP.Stock.Pieza;
+import SGP.Stock.Tipo;
 import junit.framework.TestCase;
 
 
 public class CriterioCompuestoTest extends TestCase {
 //TODO: Rehacer
+	@SuppressWarnings("deprecation")
 	public void testPuntuar() {
 		
 		Cliente cliente1 = new Cliente("pepito");
-		Cliente cliente2 = new Cliente("juancito");
-		
 		List<Cliente> favoritos = new LinkedList<Cliente>();
 		favoritos.add(cliente1);
 		

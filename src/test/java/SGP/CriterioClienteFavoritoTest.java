@@ -3,6 +3,7 @@ package SGP;
 import java.util.LinkedList;
 import java.util.List;
 
+import SGP.Criterios.Cliente;
 import junit.framework.TestCase;
 //TODO: Rehacer test
 public class CriterioClienteFavoritoTest extends TestCase {
@@ -11,8 +12,6 @@ public class CriterioClienteFavoritoTest extends TestCase {
 
 		
 		Cliente cliente1 = new Cliente("pepito");
-		Cliente cliente2 = new Cliente("juancito");
-		
 		List<Cliente> favoritos = new LinkedList<Cliente>();
 		favoritos.add(cliente1);
 		

@@ -1,5 +1,6 @@
 package SGP;
 
+import SGP.Criterios.Cliente;
 import junit.framework.TestCase;
 
 public class ClienteTest extends TestCase {

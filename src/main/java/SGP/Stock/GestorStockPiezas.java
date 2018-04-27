@@ -1,20 +1,32 @@
 package SGP.Stock;
 
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
-import SGP.Pieza;
+public class GestorStockPiezas extends GestorStock<Pieza> {
+	
+	private Set<Tipo> vaca;
 
-public class GestorStockPiezas extends IntGestorStock<Pieza> {
+	public GestorStockPiezas() {
+		super();
+		this._Stock=new LinkedList<Pieza>();
+		this.vaca=new HashSet<Tipo>();
+	}
+
+	public void setCortesVaca(HashSet<Tipo> vaca)
+	{
+		this.vaca.addAll(vaca);
+	}
 
 	@Override
 	public void agregarItem(Pieza item) {
-		// TODO Auto-generated method stub
 		super.agregarItem(item);
 	}
 
 	@Override
 	public void quitarItem(Pieza item) {
-		// TODO Auto-generated method stub
 		super.quitarItem(item);
 	}
 
@@ -29,4 +41,9 @@ public class GestorStockPiezas extends IntGestorStock<Pieza> {
 		// TODO Auto-generated method stub
 		return super.getStock();
 	}
+	
+	public Set<Tipo> getVaca() {
+		return vaca;
+	}
+
 }

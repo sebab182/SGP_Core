@@ -6,11 +6,14 @@ import java.util.List;
 
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioMenosPiezas;
+import SGP.Stock.Pieza;
+import SGP.Stock.Tipo;
 import junit.framework.TestCase;
 
 
 public class CriterioMenosPiezasTest extends TestCase {
 
+	@SuppressWarnings("deprecation")
 	public void testPuntuar() {
 
 		List<Pieza>pedido1 = new LinkedList<Pieza>();

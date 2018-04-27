@@ -2,7 +2,6 @@ package SGP.Criterios;
 
 import java.util.List;
 
-import SGP.Cliente;
 import SGP.Pedidos.Pedido;
 
 

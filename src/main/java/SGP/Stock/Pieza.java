@@ -1,9 +1,10 @@
-package SGP;
+package SGP.Stock;
 import java.io.Serializable;
 import java.util.Date;
 
 public class Pieza implements Serializable {
 	
+private static final long serialVersionUID = 1L;
 private	Tipo tipoPieza;
 private Date fechaVencimiento;
 
@@ -38,11 +39,6 @@ private Date fechaVencimiento;
 		if (getClass() != obj.getClass())
 			return false;
 		Pieza other = (Pieza) obj;
-		if (fechaVencimiento == null) {
-			if (other.fechaVencimiento != null)
-				return false;
-		} else if (!fechaVencimiento.equals(other.fechaVencimiento))
-			return false;
 		if (tipoPieza == null) {
 			if (other.tipoPieza != null)
 				return false;

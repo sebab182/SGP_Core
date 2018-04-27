@@ -1,5 +1,6 @@
 package SGP;
 
+import SGP.Stock.Tipo;
 import junit.framework.TestCase;
 
 public class TipoTest extends TestCase {
