@@ -2,7 +2,7 @@ package SGP.Criterios;
 
 import java.util.Map.Entry;
 
-import SGP.Tipo;
+import SGP.Stock.Tipo;
 import SGP.Pedidos.Pedido;
 
 public class CriterioMenosPiezas implements Criterio {

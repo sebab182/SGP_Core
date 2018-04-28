@@ -3,15 +3,12 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-import SGP.GestordeStock;
-import SGP.Pieza;
-
 public class AnalizadordeVencimiento{
 
 	public AnalizadordeVencimiento() {
 	}
-	
-	public void analizarVencimientoPiezas(GestordeStock gestorStock) {
+
+	public void analizarVencimientoPiezas(GestorStockPiezas gestorStock) {
 		//No podemos eliminar directamente: java.util.ConcurrentModificationException --> Conflicto con for each
 		List<Pieza>piezasVencidas = new LinkedList<Pieza>();
 		List<Pieza>listaStock = gestorStock.getStock();
@@ -23,7 +20,7 @@ public class AnalizadordeVencimiento{
 		}
 	}
 		for(Pieza piezaVencida: piezasVencidas) {
-			gestorStock.quitarPieza(piezaVencida);
+			gestorStock.quitarItem(piezaVencida);
 		}
 	}
 

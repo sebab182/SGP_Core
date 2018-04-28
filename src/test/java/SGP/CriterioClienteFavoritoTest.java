@@ -7,12 +7,15 @@ import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioClienteFavorito;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarneTipo;
+import SGP.Stock.Tipo;
+
 import junit.framework.TestCase;
 public class CriterioClienteFavoritoTest extends TestCase {
 
 	public void testPuntuar() {
 
 		
+
 		int local1 = 1;
 		int local2 = 2;
 		

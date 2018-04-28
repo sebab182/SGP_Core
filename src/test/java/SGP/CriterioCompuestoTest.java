@@ -3,17 +3,21 @@ package SGP;
 import java.util.LinkedList;
 import java.util.List;
 
+
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioClienteFavorito;
 import SGP.Criterios.CriterioCompuesto;
 import SGP.Criterios.CriterioMenosPiezas;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarneTipo;
+import SGP.Stock.Tipo;
+
 import junit.framework.TestCase;
 
 
 public class CriterioCompuestoTest extends TestCase {
 //TODO: Rehacer
+	@SuppressWarnings("deprecation")
 	public void testPuntuar() {
 		
 		int local1 = 1;

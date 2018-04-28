@@ -4,11 +4,14 @@ import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioMenosPiezas;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarneTipo;
+import SGP.Stock.Tipo;
+
 import junit.framework.TestCase;
 
 
 public class CriterioMenosPiezasTest extends TestCase {
 
+	@SuppressWarnings("deprecation")
 	public void testPuntuar() {
 
 		int local1 = 1;

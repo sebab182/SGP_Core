@@ -1,5 +1,6 @@
 package SGP;
 
+import SGP.Datos.DataSource;
 import junit.framework.TestCase;
 
 
@@ -16,10 +17,10 @@ public class DataSourceTest extends TestCase {
 		ds = new DataSource("datasource.txt");
 		ds.setSource("test");
 		String clase = ds.getFactory();
-		assertEquals(clase, "test.java.SGP.DatosHardcodeados");
+		assertEquals("SGP.Datos.DatosHardcodeados",clase);
 		
 		ds.setSource("serial");
 		clase = ds.getFactory();
-		assertEquals(clase, "main.java.SGP.DatosSerializable");
+		assertEquals("SGP.Datos.DatosSerializable",clase);
 	}
 }

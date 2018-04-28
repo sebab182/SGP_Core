@@ -2,7 +2,7 @@ package SGP.Criterios;
 
 import java.util.List;
 
-import SGP.Tipo;
+import SGP.Stock.Tipo;
 import SGP.Pedidos.Pedido;
 
 

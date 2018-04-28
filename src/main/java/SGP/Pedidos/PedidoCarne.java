@@ -1,41 +1,42 @@
 package SGP.Pedidos;
-
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import SGP.Pieza;
+import SGP.Stock.Tipo;
 
+public class PedidoCarne extends Pedido<Tipo> implements Serializable{
 
-public class PedidoCarne extends Pedido<Pieza>{
+	private static final long serialVersionUID = 1L;
 
 	public PedidoCarne()
 	{
 		super();
-		this._items=new HashMap<Pieza, Double>();
+		this._items=new HashMap<Tipo, Double>();
 	}
 	
 	@Override
-	public void agregarItem(Pieza item, Double cantidad) {
-		// TODO Auto-generated method stub
+	public void agregarItem(Tipo item, Double cantidad) {
 		super.agregarItem(item, cantidad);
 	}
 
 	@Override
-	public void quitarItem(Pieza item) {
-		// TODO Auto-generated method stub
+	public void quitarItem(Tipo item) {
 		super.quitarItem(item);
 	}
 
 	@Override
 	public void vaciarPedido() {
-		// TODO Auto-generated method stub
 		super.vaciarPedido();
 	}
 	
-	public Map<Pieza, Double> itemsPedidos()
+	public Map<Tipo, Double> itemsPedidos()
 	{
 		return this._items;
 	}
-	
 
+	@Override
+	public String toString() {
+		return this._items.toString();
+	}
 }
