@@ -3,29 +3,44 @@ package SGP;
 import java.util.LinkedList;
 import java.util.List;
 
-import SGP.Criterios.Cliente;
+import SGP.Criterios.Criterio;
+import SGP.Criterios.CriterioClienteFavorito;
+import SGP.Pedidos.Pedido;
+import SGP.Pedidos.PedidoCarne;
+import SGP.Stock.Tipo;
+
 import junit.framework.TestCase;
-//TODO: Rehacer test
 public class CriterioClienteFavoritoTest extends TestCase {
 
 	public void testPuntuar() {
 
 		
-		Cliente cliente1 = new Cliente("pepito");
-		List<Cliente> favoritos = new LinkedList<Cliente>();
-		favoritos.add(cliente1);
+
+		int local1 = 1;
+		int local2 = 2;
 		
-    	/*Pedido p1 = new Pedido(cliente1,new LinkedList<Pieza>());    
-    	Pedido p2 = new Pedido(cliente2,new LinkedList<Pieza>());
+		List<Integer> favoritos = new LinkedList<Integer>();
+		favoritos.add(local1);
+		
+    	Pedido<Tipo> p1 = new PedidoCarne();
+    	p1.setLocal(local1);
+    	p1.agregarItem(new Tipo("pata1"), 2.0);
+		p1.agregarItem(new Tipo("pata3"), 1.0);
+		p1.agregarItem(new Tipo("pata4"), 1.0);
+		p1.agregarItem(new Tipo("muslo"), 1.0);
+		p1.agregarItem(new Tipo("vacio"), 2.0);	
+		
+    	Pedido<Tipo> p2 = new PedidoCarne();
+    	p2.setLocal(local2);
+    	p2.agregarItem(new Tipo("pata3"), 1.0);
+		p2.agregarItem(new Tipo("pata4"), 1.0);
+		p2.agregarItem(new Tipo("muslo"), 1.0);
+		p2.agregarItem(new Tipo("vacio"), 3.0);
     	
     	Criterio c = new CriterioClienteFavorito(favoritos);
     	
-    	p1.setPuntage(c.puntuar(p1));
-    	p2.setPuntage(c.puntuar(p2));
-    	
-    	
-    	assertEquals(p1.getPuntaje(), 45);
-    	assertEquals(p2.getPuntaje(), 0);*/
+    	assertEquals(c.puntuar(p1), 45);
+    	assertEquals(c.puntuar(p2), 0);
     	
 	}
 	

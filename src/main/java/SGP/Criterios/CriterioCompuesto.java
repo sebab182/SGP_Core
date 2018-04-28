@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import SGP.Stock.Tipo;
 import SGP.Pedidos.Pedido;
 
 
@@ -16,7 +17,7 @@ public class CriterioCompuesto implements Criterio{
 	}
 	
 	@Override
-	public int puntuar(Pedido pedido) {
+	public int puntuar(Pedido<Tipo> pedido) {
 		int ret = 0;
 		
 		// Suma el puntaje que le da cada criterio.

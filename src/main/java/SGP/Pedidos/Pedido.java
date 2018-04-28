@@ -22,6 +22,14 @@ public abstract class Pedido<T>{
 		this._items.clear();
 	}
 
+	public int getLocal() {
+		return this._nroLocal;
+	}
+	
+	public void setLocal(int local) {
+		this._nroLocal = local;
+	}
+	
 	public Map<T, Double> get_items() {
 		return _items;
 	}
