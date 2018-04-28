@@ -2,7 +2,7 @@ package SGP.Criterios;
 
 import java.util.List;
 
-import SGP.Cliente;
+import SGP.Tipo;
 import SGP.Pedidos.Pedido;
 
 
@@ -18,9 +18,9 @@ public class CriterioClienteFavorito implements Criterio {
 	}
 	
 	@Override
-	public int puntuar(PedidoPuntuable pedido) {
+	public int puntuar(Pedido<Tipo> pedido) {
 		
-		int local = pedido.getPedido().getLocal();
+		int local = pedido.getLocal();
 		
 		if (this.locales.contains(local))
 			return this.puntaje;

@@ -1,13 +1,9 @@
 package SGP;
 
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioMenosPiezas;
-import SGP.Criterios.PedidoPuntuable;
 import SGP.Pedidos.Pedido;
+import SGP.Pedidos.PedidoCarneTipo;
 import junit.framework.TestCase;
 
 
@@ -15,33 +11,29 @@ public class CriterioMenosPiezasTest extends TestCase {
 
 	public void testPuntuar() {
 
-		List<Pieza>pedido1 = new LinkedList<Pieza>();
-		pedido1.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
-		pedido1.add(new Pieza(new Tipo("pata1"),new Date(107,11,12)));
-		pedido1.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
-		pedido1.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
-		pedido1.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
-		pedido1.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
-		pedido1.add(new Pieza(new Tipo("vacio"),new Date(118,3,21)));	
-		//PedidoPuntuable p1 = new PedidoPuntuable(new Pedido<Tipo>(1,pedido1);
-    	
-    	List<Pieza>pedido2 = new LinkedList<Pieza>();
-    	pedido2.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
-		pedido2.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
-		pedido2.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
-		pedido2.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
-		pedido2.add(new Pieza(new Tipo("vacio"),new Date(118,3,21)));	
-		pedido2.add(new Pieza(new Tipo("vacio"),new Date(118,3,21)));	
-    	//Pedido p2 = new Pedido(new Cliente(""),pedido2);
+		int local1 = 1;
+		int local2 = 2;
+		
+		Pedido<Tipo> p1 = new PedidoCarneTipo();
+		p1.setLocal(local1);
+		p1.agregarItem(new Tipo("pata1"), 2.0);
+		p1.agregarItem(new Tipo("pata3"), 1.0);
+		p1.agregarItem(new Tipo("pata4"), 1.0);
+		p1.agregarItem(new Tipo("muslo"), 1.0);
+		p1.agregarItem(new Tipo("vacio"), 2.0);	
+		
+		Pedido<Tipo> p2 = new PedidoCarneTipo();
+		p2.setLocal(local2);
+		p2.agregarItem(new Tipo("pata3"), 1.0);
+		p2.agregarItem(new Tipo("pata4"), 1.0);
+		p2.agregarItem(new Tipo("muslo"), 1.0);
+		p2.agregarItem(new Tipo("vacio"), 3.0);
     	
     	Criterio c = new CriterioMenosPiezas(2);
     	
-    	//p1.setPuntage(c.puntuar(p1));
-    	//p2.setPuntage(c.puntuar(p2));
     	
-    	
-    	//assertEquals(p1.getPuntaje(), -14);
-    	//assertEquals(p2.getPuntaje(), -12);
+    	assertEquals(c.puntuar(p1), -14);
+    	assertEquals(c.puntuar(p2), -12);
     	
 	}
 	

@@ -22,7 +22,7 @@ public class PedidoPuntuable implements Comparable<PedidoPuntuable>{
 	}
 	
 	public void setPuntaje(Criterio criterio) {
-		this.puntaje = criterio.puntuar(this);
+		this.puntaje = criterio.puntuar(this.getPedido());
 	}
 
 	@Override

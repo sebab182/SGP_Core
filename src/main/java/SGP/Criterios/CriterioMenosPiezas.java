@@ -1,6 +1,5 @@
 package SGP.Criterios;
 
-import java.util.List;
 import java.util.Map.Entry;
 
 import SGP.Tipo;
@@ -23,11 +22,11 @@ public class CriterioMenosPiezas implements Criterio {
 	* al pedido que mas piezas tiene.
 	*/
 	@Override
-	public int puntuar(PedidoPuntuable pedido) {
+	public int puntuar(Pedido<Tipo> pedido) {
 		int cantidad_piezas = 0;
 		
 		// Sumo la cantidad de piezas de cada tipo.
-		for (Entry<Tipo, Double> e: pedido.getPedido().get_items().entrySet())
+		for (Entry<Tipo, Double> e: pedido.get_items().entrySet())
 			
 			// conviene int ???
 			cantidad_piezas = cantidad_piezas + e.getValue().intValue();
