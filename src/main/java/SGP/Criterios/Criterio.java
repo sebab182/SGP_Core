@@ -1,6 +1,6 @@
 package SGP.Criterios;
 
-import SGP.Tipo;
+import SGP.Stock.Tipo;
 import SGP.Pedidos.Pedido;
 
 public interface Criterio {

@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import SGP.Tipo;
+import SGP.Stock.Tipo;
 import SGP.Pedidos.Pedido;
 
 public class PriorizadorDePedidos {

@@ -9,7 +9,8 @@ import SGP.Criterios.CriterioCompuesto;
 import SGP.Criterios.CriterioMenosPiezas;
 import SGP.Criterios.PriorizadorDePedidos;
 import SGP.Pedidos.Pedido;
-import SGP.Pedidos.PedidoCarneTipo;
+import SGP.Pedidos.PedidoCarne;
+import SGP.Stock.Tipo;
 import junit.framework.TestCase;
 
 public class PriorizadorDePedidosTest extends TestCase {
@@ -23,7 +24,7 @@ public class PriorizadorDePedidosTest extends TestCase {
 		List<Integer> favoritos = new LinkedList<Integer>();
 		favoritos.add(local3);
 		
-		Pedido<Tipo> p1 = new PedidoCarneTipo();
+		Pedido<Tipo> p1 = new PedidoCarne();
     	p1.setLocal(local1);
     	p1.agregarItem(new Tipo("pata1"), 2.0);
 		p1.agregarItem(new Tipo("pata3"), 1.0);
@@ -31,14 +32,14 @@ public class PriorizadorDePedidosTest extends TestCase {
 		p1.agregarItem(new Tipo("muslo"), 1.0);
 		p1.agregarItem(new Tipo("vacio"), 2.0);	
 		
-    	Pedido<Tipo> p2 = new PedidoCarneTipo();
+    	Pedido<Tipo> p2 = new PedidoCarne();
     	p2.setLocal(local2);
     	p2.agregarItem(new Tipo("pata3"), 1.0);
 		p2.agregarItem(new Tipo("pata4"), 1.0);
 		p2.agregarItem(new Tipo("muslo"), 1.0);
 		p2.agregarItem(new Tipo("vacio"), 3.0);
 		
-		Pedido<Tipo> p3 = new PedidoCarneTipo();
+		Pedido<Tipo> p3 = new PedidoCarne();
 		p3.setLocal(local3);
 		p3.agregarItem(new Tipo("pata3"), 1.0);
 		
