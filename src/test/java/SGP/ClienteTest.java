@@ -19,7 +19,7 @@ public class ClienteTest extends TestCase {
 		assertNotSame(a,b);
 		assertEquals(a,c);
 		assertEquals(a,a);
-		assertNotSame(a,null);
+		assertFalse(a.equals(null));
 		assertNotSame(a,d);
 	}
 
