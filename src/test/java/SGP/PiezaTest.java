@@ -37,15 +37,14 @@ public class PiezaTest extends TestCase {
 		Pieza c = new Pieza(new Tipo(null),new Date());
 		assertNotSame(c,p);
 		
-		assertNotSame(p,null);
+		assertFalse(p.equals(null));
 		
-		assertNotSame(p,new Pieza(null,null));
+		assertFalse(p.equals(new Pieza(null,null)));
 		
-		
+		assertFalse((new Pieza(null,null).equals(p)));
 	}
 
 	public void testToString() {
 		assertEquals("muslo",p.toString());
 	}
-
 }

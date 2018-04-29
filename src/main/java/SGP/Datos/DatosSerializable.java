@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import SGP.Pedidos.Pedido;
@@ -20,7 +22,7 @@ public class DatosSerializable implements AbstractFactory {
 	@SuppressWarnings("unchecked")
 	public List<Pieza> cargarPiezas() {
 		List<Pieza>piezas = new LinkedList<Pieza>();
-				
+			
 		try {
 			FileInputStream fis = new FileInputStream("piezas.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
@@ -77,17 +79,62 @@ public class DatosSerializable implements AbstractFactory {
 
 	@Override
 	public void cargarGestordeStock(GestorStockPiezas a) {
-		//GestordeStock gestorStock = new GestordeStock();
 		//TODO: Implementar Serializacion de Stock, no guardar clase GESTOR sino datos base		
+		List<Pieza> listaPiezas=new LinkedList<Pieza>();
+		HashSet<Tipo> piezasVaca=new HashSet<Tipo>();
+		
+		/*listaPiezas.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
+		listaPiezas.add(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
+		listaPiezas.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
+		listaPiezas.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
+		listaPiezas.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
+		listaPiezas.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
+		
+		try
+		{
+			FileOutputStream fos = new FileOutputStream("listaStock.txt");
+			ObjectOutputStream out = new ObjectOutputStream(fos);
+			out.writeObject(listaPiezas);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}	
+		
+		try
+		{
+			FileOutputStream fos = new FileOutputStream("piezasVaca.txt");
+			ObjectOutputStream out = new ObjectOutputStream(fos);
+			out.writeObject(piezasVaca);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}	*/
+
+		
 		try {
-			FileInputStream fis = new FileInputStream("gestorStock.txt");
+			FileInputStream fis = new FileInputStream("listaStock.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
-			//gestorStock= (GestordeStock) in.readObject();
+			listaPiezas= (List<Pieza>) in.readObject();
 			in.close();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		//return gestorStock;
+		
+		try {
+			FileInputStream fis = new FileInputStream("piezasVaca.txt");
+			ObjectInputStream in = new ObjectInputStream(fis);
+			piezasVaca= (HashSet<Tipo>) in.readObject();
+			in.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		//Lleno el gestor de stock
+		for(Pieza p:listaPiezas){
+			a.agregarItem(p);
+			piezasVaca.add(p.getTipoPieza());}
+		a.setCortesVaca(piezasVaca);
 	}
 }

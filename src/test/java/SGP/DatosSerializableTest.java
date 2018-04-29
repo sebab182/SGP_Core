@@ -11,7 +11,7 @@ public class DatosSerializableTest extends TestCase {
 		ds = new DatosSerializable();
 	}
 	public void testCargarPiezas() {
-		assertTrue(true/*.size()==7*/);
+		assertTrue(ds.cargarPiezas().size()==7);
 	}
 
 	public void testCargarPedidos() {
@@ -21,7 +21,6 @@ public class DatosSerializableTest extends TestCase {
 	public void testCargarGestordeStock() {
 		GestorStockPiezas gs= new GestorStockPiezas();
 		ds.cargarGestordeStock(gs);
-		assertTrue(true/*gs.getStock().isEmpty()==false*/);
+		assertTrue(!gs.getStock().isEmpty());
 	}
-
 }
