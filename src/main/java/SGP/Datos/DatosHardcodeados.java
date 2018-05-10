@@ -12,7 +12,7 @@ import SGP.Stock.Pieza;
 import SGP.Stock.Tipo;
 
 public class DatosHardcodeados implements AbstractFactory {
-//TODO: Eliminar!
+//TODO: No pudimos cargar la clase datos hardcodeados que está en el paquete Test, desde el paquete Main!
 	public DatosHardcodeados(){
 	}
 
@@ -20,11 +20,12 @@ public class DatosHardcodeados implements AbstractFactory {
 	public List<Pieza> cargarPiezas() {
 		List<Pieza>piezas= new LinkedList<Pieza>();
 		//date(año= 1900+años, mes<0 a 11>, día)
-		piezas.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
-		piezas.add(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
+		piezas.add(new Pieza(new Tipo("pata1"),new Date(118,10,23)));
+		piezas.add(new Pieza(new Tipo("pata1"),new Date(108,10,23)));
+		piezas.add(new Pieza(new Tipo("pata2"),new Date(118,11,12)));
 		piezas.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
-		piezas.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
-		piezas.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
+		piezas.add(new Pieza(new Tipo("pata4"),new Date(118,10,27)));
+		piezas.add(new Pieza(new Tipo("muslo"),new Date(118,3,21)));
 		piezas.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
 		piezas.add(new Pieza(new Tipo("falda"),new Date(118,2,23)));
 		return piezas;
@@ -52,13 +53,23 @@ public class DatosHardcodeados implements AbstractFactory {
 		LinkedList<Pieza> tmp=new LinkedList<Pieza>();
 		HashSet<Tipo> vaca=new HashSet<Tipo> ();
 		
+		tmp.add(new Pieza(new Tipo("pata1"),new Date(118,10,23)));
+		tmp.add(new Pieza(new Tipo("pata1"),new Date(118,10,23)));
+		tmp.add(new Pieza(new Tipo("pata2"),new Date(118,11,12)));
+		tmp.add(new Pieza(new Tipo("pata3"),new Date(118,11,21)));
+		tmp.add(new Pieza(new Tipo("pata4"),new Date(118,10,27)));
+		tmp.add(new Pieza(new Tipo("muslo"),new Date(118,8,21)));
+		tmp.add(new Pieza(new Tipo("vacio"),new Date(118,7,21)));
+		tmp.add(new Pieza(new Tipo("falda"),new Date(118,7,23)));
+		
+		/*
 		tmp.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
 		tmp.add(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
 		tmp.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
 		tmp.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
 		tmp.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
 		tmp.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
-		
+		*/
 		
 		for(Pieza p:tmp)
 		{
