@@ -62,20 +62,9 @@ public class DatosHardcodeados implements AbstractFactory {
 		tmp.add(new Pieza(new Tipo("vacio"),new Date(118,7,21)));
 		tmp.add(new Pieza(new Tipo("falda"),new Date(118,7,23)));
 		
-		/*
-		tmp.add(new Pieza(new Tipo("pata1"),new Date(107,10,23)));
-		tmp.add(new Pieza(new Tipo("pata2"),new Date(107,11,12)));
-		tmp.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
-		tmp.add(new Pieza(new Tipo("pata4"),new Date(110,10,27)));
-		tmp.add(new Pieza(new Tipo("muslo"),new Date(108,3,21)));
-		tmp.add(new Pieza(new Tipo("vacio"),new Date(118,2,21)));
-		*/
-		
-		for(Pieza p:tmp)
-		{
+		for(Pieza p:tmp){
 			a.agregarItem(p);
-			vaca.add(p.getTipoPieza());
-		}
+			vaca.add(p.getTipoPieza());}
 		
 		a.setCortesVaca(vaca);
 		
