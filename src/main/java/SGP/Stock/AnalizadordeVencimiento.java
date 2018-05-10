@@ -4,15 +4,16 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class AnalizadordeVencimiento{
+	private Date fechaActual;
 
-	public AnalizadordeVencimiento() {
+	public AnalizadordeVencimiento(Date fechaActual) {
+		this.fechaActual=fechaActual;
 	}
 
 	public void analizarVencimientoPiezas(GestorStockPiezas gestorStock) {
 		//No podemos eliminar directamente: java.util.ConcurrentModificationException --> Conflicto con for each
 		List<Pieza>piezasVencidas = new LinkedList<Pieza>();
 		List<Pieza>listaStock = gestorStock.getStock();
-		Date fechaActual = new Date();
 		for(Pieza p: listaStock) {
 			Date fechaVencimiento = p.getFechaVencimiento();
 			if(analizarVencimiento(fechaActual, fechaVencimiento)){
