@@ -11,7 +11,6 @@ public class DataSource {
 			BufferedReader in = new BufferedReader(new FileReader(nombreTXT)); //Leo el archivo
 			String source = in.readLine(); //Leo el tipo de factory a cargar
 			in.close(); //Cierro el archivo
-			factory="";
 			if(source.equals("test")) {
 				factory = DatosHardcodeados.class.getName(); //Cargando datos hardcodeados
 			}

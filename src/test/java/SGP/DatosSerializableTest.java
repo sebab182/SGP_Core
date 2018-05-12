@@ -17,4 +17,8 @@ public class DatosSerializableTest extends TestCase {
 	public void testCargarPedidos() {
 		assertEquals(ds.cargarPedidos().size(),3);
 	}
+	
+	public void testCargarConjuntoVaca() {
+		assertEquals(false,ds.cargarConjuntoVaca().isEmpty());
+	}
 }

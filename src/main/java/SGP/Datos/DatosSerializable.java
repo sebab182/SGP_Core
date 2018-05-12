@@ -81,16 +81,16 @@ public class DatosSerializable implements AbstractFactory {
 
 	@Override
 	public HashSet<Tipo> cargarConjuntoVaca() {
-		HashSet<Tipo> piezasVaca=new HashSet<Tipo>();
+		HashSet<Tipo> vaca=new HashSet<Tipo> ();		
 		try {
 			FileInputStream fis = new FileInputStream("piezasVaca.txt");
 			ObjectInputStream in = new ObjectInputStream(fis);
-			piezasVaca= (HashSet<Tipo>) in.readObject();
+			vaca= (HashSet<Tipo>) in.readObject();
 			in.close();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		return piezasVaca;
+		return vaca;
 	}
 }
