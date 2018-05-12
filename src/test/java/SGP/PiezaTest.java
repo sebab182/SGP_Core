@@ -47,4 +47,10 @@ public class PiezaTest extends TestCase {
 	public void testToString() {
 		assertEquals("muslo",p.toString());
 	}
+	
+	public void testParser() {
+		Pieza p = new Pieza("pata1 05/25/09");
+		assertEquals("pata1",p.getTipoPieza().toString());
+		assertEquals(new Date("05/25/09"),p.getFechaVencimiento());
+	}
 }

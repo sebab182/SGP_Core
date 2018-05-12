@@ -12,6 +12,23 @@ private Date fechaVencimiento;
 		this.tipoPieza=tipo;
 		this.fechaVencimiento= fechaVencimiento;
 	}
+	
+	//Parser de una pieza a partir de un String
+	public Pieza(String pieza) {
+		//tipoPieza - fechaPieza
+		this(parseTipo(pieza),parseDate(pieza));
+	}
+	
+	private static Tipo parseTipo(String t) {
+		String[] aux = t.split(" ");
+		return new Tipo(aux[0]);
+	}
+	
+	@SuppressWarnings("deprecation")
+	private static Date parseDate(String d) {
+		String[] aux = d.split(" ");
+		return new Date(Date.parse(aux[1]));
+	}
 
 	public Tipo getTipoPieza() {
 		return tipoPieza;
