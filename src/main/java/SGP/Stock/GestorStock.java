@@ -11,6 +11,11 @@ public abstract class GestorStock<T> {
 		this._Stock.add(item);
 	}
 	
+	public void agregarItems(List<T> _items)
+	{
+		this._Stock.addAll(_items);
+	}
+	
 	public void quitarItem(T item)
 	{
 		this._Stock.remove(item);

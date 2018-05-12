@@ -7,7 +7,6 @@ import java.util.List;
 import SGP.Datos.AbstractFactory;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
-import SGP.Stock.GestorStockPiezas;
 import SGP.Stock.Pieza;
 import SGP.Stock.Tipo;
 
@@ -46,29 +45,17 @@ public class DatosHardcodeados implements AbstractFactory {
 		return pedidos;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
-	public void cargarGestordeStock(GestorStockPiezas a){
-		
-		LinkedList<Pieza> tmp=new LinkedList<Pieza>();
+	public HashSet<Tipo> cargarConjuntoVaca() {
 		HashSet<Tipo> vaca=new HashSet<Tipo> ();
+		vaca.add(new Tipo("pata1"));
+		vaca.add(new Tipo("pata2"));
+		vaca.add(new Tipo("pata3"));
+		vaca.add(new Tipo("pata4"));
+		vaca.add(new Tipo("muslo"));
+		vaca.add(new Tipo("vacio"));
+		vaca.add(new Tipo("falda"));
+		return vaca;
 		
-		tmp.add(new Pieza(new Tipo("pata1"),new Date(118,10,23)));
-		tmp.add(new Pieza(new Tipo("pata1"),new Date(118,10,23)));
-		tmp.add(new Pieza(new Tipo("pata2"),new Date(118,11,12)));
-		tmp.add(new Pieza(new Tipo("pata3"),new Date(118,11,21)));
-		tmp.add(new Pieza(new Tipo("pata4"),new Date(118,10,27)));
-		tmp.add(new Pieza(new Tipo("muslo"),new Date(118,8,21)));
-		tmp.add(new Pieza(new Tipo("vacio"),new Date(118,7,21)));
-		tmp.add(new Pieza(new Tipo("falda"),new Date(118,7,23)));
-		
-		for(Pieza p:tmp){
-			a.agregarItem(p);
-			vaca.add(p.getTipoPieza());}
-		
-		a.setCortesVaca(vaca);
-		
-		//gs.setVacasExistentes(10);
-		//gs.setStock(stock);
-}
+	}
 }

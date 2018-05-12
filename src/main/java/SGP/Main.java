@@ -20,8 +20,9 @@ public class Main {
 		AbstractFactory af = (AbstractFactory) cls.newInstance();
 		
 		//Cargamos stock y pedidos
-		GestorStockPiezas gestorStock=new GestorStockPiezas(); 
-		af.cargarGestordeStock(gestorStock);
+		GestorStockPiezas gestorStock=new GestorStockPiezas();
+		gestorStock.setCortesVaca(af.cargarConjuntoVaca());
+		gestorStock.agregarItems(af.cargarPiezas());
 		
 		//Analizo piezas vencidas
 		AnalizadordeVencimiento av = new AnalizadordeVencimiento(new Date());

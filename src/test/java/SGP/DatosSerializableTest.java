@@ -17,10 +17,8 @@ public class DatosSerializableTest extends TestCase {
 	public void testCargarPedidos() {
 		assertEquals(ds.cargarPedidos().size(),3);
 	}
-
-	public void testCargarGestordeStock() {
-		GestorStockPiezas gs= new GestorStockPiezas();
-		ds.cargarGestordeStock(gs);
-		assertTrue(!gs.getStock().isEmpty());
+	
+	public void testCargarConjuntoVaca() {
+		assertEquals(false,ds.cargarConjuntoVaca().isEmpty());
 	}
 }
