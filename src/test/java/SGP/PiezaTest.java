@@ -14,7 +14,8 @@ public class PiezaTest extends TestCase {
 	}
 	
 	public void testHashCode() {
-		Pieza a = new Pieza(new Tipo("muslo"),new Date());
+		Pieza a = new Pieza(new Tipo("muslo"),new Date(118,2,14));
+		assertNotSame(a,p);
 		assertNotSame(a.hashCode(),p.hashCode());
 		assertNotSame(a.hashCode(),null);
 	}

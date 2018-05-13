@@ -16,7 +16,7 @@ public class AnalizadordeVencimiento{
 		List<Pieza>listaStock = gestorStock.getStock();
 		for(Pieza p: listaStock) {
 			Date fechaVencimiento = p.getFechaVencimiento();
-			if(analizarVencimiento(fechaActual, fechaVencimiento)){
+			if(analizarFechas(fechaActual, fechaVencimiento)){
 				piezasVencidas.add(p);
 		}
 	}
@@ -25,7 +25,7 @@ public class AnalizadordeVencimiento{
 		}
 	}
 
-	private boolean analizarVencimiento(Date fechaActual, Date fechaVencimiento) {
+	private boolean analizarFechas(Date fechaActual, Date fechaVencimiento) {
 		return fechaActual.after(fechaVencimiento);
 	}
 }
