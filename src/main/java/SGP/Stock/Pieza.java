@@ -66,6 +66,6 @@ private Date fechaVencimiento;
 
 	@Override
 	public String toString() {
-		return this.tipoPieza.getTipoPieza();
+		return this.tipoPieza.getNombreTipo();
 	}
 }
