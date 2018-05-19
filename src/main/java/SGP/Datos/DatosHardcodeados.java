@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import SGP.Datos.AbstractFactory;
+import SGP.Pedidos.Local;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
 import SGP.Stock.Pieza;
@@ -33,11 +34,15 @@ public class DatosHardcodeados implements AbstractFactory {
 	public List<Pedido<Tipo>> cargarPedidos() {
 		List<Pedido<Tipo>>pedidos= new LinkedList<Pedido<Tipo>>();
 		Pedido<Tipo> a = new PedidoCarne();
+		Local l1 = new Local("Los Polvorines","lpolvorines@gmail.com");
+		a.setLocal(l1);
 		a.agregarItem(new Tipo("muslo"), 3.0);
 		a.agregarItem(new Tipo("pata"), 5.0);
 		pedidos.add(a);
 		
 		Pedido<Tipo> b = new PedidoCarne();
+		Local l2 = new Local("Munro","lmunro@gmail.com");
+		b.setLocal(l2);
 		b.agregarItem(new Tipo("vacio"), 4.0);
 		b.agregarItem(new Tipo("muslo"), 7.0);
 		b.agregarItem(new Tipo("pata"), 3.0);

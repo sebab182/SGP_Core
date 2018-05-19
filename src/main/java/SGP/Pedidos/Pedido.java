@@ -3,7 +3,7 @@ package SGP.Pedidos;
 import java.util.Map;
 
 public abstract class Pedido<T>{
-	int _nroLocal;	
+	Local _Local;	
 	Map<T, Double> _items;
 	
 	public void agregarItem(T item, Double valor)
@@ -22,13 +22,14 @@ public abstract class Pedido<T>{
 		this._items.clear();
 	}
 
-	public int getLocal() {
-		return this._nroLocal;
+	public Local getLocal() {
+		return this._Local;
 	}
 	
-	public void setLocal(int local) {
-		this._nroLocal = local;
-	}
+
+	public void setLocal(Local l) {
+		this._Local=l;
+	}	
 	
 	public Map<T, Double> get_items() {
 		return _items;

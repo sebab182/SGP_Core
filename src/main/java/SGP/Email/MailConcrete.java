@@ -10,10 +10,10 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class MailConcrete implements MailInterface {
+public class MailConcrete implements MailSender {
 
 	@Override
-	public void enviarMail(DataAcount datosCuenta, String mailDestinatario, String asunto, String mensaje) throws MessagingException {
+	public void enviarMail(Account datosCuenta, String mailDestinatario, String asunto, String mensaje) throws MessagingException {
 		  //Primero ordenamos los datos del cuenta de mail del Emisor
 		  String emailEmisor = datosCuenta.getDireccionMail();
 	      final String usuario = datosCuenta.getUsuario();

@@ -1,7 +1,11 @@
 package SGP;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioMenosPiezas;
+import SGP.Pedidos.Local;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
 import SGP.Stock.Tipo;
@@ -14,8 +18,10 @@ public class CriterioMenosPiezasTest extends TestCase {
 	@SuppressWarnings("deprecation")
 	public void testPuntuar() {
 
-		int local1 = 1;
-		int local2 = 2;
+		Local local1 = new Local("LP","mail");
+		Local local2 = new Local("M","mail");
+		
+		List<Local> favoritos = new LinkedList<Local>();
 		
 		Pedido<Tipo> p1 = new PedidoCarne();
 		p1.setLocal(local1);
