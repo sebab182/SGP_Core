@@ -47,6 +47,7 @@ private Date fechaVencimiento;
 		return result;
 	}
 
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -56,6 +57,11 @@ private Date fechaVencimiento;
 		if (getClass() != obj.getClass())
 			return false;
 		Pieza other = (Pieza) obj;
+		if (fechaVencimiento == null) {
+			if (other.fechaVencimiento != null)
+				return false;
+		} else if (!fechaVencimiento.equals(other.fechaVencimiento))
+			return false;
 		if (tipoPieza == null) {
 			if (other.tipoPieza != null)
 				return false;

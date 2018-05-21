@@ -12,10 +12,16 @@ import SGP.Stock.Pieza;
 public class CSVExporter implements Exporter {
 	private String salida;
 	private String nombreArchivo;
+	private String path;
 	private String extension="csv";
 	
-	public CSVExporter(String nombreArchivo) {
+	public CSVExporter(String nombreArchivo, String path) {
 		this.nombreArchivo=nombreArchivo;
+		this.path= path;
+	}
+	
+	public CSVExporter() {
+		//Constructor vacio para class for name
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -28,13 +34,26 @@ public class CSVExporter implements Exporter {
 		}
 			FileWriter fw;
 			try {
-				fw = new FileWriter(nombreArchivo+"."+extension);
+				fw = new FileWriter(path+nombreArchivo+"."+extension);
 				fw.write(salida);
 				fw.close();
 			} catch (IOException e) {
 				//e.printStackTrace();
 				System.out.println("Se produjo el siguiente error: "+e.getMessage());
 			}
+	}
+
+
+	@Override
+	public void setNombre(String nombre) {
+		this.nombreArchivo=nombre;
+		
+	}
+
+	@Override
+	public void setPath(String path) {
+		this.path=path;
+		
 	}
 
 }

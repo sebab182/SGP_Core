@@ -13,7 +13,7 @@ import SGP.Stock.Tipo;
 
 public class Main {
 
-	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+	public static void main(String[] args) throws Exception {
 		//DataSource selecciona el tipo de factory a cargar
 		DataSource ds = new DataSource("datasource.txt");
 		Class<?> cls = Class.forName(ds.getFactory());

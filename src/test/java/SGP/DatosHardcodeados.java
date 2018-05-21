@@ -1,4 +1,4 @@
-package SGP.Datos;
+package SGP;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -20,9 +20,9 @@ public class DatosHardcodeados implements AbstractFactory {
 	public List<Pieza> cargarPiezas() {
 		List<Pieza>piezas= new LinkedList<Pieza>();
 		//date(año= 1900+años, mes<0 a 11>, día)
-		piezas.add(new Pieza("pata1 25/05/20"));
+		piezas.add(new Pieza("pata1 25/05/18"));
 		piezas.add(new Pieza(new Tipo("pata1"),new Date(118,10,23)));
-		piezas.add(new Pieza(new Tipo("pata1"),new Date(109,8,12)));
+		piezas.add(new Pieza(new Tipo("pata1"),new Date(108,10,23)));
 		piezas.add(new Pieza(new Tipo("pata2"),new Date(118,11,12)));
 		piezas.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
 		piezas.add(new Pieza(new Tipo("pata4"),new Date(118,10,27)));

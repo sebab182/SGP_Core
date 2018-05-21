@@ -18,7 +18,7 @@ public class DataSource {
 				factory = DatosSerializable.class.getName(); //Cargando datos serializados
 			}	
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Se produjo el siguiente error: "+e.getMessage());
 		}
 	}
 
