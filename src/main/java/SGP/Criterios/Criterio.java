@@ -1,14 +1,19 @@
 package SGP.Criterios;
 
 import SGP.Stock.Tipo;
+
+import java.util.List;
+
 import SGP.Pedidos.Pedido;
 
 public interface Criterio {
 	
 	int puntuar(Pedido<Tipo> pedido);
 	
-	//int sumar(ICriterio otro);
+	void combinar(Criterio criterio);
 	
-	//int priorizar(int importancia);
+	public boolean hayOtroCriterio();
+	
+	public Criterio siguienteCriterio();
 
 }

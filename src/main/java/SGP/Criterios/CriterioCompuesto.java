@@ -8,7 +8,7 @@ import SGP.Stock.Tipo;
 import SGP.Pedidos.Pedido;
 
 
-public class CriterioCompuesto implements Criterio{
+public class CriterioCompuesto extends CriterioDecorador{
 	
 	private final List<Criterio> criterios;
 	

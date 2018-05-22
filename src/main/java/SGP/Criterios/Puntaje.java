@@ -18,19 +18,14 @@ public class Puntaje {
 		return puntajes;
 	}
 	
-	static boolean hayEmpate(Map<Pedido<Tipo>, Integer> puntajes) {
+	static boolean hayEmpate(List<Pedido<Tipo>> pedidos, Map<Pedido<Tipo>, Integer> puntajes) {
 		List<Integer> control = new LinkedList<Integer>();
 		
-		if (puntajes.size() > 1) {
-			for (Entry<Pedido<Tipo>, Integer> e: puntajes.entrySet()) {
-				if (control.isEmpty())
-					control.add(e.getValue());
-				else {
-					if (control.contains(e.getValue()))
-						return true;
-					else
-						control.add(e.getValue());
-				}
+		if (pedidos.size() > 1) {
+			for (Pedido<Tipo> p: pedidos) {
+				if (!control.isEmpty() && control.contains(puntajes.get(p)))
+					return true;
+				control.add(puntajes.get(p));
 			}
 		}
 		
