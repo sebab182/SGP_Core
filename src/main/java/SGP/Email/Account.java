@@ -1,5 +1,6 @@
 package SGP.Email;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,7 +25,10 @@ public class Account {
 	public Account() {
 		Properties p = new Properties();
 		try {
-			p.load(new FileReader("Account.properties"));
+			File currDir = new File("");
+			String path = currDir.getAbsolutePath();
+			path = path.replace("SGP_UI", "SGP_CORE");
+			p.load(new FileReader(path+"\\Account.properties"));
 			direccionMail=p.getProperty("email");
 			usuario=p.getProperty("user");
 			contrasena=p.getProperty("password");

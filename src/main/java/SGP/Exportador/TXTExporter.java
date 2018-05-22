@@ -40,8 +40,7 @@ public class TXTExporter implements Exporter {
 		}
 			FileWriter fw;
 			try {
-				System.out.println(path+nombreArchivo+"."+extension);
-				fw = new FileWriter(path+nombreArchivo+"."+extension);
+				fw = new FileWriter(path+"."+extension);
 				fw.write(salida);
 				fw.close();
 			} catch (IOException e) {

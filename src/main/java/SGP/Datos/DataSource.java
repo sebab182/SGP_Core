@@ -1,5 +1,6 @@
 package SGP.Datos;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -8,7 +9,11 @@ public class DataSource {
 	
 	public DataSource(String nombreTXT) {
 		try {
-			BufferedReader in = new BufferedReader(new FileReader(nombreTXT)); //Leo el archivo
+			File currDir = new File("");
+			String path = currDir.getAbsolutePath();
+			path = path.replace("SGP_UI", "SGP_CORE");
+			//System.out.println(path+"\\"+nombreTXT);
+			BufferedReader in = new BufferedReader(new FileReader(path+"\\"+nombreTXT)); //Leo el archivo
 			String source = in.readLine(); //Leo el tipo de factory a cargar
 			in.close(); //Cierro el archivo
 			if(source.equals("test")) {

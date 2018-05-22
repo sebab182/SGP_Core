@@ -20,22 +20,35 @@ public class DatosHardcodeados implements AbstractFactory {
 	public List<Pieza> cargarPiezas() {
 		List<Pieza>piezas= new LinkedList<Pieza>();
 		//date(año= 1900+años, mes<0 a 11>, día)
-		piezas.add(new Pieza("pata1 25/05/20"));
-		piezas.add(new Pieza(new Tipo("pata1"),new Date(118,10,23)));
-		piezas.add(new Pieza(new Tipo("pata1"),new Date(109,8,12)));
-		piezas.add(new Pieza(new Tipo("pata2"),new Date(118,11,12)));
-		piezas.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
-		piezas.add(new Pieza(new Tipo("pata4"),new Date(118,10,27)));
-		piezas.add(new Pieza(new Tipo("muslo"),new Date(118,3,21)));
-		piezas.add(new Pieza(new Tipo("vacio"),new Date(118,9,21)));
-		piezas.add(new Pieza(new Tipo("falda"),new Date(118,10,23)));
+		piezas.add(new Pieza("pata1 12/07/20"));
+		piezas.add(new Pieza("pata1 07/09/20"));
+		piezas.add(new Pieza("pata1 08/08/20"));
+		piezas.add(new Pieza("pata1 09/05/20"));
+		piezas.add(new Pieza("pata1 09/25/20"));
+		
+		piezas.add(new Pieza("pata2 08/05/20"));
+		piezas.add(new Pieza("pata2 11/15/20"));
+		piezas.add(new Pieza("pata2 10/15/20"));
+		piezas.add(new Pieza("pata2 12/05/20"));
+		piezas.add(new Pieza("pata2 11/05/20"));
+				
+		piezas.add(new Pieza("muslo 08/05/20"));
+		piezas.add(new Pieza("muslo 09/05/20"));
+		piezas.add(new Pieza("muslo 01/25/20"));
+		
+		piezas.add(new Pieza("vacio 04/18/20"));
+		
+		piezas.add(new Pieza("falda 07/25/20"));
+
+
+	
 		return piezas;
 	}
 
 	public List<Pedido<Tipo>> cargarPedidos() {
 		List<Pedido<Tipo>>pedidos= new LinkedList<Pedido<Tipo>>();
 		Pedido<Tipo> a = new PedidoCarne();
-		Local l1 = new Local("Los Polvorines","lpolvorines@gmail.com");
+		Local l1 = new Local("Los Polvorines","nicolasecancela@gmail.com");
 		a.setLocal(l1);
 		a.agregarItem(new Tipo("muslo"), 3.0);
 		a.agregarItem(new Tipo("pata1"), 5.0);
@@ -43,7 +56,7 @@ public class DatosHardcodeados implements AbstractFactory {
 		pedidos.add(a);
 		
 		Pedido<Tipo> b = new PedidoCarne();
-		Local l2 = new Local("Munro","lmunro@gmail.com");
+		Local l2 = new Local("Munro","velazquezespinola@gmail.com");
 		b.setLocal(l2);
 		b.agregarItem(new Tipo("vacio"), 4.0);
 		b.agregarItem(new Tipo("muslo"), 7.0);

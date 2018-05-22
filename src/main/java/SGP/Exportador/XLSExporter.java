@@ -38,7 +38,7 @@ public class XLSExporter implements Exporter {
 		}
 			FileWriter fw;
 			try {
-				fw = new FileWriter(path+nombreArchivo+"."+extension);
+				fw = new FileWriter(path+"."+extension);
 				fw.write(salida);
 				fw.close();
 			} catch (IOException e) {

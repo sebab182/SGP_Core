@@ -2,6 +2,7 @@ package SGP.Pedidos;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map.Entry;
 
 import SGP.Stock.Tipo;
@@ -18,6 +19,12 @@ public class GestorPedidosCarne implements IntGestorPedidos<Pedido<Tipo>> {
 	@Override
 	public void agregarPedido(Pedido<Tipo> pedido) {
 		this._pedidos.add(pedido);
+	}
+	
+	public void agregarPedidos(List<Pedido<Tipo>>pedidos) {
+		for(Pedido<Tipo>p: pedidos) {
+			_pedidos.add(p);
+		}
 	}
 
 	@Override
