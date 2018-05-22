@@ -74,5 +74,8 @@ public class GestorPedidosCarne implements IntGestorPedidos<Pedido<Tipo>> {
 	public String toString() {
 		return _pedidos.toString();
 	}
-	
+
+	public HashSet<Pedido<Tipo>> get_pedidos() {
+		return _pedidos;
+	}	
 }
