@@ -24,6 +24,10 @@ public class TipoTest extends TestCase {
 		Tipo a= new Tipo("pata1");
 		assertEquals(a,a);
 	}		
+	
+	public void testEquals6() {
+		assertNotSame(new Tipo("null"),new Tipo("pata1"));
+	}	
 
 	public void testToString() {
 		Tipo a = new Tipo("muslo");
