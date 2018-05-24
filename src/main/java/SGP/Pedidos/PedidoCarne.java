@@ -9,12 +9,22 @@ public class PedidoCarne extends Pedido<Tipo> implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
+	//Constructor canonico
+	public PedidoCarne(int aprobacion)
+	{
+		super();
+		this._items=new HashMap<Tipo, Double>();
+		this._nivelAprobacion=aprobacion;
+	}	
+	
+	//Constructor convenience
 	public PedidoCarne()
 	{
 		super();
 		this._items=new HashMap<Tipo, Double>();
+		this._nivelAprobacion=100;
 	}
-	
+		
 	@Override
 	public void agregarItem(Tipo item, Double cantidad) {
 		super.agregarItem(item, cantidad);

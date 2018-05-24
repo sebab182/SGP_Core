@@ -18,15 +18,13 @@ public class Distribuidor {
 	}
 	
 	public void resolverPedidos(HashSet<Pedido<Tipo>> pedidos, GestorStockPiezas stock){
-		//Recorro cada pedido
-		for(Pedido<Tipo> pedido: pedidos)
-		{
+		//Recorro cada pedido y me fijo si puedo resolver TODOS los items
+		for(Pedido<Tipo> pedido: pedidos){
 			Map<Tipo,Double> mapPiezas = pedido.get_items(); //Obtengo items del pedido
 			boolean puedoResponderPedido=true;
-			for(Entry<Tipo, Double> entryPedido: mapPiezas.entrySet()) //Recorro cada entrada del pedido
-			{
-				puedoResponderPedido = puedoResponderPedido && contarStockparaPedido(entryPedido, stock); //Me fijo si puedo resolver el pedido
-			}
+			for(Entry<Tipo, Double> entryPedido: mapPiezas.entrySet()){ //Recorro cada entrada del pedido
+				puedoResponderPedido = puedoResponderPedido && tengoStockparaPedido(entryPedido, stock); //Me fijo si puedo resolver el pedido
+				}
 			if(puedoResponderPedido==true) {
 				pedidosAceptados.add(pedido);
 				quitarPiezasStock(pedido,stock); //Como el pedido se aceptó, saco del stock las piezas y la cantidad solicitada.
@@ -36,30 +34,62 @@ public class Distribuidor {
 			}}
 	}
 	
-	private boolean contarStockparaPedido(Entry<Tipo, Double> entryPedido, GestorStockPiezas stock) {
+	private boolean tengoStockparaPedido(Entry<Tipo, Double> entryPedido, GestorStockPiezas stock) {
 		Tipo tipoPedido = entryPedido.getKey();
 		Double cantPedido = entryPedido.getValue();
-		List<Pieza>listaStock = stock.getStock();
 		Double cantStock = (double) stock.contarPiezasTipoN(tipoPedido);
-		/*for(Pieza p: listaStock) {
-			if(p.getTipoPieza().equals(tipoPedido)) {
-				cantStock++;
-			}
-		}*/
 		int r = cantStock.compareTo(cantPedido); //r=1 es mayor la cantidad de stock, r=0 es igual stock a pedido, r=-1 es menor la cantidad de stock
 		return r>=0; //Si es 0 o 1 puedo resolver el pedido.
 	}
-
+	
+	public void resolverPedidosNivelAprobacion(List<Pedido<Tipo>> pedidos, GestorStockPiezas stock){
+		//Recorro cada pedido y me fijo si puedo resolver los pedidos de acuerdo a su nivel de aprobación
+		for(Pedido<Tipo> pedido: pedidos){
+			Map<Tipo,Double> mapPiezas = pedido.get_items(); //Obtengo items del pedido
+			Integer cantPiezas=0;
+			Integer totalItemsPedidos=0;
+			for(Entry<Tipo, Double> entryPedidoExp: mapPiezas.entrySet()) {//Recorro cada entrada del pedido
+				//Cuento el total del Stock y el total de items pedidos
+				int totaltipoPieza = contarStockExistenteParaPedido(entryPedidoExp,stock);
+				cantPiezas = cantPiezas + totaltipoPieza;
+				totalItemsPedidos = totalItemsPedidos+ entryPedidoExp.getValue().intValue();
+			}
+			System.out.println("Total items pedidos "+ totalItemsPedidos + " cantPiezas existentes"+cantPiezas);
+			Integer porcentajePedido = (cantPiezas*100/totalItemsPedidos);
+			System.out.println("Porcentaje que se puede despachar: "+ porcentajePedido+ " y porcentaje satisfactorio "+ pedido.get_nivelAprobacion());
+			if(analizarCriterio(pedido, porcentajePedido)==true) {
+				System.out.println("Se acepta el pedido");
+				pedidosAceptados.add(pedido);
+				quitarPiezasStock(pedido,stock); //Como el pedido se aceptó, saco del stock las piezas y la cantidad solicitada.
+			}
+			else {
+				System.out.println("Se rechaza el pedido");
+				pedidosRechazados.add(pedido);
+			}}
+	}	
+	
+	private int contarStockExistenteParaPedido(Entry<Tipo, Double> entryPedidoExp, GestorStockPiezas stock) {
+		Integer ret=0;
+		Tipo tipoPedidoExp = entryPedidoExp.getKey();
+		Double cantPedidoExp = entryPedidoExp.getValue();
+		Double cantStock = (double) stock.contarPiezasTipoN(tipoPedidoExp);
+		if(cantPedidoExp.compareTo(cantStock)>=0){
+			ret= cantStock.intValue();	}
+		else {
+			ret = cantPedidoExp.intValue();}
+		return ret;
+	}
+	
+	private boolean analizarCriterio(Pedido<Tipo> pedido,int PorcentajeReal) {
+		int PorcentajeAprobacion = pedido.get_nivelAprobacion();
+		return PorcentajeReal>=PorcentajeAprobacion;
+	}
+	
 	private void quitarPiezasStock(Pedido<Tipo> pedido, GestorStockPiezas stock) {
 		Map<Tipo,Double> mapPiezas = pedido.get_items();
-		for(Entry<Tipo, Double> entryPedido: mapPiezas.entrySet())
-		{
-			quitarPieza(entryPedido,stock);
+		for(Entry<Tipo, Double> entryPedido: mapPiezas.entrySet()){
+			stock.quitarNPiezas(entryPedido.getKey(), entryPedido.getValue());
 		}		
-	}
-
-	private void quitarPieza(Entry<Tipo, Double> entryPedido, GestorStockPiezas stock) {
-		stock.quitarNPiezas(entryPedido.getKey(), entryPedido.getValue());
 	}
 
 	public List<Pedido<Tipo>> getPedidosRechazados() {
