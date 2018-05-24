@@ -42,7 +42,7 @@ public class Distribuidor {
 		return r>=0; //Si es 0 o 1 puedo resolver el pedido.
 	}
 	
-	public void resolverPedidosNivelAprobacion(List<Pedido<Tipo>> pedidos, GestorStockPiezas stock){
+	public void resolverPedidosNivelAprobacion(HashSet<Pedido<Tipo>> pedidos, GestorStockPiezas stock){
 		//Recorro cada pedido y me fijo si puedo resolver los pedidos de acuerdo a su nivel de aprobación
 		for(Pedido<Tipo> pedido: pedidos){
 			Map<Tipo,Double> mapPiezas = pedido.get_items(); //Obtengo items del pedido
