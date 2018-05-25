@@ -59,4 +59,8 @@ public class XLSExporter implements Exporter {
 		
 	}
 
+	public String getSalida() {
+		return salida;
+	}
+
 }

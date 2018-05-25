@@ -44,6 +44,10 @@ public class CSVExporter implements Exporter {
 	}
 
 
+	public String getSalida() {
+		return salida;
+	}
+
 	@Override
 	public void setNombre(String nombre) {
 		this.nombreArchivo=nombre;
