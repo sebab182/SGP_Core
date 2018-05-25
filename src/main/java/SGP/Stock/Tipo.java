@@ -6,11 +6,11 @@ public class Tipo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String nombreTipo;
 	
-	public Tipo(String tipoPieza) {
-		this.nombreTipo= tipoPieza;
+	public Tipo(String nombreTipo) {
+		this.nombreTipo= nombreTipo;
 	}
 
-	public String getTipoPieza() {
+	public String getNombreTipo() {
 		return nombreTipo;
 	}
 

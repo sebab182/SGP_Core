@@ -5,26 +5,26 @@ import java.util.Map;
 
 import SGP.Stock.Tipo;
 
-public class PedidoCarne extends Pedido<Tipo> implements Serializable{
+public class PedidoExp extends Pedido<Tipo> implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	private int aprobacion;
 
-	//Constructor canonico
-	public PedidoCarne(int aprobacion)
+	public PedidoExp(int aprobacion)
 	{
 		super();
 		this._items=new HashMap<Tipo, Double>();
-		this._nivelAprobacion=aprobacion;
-	}	
-	
-	//Constructor convenience
-	public PedidoCarne()
-	{
-		super();
-		this._items=new HashMap<Tipo, Double>();
-		this._nivelAprobacion=100;
+		this.aprobacion=aprobacion;
 	}
-		
+	
+	public int getAprobacion() {
+		return aprobacion;
+	}
+
+	public void setAprobacion(int aprobacion) {
+		this.aprobacion = aprobacion;
+	}
+
 	@Override
 	public void agregarItem(Tipo item, Double cantidad) {
 		super.agregarItem(item, cantidad);
