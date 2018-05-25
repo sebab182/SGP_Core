@@ -13,7 +13,7 @@ public class DataSource {
 			String path = currDir.getAbsolutePath();
 			path = path.replace("SGP_UI", "SGP_CORE");
 			//System.out.println(path+"\\"+nombreTXT);
-			BufferedReader in = new BufferedReader(new FileReader(path+"\\"+nombreTXT)); //Leo el archivo
+			BufferedReader in = new BufferedReader(new FileReader(path+"//"+nombreTXT)); //Leo el archivo
 			String source = in.readLine(); //Leo el tipo de factory a cargar
 			in.close(); //Cierro el archivo
 			if(source.equals("test")) {
