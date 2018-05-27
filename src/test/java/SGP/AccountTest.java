@@ -47,11 +47,46 @@ public class AccountTest extends TestCase {
 	}
 	
 	public void testEqualsObject1() {
-		assertNotSame(new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45"),null);
+		assertFalse(new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45").equals(null));
 	}
 	
 	public void testEqualsObject2() {
 		assertNotSame(new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45"),new Account(null,null,null,null,null));
 	}
+	
+	public void testEqualsObject3() {
+		assertNotSame(new Account(null,"Test","PP2","smtp.gmail.com","45"),new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45"));
+	}
+	
+	public void testEqualsObject4() {
+		assertNotSame(new Account("test@test.com.ar",null,"PP2","smtp.gmail.com","45"),new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45"));
+	}
+	
+	public void testEqualsObject5() {
+		assertNotSame(new Account("test@test.com.ar","Test",null,"smtp.gmail.com","45"),new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45"));
+	}
+	
+	public void testEqualsObject6() {
+		assertNotSame(new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45"),new Account("test@test.com.ar","Test",null,"smtp.gmail.com","45"));
+	}
 
+	public void testEqualsObject7() {
+		assertNotSame(new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45"),new Object());
+	}
+	
+	public void testHashCode1() {
+		assertNotSame(24,new Account("test@test.com.ar","Test",null,"smtp.gmail.com","45").hashCode());
+	}
+	
+	public void testHashCode2() {
+		assertNotSame(24,new Account(null,"Test","PP2","smtp.gmail.com","45").hashCode());
+	}
+	
+	public void testHashCode3() {
+		assertNotSame(24,new Account("test@test.com.ar","Test",null,"smtp.gmail.com","45").hashCode());
+	}
+	
+	public void testHashCode4() {
+		assertNotSame(24,new Account("test@test.com.ar",null,"PP2","smtp.gmail.com","45").hashCode());
+	}
 }

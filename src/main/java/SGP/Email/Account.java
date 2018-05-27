@@ -1,9 +1,7 @@
 package SGP.Email;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Properties;
 
 public class Account {
@@ -34,9 +32,7 @@ public class Account {
 			contrasena=p.getProperty("password");
 			host = p.getProperty("host");
 			puerto=p.getProperty("port");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
