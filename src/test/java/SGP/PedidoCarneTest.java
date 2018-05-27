@@ -1,5 +1,6 @@
 package SGP;
 
+import SGP.Pedidos.Local;
 import SGP.Pedidos.PedidoCarne;
 import SGP.Stock.Tipo;
 import junit.framework.TestCase;
@@ -40,6 +41,16 @@ public class PedidoCarneTest extends TestCase {
 	public void testToString() {
 		pc.agregarItem(new Tipo("muslo"), 3.0);
 		assertEquals(pc.toString(),"{muslo=3.0}");
+	}
+	
+	public void testsetAprobacion() {
+		pc.set_nivelAprobacion(40);
+		assertEquals(40,pc.get_nivelAprobacion());
+	}
+	
+	public void testsetLocal() {
+		pc.setLocal(new Local("Test","test@test.com.ar"));
+		assertEquals(new Local("Test","test@test.com.ar"),pc.getLocal());
 	}
 
 }
