@@ -37,6 +37,14 @@ public class LocalTest extends TestCase {
 		assertFalse(new Local("UNGS",null).equals(new Local("UNGS","test@test.com.ar")));
 	}
 	
+	public void testEquals7(){
+		assertTrue(new Local("UNGS",null).equals(new Local("UNGS",null)));
+	}
+	
+	public void testEquals8(){
+		assertTrue(new Local(null,null).equals(new Local(null,null)));
+	}
+	
 	public void testHashCode() {
 		assertEquals(-331903846,new Local("UNGS","test@test.com.ar").hashCode());
 	}
