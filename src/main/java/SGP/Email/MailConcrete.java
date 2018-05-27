@@ -45,7 +45,5 @@ public class MailConcrete implements MailSender {
 			} catch (Exception e) {
 				System.out.println("Se produjo el siguiente error: "+e);
 			}
-
-	      	 
 	}
 	}

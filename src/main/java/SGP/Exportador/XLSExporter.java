@@ -50,17 +50,22 @@ public class XLSExporter implements Exporter {
 	@Override
 	public void setNombre(String nombre) {
 		this.nombreArchivo=nombre;
-		
 	}
 
 	@Override
 	public void setPath(String path) {
 		this.path=path;
-		
 	}
 
 	public String getSalida() {
 		return salida;
 	}
 
+	public String getNombre() {
+		return nombreArchivo;
+	}
+
+	public String getPath() {
+		return path;
+	}
 }
