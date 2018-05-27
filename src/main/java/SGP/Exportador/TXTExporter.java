@@ -1,9 +1,7 @@
 package SGP.Exportador;
 
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -57,9 +55,17 @@ public class TXTExporter implements Exporter {
 		this.nombreArchivo=nombre;		
 	}
 
+	public String getNombre() {
+		return nombreArchivo;
+	}
+
 	@Override
 	public void setPath(String path) {
 		this.path=path;
+	}
+	
+	public String getPath() {
+		return path;
 	}
 
 	public String getSalida() {

@@ -7,22 +7,33 @@ import junit.framework.TestCase;
 
 public class TXTExporterTest extends TestCase {
 	private TXTExporter te;
+	
+	public TXTExporterTest() {
+		te = new TXTExporter("","");
+	}
 
 	public void testGenerarInforme() {
-		te = new TXTExporter("test",".");
-		//te.generarInforme(cargarStockTest());
-		//assertTrue(!te.getSalida().isEmpty());
+		te.generarInforme(cargarStockTest());
+		assertTrue(!te.getSalida().isEmpty());
 	}
 
 	public void testGetExtension() {
-		te = new TXTExporter("test",".");
 		assertEquals("txt",te.getExtension());
 	}
 
+	public void testSetNombre() {
+		te.setNombre("UNGS");
+		assertEquals("UNGS",te.getNombre());
+	}
+	
 	public void testGetSalida() {
-		te = new TXTExporter("test",".");
-		//te.generarInforme(cargarStockTest());
-		//assertTrue(te.getSalida().contains("muslo"));
+		te.generarInforme(cargarStockTest());
+		assertTrue(te.getSalida().contains("muslo"));
+	}
+	
+	public void testSetPath() {
+		te.setPath("C:\\");
+		assertEquals("C:\\",te.getPath());
 	}
 
 	public GestorStockPiezas cargarStockTest() {

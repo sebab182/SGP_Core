@@ -30,8 +30,4 @@ public class DataSource {
 	public String getFactory() {
 		return factory;
 	}
-	
-	public void setFactory(String f) {
-		factory = f;
-	}
 }

@@ -43,7 +43,6 @@ public class CSVExporter implements Exporter {
 			}
 	}
 
-
 	public String getSalida() {
 		return salida;
 	}
@@ -51,13 +50,22 @@ public class CSVExporter implements Exporter {
 	@Override
 	public void setNombre(String nombre) {
 		this.nombreArchivo=nombre;
-		
+	}
+
+	public String getNombre() {
+		return nombreArchivo;
 	}
 
 	@Override
 	public void setPath(String path) {
 		this.path=path;
-		
 	}
 
+	public String getPath() {
+		return path;
+	}
+
+	public String getExtension() {
+		return extension;
+	}
 }

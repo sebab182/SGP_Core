@@ -26,7 +26,23 @@ public class TipoTest extends TestCase {
 	}		
 	
 	public void testEquals6() {
-		assertNotSame(new Tipo("null"),new Tipo("pata1"));
+		assertNotSame(new Tipo(null),new Tipo("pata1"));
+	}	
+	
+	public void testEquals7() {
+		assertNotSame(new Tipo("pata1"),new Tipo(null));
+	}	
+	
+	public void testEquals8() {
+		assertTrue(new Tipo(null).equals(new Tipo(null)));
+	}	
+	
+	public void testHashCode() {
+		assertEquals(106438642,new Tipo("pata1").hashCode());
+	}	
+	
+	public void testHashCode2() {
+		assertEquals(31,new Tipo(null).hashCode());
 	}	
 
 	public void testToString() {

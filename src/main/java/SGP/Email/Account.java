@@ -59,5 +59,44 @@ public class Account {
 
 	public String getPuerto() {
 		return puerto;
-	}	
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((contrasena == null) ? 0 : contrasena.hashCode());
+		result = prime * result + ((direccionMail == null) ? 0 : direccionMail.hashCode());
+		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Account other = (Account) obj;
+		if (contrasena == null) {
+			if (other.contrasena != null)
+				return false;
+		} else if (!contrasena.equals(other.contrasena))
+			return false;
+		if (direccionMail == null) {
+			if (other.direccionMail != null)
+				return false;
+		} else if (!direccionMail.equals(other.direccionMail))
+			return false;
+		if (usuario == null) {
+			if (other.usuario != null)
+				return false;
+		} else if (!usuario.equals(other.usuario))
+			return false;
+		return true;
+	}
+	
+	
 }
