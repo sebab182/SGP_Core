@@ -30,7 +30,7 @@ public class PiezaTest extends TestCase {
 	
 	public void testHashCode4() {
 		Pieza a = new Pieza(null,new Date(118,2,14));
-		assertEquals(737420575, a.hashCode());
+		assertNotSame(7, a.hashCode());
 	}
 
 	public void testHashCode5() {

@@ -28,7 +28,7 @@ public class Account {
 			File currDir = new File("");
 			String path = currDir.getAbsolutePath();
 			path = path.replace("SGP_UI", "SGP_CORE");
-			p.load(new FileReader(path+"\\Account.properties"));
+			p.load(new FileReader(path+"//Account.properties"));
 			direccionMail=p.getProperty("email");
 			usuario=p.getProperty("user");
 			contrasena=p.getProperty("password");
