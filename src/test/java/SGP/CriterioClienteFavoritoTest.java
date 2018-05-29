@@ -5,6 +5,7 @@ import java.util.List;
 
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioClienteFavorito;
+import SGP.Pedidos.Local;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
 import SGP.Stock.Tipo;
@@ -16,10 +17,10 @@ public class CriterioClienteFavoritoTest extends TestCase {
 		assertTrue(true);
 		/*
 
-		int local1 = 1;
-		int local2 = 2;
+		Local local1 = new Local("LP","mail");
+		Local local2 = new Local("M","mail");
 		
-		List<Integer> favoritos = new LinkedList<Integer>();
+		List<Local> favoritos = new LinkedList<Local>();
 		favoritos.add(local1);
 		
     	Pedido<Tipo> p1 = new PedidoCarne();

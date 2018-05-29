@@ -30,9 +30,9 @@ public class AnalizadordeVencimientoTest extends TestCase {
 		assertEquals(gestorStock.getStock().size(),1);
 	}
 	
-	public void testSGPExperimental1(){
+	/*public void testSGPExperimental1(){
 		//Se dispone una sola pieza en el stock con fecha de caducidad 10/10/2007 y fecha actual 09/05/2018, la pieza se elimina del stock.		AnalizadordeVencimiento av = new AnalizadordeVencimiento(new Date(118,4,9));
 		SGP sistema = new SGP(new AnalizadordeVencimiento(new Date(118,4,9)),new GestorStockPiezas(),new Pieza("pata1 10/10/07"));
 		assertEquals(true,sistema.getGestorStock().getStock().isEmpty());
-	}
+	}*/
 }

@@ -45,5 +45,46 @@ public class GestorStockPiezas extends GestorStock<Pieza> {
 	public Set<Tipo> getVaca() {
 		return vaca;
 	}
+	
+	/*public void quitarNPiezas(Tipo tipo, Double cantQuitar) {
+		Double cantQuitada =0.0;
+		while(cantQuitada.compareTo(cantQuitar)<0) {
+			for(int i=0; i<this._Stock.size();i++) {
+				if(cantQuitada.equals(cantQuitar))
+				{
+					break;
+				}
+				Pieza p = _Stock.get(i);
+				if(p.getTipoPieza().equals(tipo)) {
+					_Stock.remove(p);
+					cantQuitada++;
+				}
+			}
+		}
+	}*/
+	
+	public void quitarNPiezas(Tipo tipo, Double cantQuitar) {
+		List<Pieza> eliminar = filtrarPiezas(tipo);
+		//Arme la lista de piezas a eliminar ahora saco la cantidad a Quitar
+		if(cantQuitar>eliminar.size()) {
+			cantQuitar=(double) eliminar.size(); //Si la cantidad a quitar es mayor a la existente la cantidad a quitar es la cantidad de piezas existentes.
+		}
+		for(int i=0; i<cantQuitar;i++) {
+			_Stock.remove(eliminar.get(i));
+		}
+	}
 
+	public List<Pieza> filtrarPiezas(Tipo tipo) {
+		List<Pieza> aux = new LinkedList<Pieza>();
+		for(Pieza p: _Stock) {
+			if(p.getTipoPieza().equals(tipo)) {
+				aux.add(p);
+			}
+		}
+		return aux;		
+	}
+	
+	public int contarPiezasTipoN(Tipo tipo) {
+		return filtrarPiezas(tipo).size();
+	}
 }

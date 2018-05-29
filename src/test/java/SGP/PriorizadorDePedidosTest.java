@@ -8,6 +8,7 @@ import SGP.Criterios.CriterioClienteFavorito;
 import SGP.Criterios.CriterioCompuesto;
 import SGP.Criterios.CriterioMenosPiezas;
 import SGP.Criterios.PriorizadorDePedidos;
+import SGP.Pedidos.Local;
 import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
 import SGP.Stock.Tipo;
@@ -16,6 +17,7 @@ import junit.framework.TestCase;
 public class PriorizadorDePedidosTest extends TestCase {
 
 	public void testPriorizar() {
+
 		assertTrue(true);
 		/*
 		int local1 = 1;
@@ -23,6 +25,7 @@ public class PriorizadorDePedidosTest extends TestCase {
 		int local3 = 3;
 		
 		List<Integer> favoritos = new LinkedList<Integer>();
+
 		favoritos.add(local3);
 		
 		Pedido<Tipo> p1 = new PedidoCarne();
@@ -59,14 +62,7 @@ public class PriorizadorDePedidosTest extends TestCase {
 		
 		List<Pedido<Tipo>> ordenados = pp.priorizar(pedidos, c);
 		
-		 puntajes:
-		 * p1 = -14
-		 * p2 = -12
-		 * p3 = 43
-		 * quedan odenados asi:
-		 * {p3, p2, p1}
-		 
-		
+
 		assertEquals(ordenados.get(0), p3);
 		assertEquals(ordenados.get(1), p2);
 		assertEquals(ordenados.get(2), p1);

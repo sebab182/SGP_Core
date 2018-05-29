@@ -13,7 +13,7 @@ import SGP.Stock.Tipo;
 
 public class Main {
 
-	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+	public static void main(String[] args) throws Exception {
 		//DataSource selecciona el tipo de factory a cargar
 		DataSource ds = new DataSource("datasource.txt");
 		Class<?> cls = Class.forName(ds.getFactory());
@@ -41,8 +41,5 @@ public class Main {
 		ControlProduccion ControlProd = new ControlProduccion();
 		//Calculo total a Faenar
 		System.out.println(ControlProd.calcularFaena(gp, gestorStock));
-		//Creamos distribuidor y resolvemos los pedidos
-		//Distribuidor d = new Distribuidor();
-		//List<Map<Pieza,Integer>>distribuciones = d.resolverPedidos(pedidos, gestorStock);
 	}
 }
