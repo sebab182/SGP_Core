@@ -10,9 +10,4 @@ public abstract class Inspector {
 		return conservacion.conservarSegunInspector(this);
 	}
 	
-	public abstract int inspeccionarRefrigeracion(Refrigeracion refrigeracion);
-	
-	public abstract int inspeccionarConservacionNull(ConservacionNull conservacionNull);
-	
-
 }
