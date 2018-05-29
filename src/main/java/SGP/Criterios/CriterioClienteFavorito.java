@@ -1,6 +1,7 @@
 package SGP.Criterios;
 
 import java.util.List;
+import java.util.Map;
 
 import SGP.Stock.Tipo;
 import SGP.Pedidos.Local;
@@ -8,13 +9,12 @@ import SGP.Pedidos.Pedido;
 
 
 
-public class CriterioClienteFavorito implements Criterio {
+public class CriterioClienteFavorito extends CriterioDecorador {
 
-	private int puntaje;
-	List<Local> locales;
+
+	Map<Integer, Integer> locales;
 	
-	public CriterioClienteFavorito(List<Local> locales) {
-		this.puntaje = 45;
+	public CriterioClienteFavorito(Map<Integer, Integer> locales) {
 		this.locales = locales;
 	}
 	
@@ -23,8 +23,8 @@ public class CriterioClienteFavorito implements Criterio {
 		
 		Local local = pedido.getLocal();
 		
-		if (this.locales.contains(local))
-			return this.puntaje;
+		if (this.locales.containsKey(local))
+			return this.locales.get(local);
 		
 		return 0;
 	}

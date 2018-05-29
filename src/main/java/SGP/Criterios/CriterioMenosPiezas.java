@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 import SGP.Stock.Tipo;
 import SGP.Pedidos.Pedido;
 
-public class CriterioMenosPiezas implements Criterio {
+public class CriterioMenosPiezas extends CriterioDecorador {
 
 	private int puntos_pieza;
 	
@@ -13,6 +13,7 @@ public class CriterioMenosPiezas implements Criterio {
 		this.puntos_pieza = 1;
 	}
 	
+	@Deprecated
 	public CriterioMenosPiezas(int puntos_pieza) {
 		this.puntos_pieza = puntos_pieza;
 	}
