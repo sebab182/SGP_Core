@@ -1,5 +1,7 @@
 package SGP.Stock;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Pieza implements Serializable {
@@ -27,7 +29,19 @@ private Date fechaVencimiento;
 	@SuppressWarnings("deprecation")
 	private static Date parseDate(String d) {
 		String[] aux = d.split(" ");
-		return new Date(Date.parse(aux[1]));
+		
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+        Date ret;
+        try {
+			ret = formatter.parse(aux[1]);
+		} catch (ParseException e) {
+			ret = null;
+			e.printStackTrace();
+		}
+		return ret;
+		//return new Date(Date.parse(aux[1]));
 	}
 
 	public Tipo getTipoPieza() {
