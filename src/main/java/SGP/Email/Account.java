@@ -69,29 +69,12 @@ public class Account {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
+		if(obj==null) {
+			return false;}
 		Account other = (Account) obj;
-		if (contrasena == null) {
-			if (other.contrasena != null)
-				return false;
-		} else if (!contrasena.equals(other.contrasena))
-			return false;
-		if (direccionMail == null) {
-			if (other.direccionMail != null)
-				return false;
-		} else if (!direccionMail.equals(other.direccionMail))
-			return false;
-		if (usuario == null) {
-			if (other.usuario != null)
-				return false;
-		} else if (!usuario.equals(other.usuario))
-			return false;
-		return true;
+		if(other.getUsuario()==null || other.getContrasena()==null || other.getDireccionMail()==null) {
+			return false;}
+		return(usuario.equals(other.getUsuario()) && contrasena.equals(other.getContrasena()) && direccionMail.equals(other.getDireccionMail()));
 	}
 	
 	
