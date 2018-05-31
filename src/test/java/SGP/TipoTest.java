@@ -26,7 +26,7 @@ public class TipoTest extends TestCase {
 	}		
 	
 	public void testEquals6() {
-		assertNotSame(new Tipo(null),new Tipo("pata1"));
+		assertFalse(new Tipo(null).equals(new Tipo("pata1")));
 	}	
 	
 	public void testEquals7() {
