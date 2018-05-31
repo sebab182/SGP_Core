@@ -1,6 +1,5 @@
 package SGP.Criterios;
 
-import java.util.List;
 import java.util.Map;
 
 import SGP.Stock.Tipo;
@@ -12,9 +11,9 @@ import SGP.Pedidos.Pedido;
 public class CriterioClienteFavorito extends CriterioDecorador {
 
 
-	Map<Integer, Integer> locales;
+	Map<Local, Integer> locales;
 	
-	public CriterioClienteFavorito(Map<Integer, Integer> locales) {
+	public CriterioClienteFavorito(Map<Local, Integer> locales) {
 		this.locales = locales;
 	}
 	

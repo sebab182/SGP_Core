@@ -1,11 +1,19 @@
 package SGP.Pedidos;
 
 import java.util.Map;
+import java.util.Map.Entry;
 
 public abstract class Pedido<T>{
 	Local _Local;	
 	Map<T, Double> _items;
 	int _nivelAprobacion;
+	
+	public double getNumeroItems() {
+		double ret = 0;
+		for (Entry<T, Double> e: this._items.entrySet())
+			ret = ret + e.getValue();
+		return ret;
+	}
 	
 	public void agregarItem(T item, Double valor)
 	{

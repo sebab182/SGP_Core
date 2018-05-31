@@ -1,13 +1,8 @@
 package SGP;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioMenosPiezas;
-import SGP.Pedidos.Local;
 import SGP.Pedidos.Pedido;
-import SGP.Pedidos.PedidoCarne;
 import SGP.Stock.Tipo;
 
 import junit.framework.TestCase;
@@ -15,34 +10,15 @@ import junit.framework.TestCase;
 
 public class CriterioMenosPiezasTest extends TestCase {
 
-	@SuppressWarnings("deprecation")
 	public void testPuntuar() {
 
-		Local local1 = new Local("LP","mail");
-		Local local2 = new Local("M","mail");
-		
-		List<Local> favoritos = new LinkedList<Local>();
-		
-		Pedido<Tipo> p1 = new PedidoCarne();
-		p1.setLocal(local1);
-		p1.agregarItem(new Tipo("pata1"), 2.0);
-		p1.agregarItem(new Tipo("pata3"), 1.0);
-		p1.agregarItem(new Tipo("pata4"), 1.0);
-		p1.agregarItem(new Tipo("muslo"), 1.0);
-		p1.agregarItem(new Tipo("vacio"), 2.0);	
-		
-		Pedido<Tipo> p2 = new PedidoCarne();
-		p2.setLocal(local2);
-		p2.agregarItem(new Tipo("pata3"), 1.0);
-		p2.agregarItem(new Tipo("pata4"), 1.0);
-		p2.agregarItem(new Tipo("muslo"), 1.0);
-		p2.agregarItem(new Tipo("vacio"), 3.0);
+    	Pedido<Tipo> p1 = new PedidoMock(7.0);
+    	Pedido<Tipo> p2 = new PedidoMock(6.0);
     	
-    	Criterio c = new CriterioMenosPiezas(2);
+    	Criterio c = new CriterioMenosPiezas();
     	
-    	
-    	assertEquals(c.puntuar(p1), -14);
-    	assertEquals(c.puntuar(p2), -12);
+    	assertEquals(c.puntuar(p1), -7);
+    	assertEquals(c.puntuar(p2), -6);
     	
 	}
 	

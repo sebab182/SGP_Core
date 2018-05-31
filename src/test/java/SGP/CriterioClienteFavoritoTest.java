@@ -1,7 +1,9 @@
 package SGP;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioClienteFavorito;
@@ -14,35 +16,22 @@ import junit.framework.TestCase;
 public class CriterioClienteFavoritoTest extends TestCase {
 
 	public void testPuntuar() {
-		assertTrue(true);
-		/*
 
 		Local local1 = new Local("LP","mail");
 		Local local2 = new Local("M","mail");
 		
-		List<Local> favoritos = new LinkedList<Local>();
-		favoritos.add(local1);
+		Map<Local, Integer> favoritos = new HashMap<Local, Integer>();
+		favoritos.put(local1, 3);
 		
-    	Pedido<Tipo> p1 = new PedidoCarne();
-    	p1.setLocal(local1);
-    	p1.agregarItem(new Tipo("pata1"), 2.0);
-		p1.agregarItem(new Tipo("pata3"), 1.0);
-		p1.agregarItem(new Tipo("pata4"), 1.0);
-		p1.agregarItem(new Tipo("muslo"), 1.0);
-		p1.agregarItem(new Tipo("vacio"), 2.0);	
 		
-    	Pedido<Tipo> p2 = new PedidoCarne();
-    	p2.setLocal(local2);
-    	p2.agregarItem(new Tipo("pata3"), 1.0);
-		p2.agregarItem(new Tipo("pata4"), 1.0);
-		p2.agregarItem(new Tipo("muslo"), 1.0);
-		p2.agregarItem(new Tipo("vacio"), 3.0);
+    	Pedido<Tipo> p1 = new PedidoMock(local1);
+    	Pedido<Tipo> p2 = new PedidoMock(local2);
     	
     	Criterio c = new CriterioClienteFavorito(favoritos);
     	
-    	assertEquals(c.puntuar(p1), 45);
+    	assertEquals(c.puntuar(p1), 3);
     	assertEquals(c.puntuar(p2), 0);
-    	*/
+    	
 	}
 	
 }

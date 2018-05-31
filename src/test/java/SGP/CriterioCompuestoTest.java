@@ -1,8 +1,9 @@
 package SGP;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-
+import java.util.Map;
 
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioClienteFavorito;
@@ -10,9 +11,7 @@ import SGP.Criterios.CriterioCompuesto;
 import SGP.Criterios.CriterioMenosPiezas;
 import SGP.Pedidos.Local;
 import SGP.Pedidos.Pedido;
-import SGP.Pedidos.PedidoCarne;
 import SGP.Stock.Tipo;
-
 import junit.framework.TestCase;
 
 
@@ -20,40 +19,28 @@ public class CriterioCompuestoTest extends TestCase {
 
 	public void testPuntuar() {
 
-		assertTrue(true);
-		/*
-		int local1 = 1;
-		int local2 = 2;
-
+		Local local1 = new Local("LP","mail");
+		Local local2 = new Local("M","mail");
 		
-		List<Local> favoritos = new LinkedList<Local>();
-		favoritos.add(local1);
+		Map<Local, Integer> favoritos = new HashMap<Local, Integer>();
+		favoritos.put(local1, 1);
 		
-		Pedido<Tipo> p1 = new PedidoCarne();
-    	p1.setLocal(local1);
-    	p1.agregarItem(new Tipo("pata1"), 2.0);
-		p1.agregarItem(new Tipo("pata3"), 1.0);
-		p1.agregarItem(new Tipo("pata4"), 1.0);
-		p1.agregarItem(new Tipo("muslo"), 1.0);
-		p1.agregarItem(new Tipo("vacio"), 2.0);	
 		
-    	Pedido<Tipo> p2 = new PedidoCarne();
-    	p2.setLocal(local2);
-    	p2.agregarItem(new Tipo("pata3"), 1.0);
-		p2.agregarItem(new Tipo("pata4"), 1.0);
-		p2.agregarItem(new Tipo("muslo"), 1.0);
-		p2.agregarItem(new Tipo("vacio"), 3.0);
-		
+    	Pedido<Tipo> p1 = new PedidoMock(7.0, local1);
+    	Pedido<Tipo> p2 = new PedidoMock(6.0, local2);
+    	
+    	Criterio c1 = new CriterioMenosPiezas();
+    	Criterio c2 = new CriterioClienteFavorito(favoritos);
     	List<Criterio> criterios = new LinkedList<Criterio>();
-    	criterios.add(new CriterioMenosPiezas(2));
-    	criterios.add(new CriterioClienteFavorito(favoritos));
-		Criterio c = new CriterioCompuesto(criterios);
+    	criterios.add(c1);
+    	criterios.add(c2);
+    	Criterio cc = new CriterioCompuesto(criterios);
 		
 
     	
-    	assertEquals(c.puntuar(p1), 31);
-    	assertEquals(c.puntuar(p2), -12);
-    	*/
+    	assertEquals(cc.puntuar(p1), -6);
+    	assertEquals(cc.puntuar(p2), -6);
+    	
 	}
 	
 }
