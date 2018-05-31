@@ -3,7 +3,6 @@ package SGP;
 import java.util.Date;
 
 import SGP.Stock.Pieza;
-import SGP.Vencimiento.Almacenamiento;
 import SGP.Vencimiento.CalculadorVencimiento;
 import SGP.Vencimiento.Freezer;
 import SGP.Vencimiento.Heladera;
@@ -44,5 +43,4 @@ public class CalculadorVencimientoTest extends TestCase {
 		calculadora.calcularFechaVencimiento(p, new Heladera());
 		assertEquals(new Date(Date.parse("05/01/2017")),p.getFechaVencimiento());
 	}	
-
 }

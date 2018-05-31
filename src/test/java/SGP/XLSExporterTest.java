@@ -1,4 +1,5 @@
 package SGP;
+import SGP.Exportador.TXTExporter;
 import SGP.Exportador.XLSExporter;
 import SGP.Stock.GestorStockPiezas;
 import SGP.Stock.Pieza;
@@ -29,6 +30,11 @@ public class XLSExporterTest extends TestCase {
 	public void testGetSalida() {
 		xe.generarInforme(cargarStockTest());
 		assertTrue(xe.getSalida().contains("muslo"));
+	}
+	
+	public void testXLS() {
+		XLSExporter aux = new XLSExporter();
+		assertTrue(aux.getSalida()==null);
 	}
 	
 	public GestorStockPiezas cargarStockTest() {
