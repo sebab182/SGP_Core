@@ -43,20 +43,20 @@ public class DistribuidorTest extends TestCase {
 	private GestorStockPiezas cargarStockTestPedidos() {
 		GestorStockPiezas gsp = new GestorStockPiezas();
 		List<Pieza>piezas= new LinkedList<Pieza>();
-		piezas.add(new Pieza("vacio 25/09/18"));
-		piezas.add(new Pieza("falda 15/09/18"));
-		piezas.add(new Pieza("pata1 12/09/18"));
-		piezas.add(new Pieza("pata3 12/02/19"));
-		piezas.add(new Pieza("pata1 22/09/18"));
-		piezas.add(new Pieza("pata1 25/09/18"));
-		piezas.add(new Pieza("pata2 11/02/19"));
-		piezas.add(new Pieza("pata3 03/02/19"));
-		piezas.add(new Pieza("muslo 25/05/18"));
-		piezas.add(new Pieza("falda 15/09/18"));
-		piezas.add(new Pieza("pata1 26/09/18"));
-		piezas.add(new Pieza("pata1 28/09/18"));
-		piezas.add(new Pieza("pata1 18/09/18"));
-		piezas.add(new Pieza("vacio 18/09/18"));
+		piezas.add(new Pieza("vacio 25/09/18 l"));
+		piezas.add(new Pieza("falda 15/09/18 l"));
+		piezas.add(new Pieza("pata1 12/09/18 l"));
+		piezas.add(new Pieza("pata3 12/02/19 l"));
+		piezas.add(new Pieza("pata1 22/09/18 l"));
+		piezas.add(new Pieza("pata1 25/09/18 l"));
+		piezas.add(new Pieza("pata2 11/02/19 l"));
+		piezas.add(new Pieza("pata3 03/02/19 l"));
+		piezas.add(new Pieza("muslo 25/05/18 l"));
+		piezas.add(new Pieza("falda 15/09/18 l"));
+		piezas.add(new Pieza("pata1 26/09/18 l"));
+		piezas.add(new Pieza("pata1 28/09/18 l"));
+		piezas.add(new Pieza("pata1 18/09/18 l"));
+		piezas.add(new Pieza("vacio 18/09/18 l"));
 		gsp.agregarItems(piezas);
 		return gsp;
 	}
@@ -87,7 +87,7 @@ public class DistribuidorTest extends TestCase {
 
 	public GestorStockPiezas cargarStockTestNiveles() {
 		GestorStockPiezas gsp = new GestorStockPiezas();
-		gsp.agregarItem(new Pieza("muslo 25/05/18"));
+		gsp.agregarItem(new Pieza("muslo 25/05/18 l"));
 		return gsp;
 	}
 	

@@ -31,13 +31,13 @@ public class CSVExporterTest extends TestCase {
 	}
 
 	public void testSetPath() {
-		ce.setPath("C:\\");
-		assertEquals("C:\\",ce.getPath());
+		ce.setPath("C://");
+		assertEquals("C://",ce.getPath());
 	}
 	
 	public GestorStockPiezas cargarStockTest() {
 		GestorStockPiezas gsp = new GestorStockPiezas();
-		gsp.agregarItem(new Pieza("muslo 25/05/18"));
+		gsp.agregarItem(new Pieza("muslo 25/05/18 l"));
 		return gsp;
 	}
 }
