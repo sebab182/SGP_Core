@@ -13,7 +13,7 @@ public class TipoTest extends TestCase {
 	}
 	
 	public void testEquals3() {
-		assertNotSame(new Tipo("pata1"),null);
+		assertFalse(new Tipo("pata1").equals(null));
 	}
 	
 	public void testEquals4() {
@@ -26,7 +26,7 @@ public class TipoTest extends TestCase {
 	}		
 	
 	public void testEquals6() {
-		assertNotSame(new Tipo(null),new Tipo("pata1"));
+		assertFalse(new Tipo(null).equals(new Tipo("pata1")));
 	}	
 	
 	public void testEquals7() {
@@ -35,6 +35,10 @@ public class TipoTest extends TestCase {
 	
 	public void testEquals8() {
 		assertTrue(new Tipo(null).equals(new Tipo(null)));
+	}	
+	
+	public void testEquals9() {
+		assertFalse(new Tipo("pata1").equals(new Object()));
 	}	
 	
 	public void testHashCode() {

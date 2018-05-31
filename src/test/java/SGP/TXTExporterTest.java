@@ -18,6 +18,7 @@ public class TXTExporterTest extends TestCase {
 	}
 
 	public void testGetExtension() {
+		te = new TXTExporter("salida","");
 		assertEquals("txt",te.getExtension());
 	}
 
@@ -36,9 +37,14 @@ public class TXTExporterTest extends TestCase {
 		assertEquals("C:\\",te.getPath());
 	}
 
+	public void testTXT() {
+		TXTExporter aux = new TXTExporter();
+		assertTrue(aux.getSalida()==null);
+	}
+	
 	public GestorStockPiezas cargarStockTest() {
 		GestorStockPiezas gsp = new GestorStockPiezas();
-		gsp.agregarItem(new Pieza("muslo 25/05/18"));
+		gsp.agregarItem(new Pieza("muslo 25/05/18 l"));
 		return gsp;
 	}
 }

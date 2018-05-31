@@ -1,4 +1,5 @@
 package SGP;
+import SGP.Exportador.TXTExporter;
 import SGP.Exportador.XLSExporter;
 import SGP.Stock.GestorStockPiezas;
 import SGP.Stock.Pieza;
@@ -31,9 +32,14 @@ public class XLSExporterTest extends TestCase {
 		assertTrue(xe.getSalida().contains("muslo"));
 	}
 	
+	public void testXLS() {
+		XLSExporter aux = new XLSExporter();
+		assertTrue(aux.getSalida()==null);
+	}
+	
 	public GestorStockPiezas cargarStockTest() {
 		GestorStockPiezas gsp = new GestorStockPiezas();
-		gsp.agregarItem(new Pieza("muslo 25/05/18"));
+		gsp.agregarItem(new Pieza("muslo 25/05/18 l"));
 		return gsp;
 	}
 }

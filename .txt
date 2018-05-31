@@ -1,0 +1,5 @@
+==================SISTEMA DE GESTION DE PIEZAS==================
+Fecha: 29/05/2018
+Hora: 18:50
+======================INVENTARIO======================
+Pieza: muslo    |     Fecha de vencimiento: 05/01/2020

@@ -15,7 +15,7 @@ public class PiezaTest extends TestCase {
 	
 	public void testHashCode1() {
 		Pieza a = new Pieza(new Tipo("muslo"),new Date(118,2,14));
-		assertNotSame(a,p);
+		assertFalse(a.equals(p));
 	}
 	
 	public void testHashCode2() {
@@ -54,7 +54,7 @@ public class PiezaTest extends TestCase {
 	
 	public void testEquals2() {
 		Pieza b = new Pieza(new Tipo("vacio"),null);
-		assertNotSame(b,p);
+		assertFalse(b.equals(p));
 	}
 	
 	public void testEquals3() {
@@ -64,7 +64,7 @@ public class PiezaTest extends TestCase {
 	
 	public void testEquals4() {
 		Pieza c = new Pieza(new Tipo(null),new Date());
-		assertNotSame(c,p);
+		assertFalse(c.equals(p));
 	}
 	
 	public void testEquals5() {
@@ -79,17 +79,21 @@ public class PiezaTest extends TestCase {
 		assertFalse((new Pieza(null,null).equals(p)));
 	}	
 	
+	public void testEquals8() {
+		assertFalse(p.equals(new Object()));
+	}	
+	
 	public void testToString() {
 		assertEquals("muslo",p.toString());
 	}
 	
 	public void testParser1() {
-		Pieza p = new Pieza("pata1 05/25/09");
+		Pieza p = new Pieza("pata1 05/25/09 l");
 		assertEquals("pata1",p.getTipoPieza().toString());
 	}
 	
 	public void testParser2() {
-		Pieza p = new Pieza("pata1 05/25/09");
+		Pieza p = new Pieza("pata1 05/25/09 l");
 		assertEquals(new Date("05/25/09"),p.getFechaVencimiento());
 	}
 }

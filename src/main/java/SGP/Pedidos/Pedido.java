@@ -13,7 +13,6 @@ public abstract class Pedido<T>{
 		this._items.put(item, valor);
 	}
 	
-	
 	public void quitarItem(T item)
 	{
 		this._items.remove(item);
@@ -27,7 +26,6 @@ public abstract class Pedido<T>{
 	public Local getLocal() {
 		return this._Local;
 	}
-	
 
 	public void setLocal(Local l) {
 		this._Local=l;

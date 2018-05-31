@@ -26,13 +26,12 @@ public class ControlProduccionTest extends TestCase {
 		Tipo pata3=new Tipo("Pieza 3");
 		
 		this._gs=new GestorStockPiezas();
-		this._gs.agregarItem(new Pieza(pata1,new Date()));
-		this._gs.agregarItem(new Pieza(pata2,new Date()));
-		this._gs.agregarItem(new Pieza(pata2,new Date()));
-		this._gs.agregarItem(new Pieza(pata1,new Date()));
-		this._gs.agregarItem(new Pieza(pata1,new Date()));
-		this._gs.agregarItem(new Pieza(pata3,new Date()));
-				
+		this._gs.agregarItem(new Pieza("pata1 31/05/2018 l"));
+		this._gs.agregarItem(new Pieza("pata2 31/05/2018 l"));
+		this._gs.agregarItem(new Pieza("pata2 31/05/2018 l"));
+		this._gs.agregarItem(new Pieza("pata1 31/05/2018 l"));
+		this._gs.agregarItem(new Pieza("pata1 31/05/2018 c"));
+		this._gs.agregarItem(new Pieza("pata3 31/05/2018 c"));
 				
 		this._gp=new GestorPedidosCarne();
 		
@@ -42,7 +41,7 @@ public class ControlProduccionTest extends TestCase {
 		
 		PedidoCarne p2=new PedidoCarne();
 		p2.agregarItem(pata1, 1.0);
-		p2.agregarItem(pata2, 5.0);		
+		p2.agregarItem(pata2, 3.0);		
 
 		PedidoCarne p3=new PedidoCarne();
 		p3.agregarItem(pata1, 1.0);
@@ -59,7 +58,6 @@ public class ControlProduccionTest extends TestCase {
 	
 	public void testCalcularFaena() {
 		Double a=_cp.calcularFaena(_gp, _gs);
-		
 		assertEquals(a,3.0);
 		
 	}

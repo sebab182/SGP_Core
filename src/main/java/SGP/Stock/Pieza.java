@@ -4,44 +4,66 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import SGP.Vencimiento.Almacenamiento;
+import SGP.Vencimiento.CalculadorVencimiento;
+import SGP.Vencimiento.VidaCorta;
+import SGP.Vencimiento.VidaLarga;
+import SGP.Vencimiento.VidaUtil;
+
 public class Pieza implements Serializable {
 	
 private static final long serialVersionUID = 1L;
 private	Tipo tipoPieza;
+private Date fechaElaboracion;
 private Date fechaVencimiento;
+private VidaUtil vidaUtil;
 
-	public Pieza(Tipo tipo, Date fechaVencimiento) {
-		this.tipoPieza=tipo;
-		this.fechaVencimiento= fechaVencimiento;
-	}
+
+public Pieza(Tipo tipo, Date fechaElaboracion, Date fechaVencimiento, VidaUtil vidaUtil) {
+	this.tipoPieza=tipo;
+	this.fechaElaboracion = fechaElaboracion;
+	this.fechaVencimiento= fechaElaboracion; //Se inicia con la misma fecha de elaboracion luego se calcula
+	this.vidaUtil= vidaUtil;
+}
 	
+public Pieza(Tipo tipo, Date fechaElaboracion) {
+	this.tipoPieza=tipo;
+	this.fechaElaboracion = fechaElaboracion;
+	this.fechaVencimiento= fechaElaboracion; //Se inicia con la misma fecha de elaboracion luego se calcula
+	this.vidaUtil= new VidaLarga();
+}
+
 	//Parser de una pieza a partir de un String
 	public Pieza(String pieza) {
 		//tipoPieza - fechaPieza
-		this(parseTipo(pieza),parseDate(pieza));
+		this(parseTipo(pieza),parseElaboracion(pieza),parserVencimiento(pieza),parserVidaUtil(pieza));
 	}
 	
+	private static VidaUtil parserVidaUtil(String v) {
+		String[] aux = v.split(" ");
+		String vidaUtil = aux[2];
+		if(vidaUtil.contains("l")) {
+			return new VidaLarga();
+		}
+		else {
+			return new VidaCorta();
+		}
+	}
+
+	private static Date parserVencimiento(String pieza) {
+		CalculadorVencimiento c = new CalculadorVencimiento();
+		return null;
+	}
+
 	private static Tipo parseTipo(String t) {
 		String[] aux = t.split(" ");
 		return new Tipo(aux[0]);
 	}
 	
 	@SuppressWarnings("deprecation")
-	private static Date parseDate(String d) {
+	private static Date parseElaboracion(String d) {
 		String[] aux = d.split(" ");
-		
-
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-
-        Date ret;
-        try {
-			ret = formatter.parse(aux[1]);
-		} catch (ParseException e) {
-			ret = null;
-			e.printStackTrace();
-		}
-		return ret;
-		//return new Date(Date.parse(aux[1]));
+		return new Date(Date.parse(aux[1]));
 	}
 
 	public Tipo getTipoPieza() {
@@ -60,7 +82,14 @@ private Date fechaVencimiento;
 		result = prime * result + ((tipoPieza == null) ? 0 : tipoPieza.hashCode());
 		return result;
 	}
+	
+	public Date getFechaElaboracion() {
+		return fechaElaboracion;
+	}
 
+	public void setFechaVencimiento(Date fechaVencimiento) {
+		this.fechaVencimiento = fechaVencimiento;
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -87,5 +116,9 @@ private Date fechaVencimiento;
 	@Override
 	public String toString() {
 		return this.tipoPieza.getNombreTipo();
+	}
+
+	public VidaUtil getVidaUtil() {
+		return vidaUtil;
 	}
 }
