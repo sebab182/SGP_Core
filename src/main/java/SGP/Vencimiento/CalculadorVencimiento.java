@@ -8,13 +8,15 @@ import SGP.Stock.Pieza;
 public class CalculadorVencimiento {
 
 	public void calcularFechaVencimiento(Pieza p, Almacenamiento a) {
-		VidaUtil vu = p.getVidaUtil();
 		int meses=0;
-		if(p.getVidaUtil().getClass().isInstance(VidaLarga.class)) {
-			meses = a.obtenerValorVencimiento((VidaLarga) vu);
+		VidaUtil vidaUtil = p.getVidaUtil();
+		if(vidaUtil instanceof VidaLarga) {
+			System.out.println("Vida larga");
+			meses = a.obtenerValorVencimiento((VidaLarga) vidaUtil);
 		}
-		else {
-			meses = a.obtenerValorVencimiento((VidaCorta)vu);
+		if(vidaUtil instanceof VidaCorta) {
+			System.out.println("Vida corta");
+			meses = a.obtenerValorVencimiento((VidaCorta) vidaUtil);
 		}
 		
 	    Calendar calendar = Calendar.getInstance();
@@ -22,6 +24,5 @@ public class CalculadorVencimiento {
         calendar.add(Calendar.MONTH, meses);  //Agregamos la cantidad de meses recibidos del almacenamiento y el tipo de vida util
 	    Date fechaVencimiento = calendar.getTime(); //Obtenemos la fecha de Vencimiento
 	    p.setFechaVencimiento(fechaVencimiento); //Seteo la fecha de vencimiento
-	    System.out.println(fechaVencimiento);
 	}
 }
