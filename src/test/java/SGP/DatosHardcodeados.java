@@ -21,14 +21,25 @@ public class DatosHardcodeados implements AbstractFactory {
 		List<Pieza>piezas= new LinkedList<Pieza>();
 		//date(año= 1900+años, mes<0 a 11>, día)
 		piezas.add(new Pieza("pata1 25/05/18"));
-		piezas.add(new Pieza(new Tipo("pata1"),new Date(118,10,23)));
-		piezas.add(new Pieza(new Tipo("pata1"),new Date(108,10,23)));
-		piezas.add(new Pieza(new Tipo("pata2"),new Date(118,11,12)));
-		piezas.add(new Pieza(new Tipo("pata3"),new Date(118,1,21)));
-		piezas.add(new Pieza(new Tipo("pata4"),new Date(118,10,27)));
-		piezas.add(new Pieza(new Tipo("muslo"),new Date(118,3,21)));
-		piezas.add(new Pieza(new Tipo("vacio"),new Date(118,9,21)));
-		piezas.add(new Pieza(new Tipo("falda"),new Date(118,10,23)));
+		piezas.add(new Pieza("pata1 12/07/20 l"));
+		piezas.add(new Pieza("pata1 07/09/20 l"));
+		piezas.add(new Pieza("pata1 08/08/20 l"));
+		piezas.add(new Pieza("pata1 09/05/20 c"));
+		piezas.add(new Pieza("pata1 09/25/20 c"));
+		
+		piezas.add(new Pieza("pata2 08/05/20 l"));
+		piezas.add(new Pieza("pata2 11/15/20 l"));
+		piezas.add(new Pieza("pata2 10/15/20 c"));
+		piezas.add(new Pieza("pata2 12/05/20 l"));
+		piezas.add(new Pieza("pata2 11/05/20 c"));
+				
+		piezas.add(new Pieza("muslo 08/05/20 c"));
+		piezas.add(new Pieza("muslo 09/05/20 c"));
+		piezas.add(new Pieza("muslo 01/25/20 c"));
+		
+		piezas.add(new Pieza("vacio 04/18/20 l"));
+		
+		piezas.add(new Pieza("falda 07/25/20 c"));
 		return piezas;
 	}
 

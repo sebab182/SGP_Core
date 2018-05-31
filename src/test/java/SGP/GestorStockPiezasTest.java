@@ -19,8 +19,8 @@ public class GestorStockPiezasTest extends TestCase {
 	
 	public void testVaciarStock() {
 		this._gs=new GestorStockPiezas();
-		this._gs.agregarItem(new Pieza(new Tipo("t1"),new Date()));
-		this._gs.agregarItem(new Pieza(new Tipo("t2"),new Date()));
+		this._gs.agregarItem(new Pieza("t1 22/08/18 l"));
+		this._gs.agregarItem(new Pieza("t2 22/08/18 l"));
 
 		this._gs.vaciarStock();
 		
@@ -43,15 +43,15 @@ public class GestorStockPiezasTest extends TestCase {
 
 	public void testAgregarItemPieza() {
 		this._gs=new GestorStockPiezas();
-		this._gs.agregarItem(new Pieza(new Tipo("t1"),new Date()));
+		this._gs.agregarItem(new Pieza("t1 22/08/18 l"));
 
 		assertEquals(this._gs.getStock().size(),1);
 	}
 
 	public void testQuitarItemPieza() {
 		this._gs=new GestorStockPiezas();
-		Pieza p1 =new Pieza(new Tipo("t1"),new Date());
-		Pieza p2 =new Pieza(new Tipo("t3"),new Date());
+		Pieza p1 =new Pieza("t1 22/08/18 l");
+		Pieza p2 =new Pieza("t3 22/08/18 l");
 		this._gs.agregarItem(p1);
 		this._gs.agregarItem(p2);
 		
