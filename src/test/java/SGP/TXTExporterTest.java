@@ -18,6 +18,7 @@ public class TXTExporterTest extends TestCase {
 	}
 
 	public void testGetExtension() {
+		te = new TXTExporter("salida","");
 		assertEquals("txt",te.getExtension());
 	}
 
