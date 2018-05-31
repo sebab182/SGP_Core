@@ -17,25 +17,30 @@ public class DistribuidorTest extends TestCase {
 	private Distribuidor d;
 	
 	public DistribuidorTest() {
-		d = new Distribuidor();
+		
 	}
 
 	public void testResolverPedidos() {
+		d = new Distribuidor();
 		d.resolverPedidos(cargarPedidosTestPedidos(), cargarStockTestPedidos());
-		assertEquals(3,d.getPedidosAceptados().size());
+		assertEquals(1,d.getPedidosAceptados().size());
+		assertEquals(1,d.getPedidosRechazados().size());
 	}
 
 	public void testResolverPedidosNivelAprobacion() {
+		d = new Distribuidor();
 		d.resolverPedidosNivelAprobacion(cargarPedidosTestNiveles(), cargarStockTestNiveles());
 		assertEquals(1,d.getPedidosAceptados().size());
 	}
 
 	public void testGetPedidosRechazados() {
+		d = new Distribuidor();
 		d.resolverPedidosNivelAprobacion(cargarPedidosTestNiveles(), cargarStockTestNiveles());
 		assertEquals(2,d.getPedidosRechazados().size());
 	}
 
 	public void testGetPedidosAceptados() {
+		d = new Distribuidor();
 		d.resolverPedidosNivelAprobacion(cargarPedidosTestNiveles(), cargarStockTestNiveles());
 		assertEquals(1,d.getPedidosAceptados().size());
 	}
@@ -43,20 +48,17 @@ public class DistribuidorTest extends TestCase {
 	private GestorStockPiezas cargarStockTestPedidos() {
 		GestorStockPiezas gsp = new GestorStockPiezas();
 		List<Pieza>piezas= new LinkedList<Pieza>();
-		piezas.add(new Pieza("vacio 25/09/18 l"));
-		piezas.add(new Pieza("falda 15/09/18 l"));
 		piezas.add(new Pieza("pata1 12/09/18 l"));
-		piezas.add(new Pieza("pata3 12/02/19 l"));
-		piezas.add(new Pieza("pata1 22/09/18 l"));
-		piezas.add(new Pieza("pata1 25/09/18 l"));
-		piezas.add(new Pieza("pata2 11/02/19 l"));
-		piezas.add(new Pieza("pata3 03/02/19 l"));
-		piezas.add(new Pieza("muslo 25/05/18 l"));
-		piezas.add(new Pieza("falda 15/09/18 l"));
-		piezas.add(new Pieza("pata1 26/09/18 l"));
-		piezas.add(new Pieza("pata1 28/09/18 l"));
-		piezas.add(new Pieza("pata1 18/09/18 l"));
-		piezas.add(new Pieza("vacio 18/09/18 l"));
+		piezas.add(new Pieza("pata1 10/09/18 l"));
+		piezas.add(new Pieza("pata1 09/09/18 l"));
+		
+		piezas.add(new Pieza("muslo 08/06/18 l"));
+		piezas.add(new Pieza("muslo 07/07/18 l"));
+		piezas.add(new Pieza("muslo 06/08/18 l"));
+		piezas.add(new Pieza("muslo 05/09/18 l"));
+		
+		piezas.add(new Pieza("vacio 12/09/18 l"));
+		piezas.add(new Pieza("vacio 12/10/18 l"));
 		gsp.agregarItems(piezas);
 		return gsp;
 	}
@@ -65,51 +67,45 @@ public class DistribuidorTest extends TestCase {
 		GestorPedidosCarne gpc = new GestorPedidosCarne();
 		
 		Pedido<Tipo> a = new PedidoCarne();
-		a.agregarItem(new Tipo("muslo"), 1.0);
+		a.agregarItem(new Tipo("muslo"), 3.0);
 		a.agregarItem(new Tipo("pata1"), 2.0);
-		a.agregarItem(new Tipo("falda"), 1.0);
+		a.agregarItem(new Tipo("vacio"), 2.0);
 		gpc.agregarPedido(a);
 			
 		Pedido<Tipo> b = new PedidoCarne();
-		b.agregarItem(new Tipo("vacio"), 1.0);
-		b.agregarItem(new Tipo("falda"), 1.0);
-		b.agregarItem(new Tipo("pata1"), 1.0);
-		b.agregarItem(new Tipo("pata3"), 1.0);			
+		b.agregarItem(new Tipo("pata1"), 3.0);
+		b.agregarItem(new Tipo("muslo"), 2.0);			
 		gpc.agregarPedido(b);
 
-		Pedido<Tipo> c = new PedidoCarne();
-		c.agregarItem(new Tipo("pata1"), 2.0);
-		c.agregarItem(new Tipo("pata2"), 1.0);
-		c.agregarItem(new Tipo("pata3"), 1.0);			
-		gpc.agregarPedido(c);
 		return gpc.get_pedidos();
 	}
 
 	public GestorStockPiezas cargarStockTestNiveles() {
 		GestorStockPiezas gsp = new GestorStockPiezas();
-		gsp.agregarItem(new Pieza("muslo 25/05/18 l"));
+		gsp.agregarItem(new Pieza("vacio 25/05/18 l"));
 		return gsp;
 	}
 	
 	public HashSet<Pedido<Tipo>> cargarPedidosTestNiveles() {
 		GestorPedidosCarne gpc = new GestorPedidosCarne();
 		Pedido<Tipo> a = new PedidoCarne(100);
-		a.agregarItem(new Tipo("muslo"), 1.0);
 		a.agregarItem(new Tipo("pata1"), 1.0);
+		a.agregarItem(new Tipo("vacio"), 1.0);
 		a.agregarItem(new Tipo("falda"), 1.0);
 		gpc.agregarPedido(a);
 		
-		Pedido<Tipo> a1 = new PedidoCarne(50);
-		a1.agregarItem(new Tipo("muslo"), 1.0);
-		a1.agregarItem(new Tipo("pata1"), 1.0);
-		a1.agregarItem(new Tipo("falda"), 1.0);
-		gpc.agregarPedido(a1);		
+		Pedido<Tipo> b = new PedidoCarne(50);
+		b.agregarItem(new Tipo("pata1"), 1.0);
+		b.agregarItem(new Tipo("vacio"), 1.0);
+		b.agregarItem(new Tipo("falda"), 1.0);
+		gpc.agregarPedido(b);		
 		
-		Pedido<Tipo> a2 = new PedidoCarne(30);
-		a2.agregarItem(new Tipo("muslo"), 1.0);
-		a2.agregarItem(new Tipo("pata1"), 1.0);
-		a2.agregarItem(new Tipo("falda"), 1.0);
-		gpc.agregarPedido(a2);
+		Pedido<Tipo> c = new PedidoCarne(30);
+		c.agregarItem(new Tipo("pata1"), 1.0);
+		c.agregarItem(new Tipo("vacio"), 1.0);
+		c.agregarItem(new Tipo("muslo"), 1.0);
+
+		gpc.agregarPedido(c);
 		return gpc.get_pedidos();
 	}
 

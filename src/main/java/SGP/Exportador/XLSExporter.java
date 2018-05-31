@@ -64,6 +64,10 @@ public class XLSExporter implements Exporter {
 	public String getNombre() {
 		return nombreArchivo;
 	}
+	
+	public String getExtension() {
+		return extension;
+	}
 
 	public String getPath() {
 		return path;

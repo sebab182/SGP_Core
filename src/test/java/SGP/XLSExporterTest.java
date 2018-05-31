@@ -16,6 +16,11 @@ public class XLSExporterTest extends TestCase {
 		xe.generarInforme(cargarStockTest());
 		assertTrue(!xe.getSalida().isEmpty());
 	}
+	
+	public void testGetExtension() {
+		xe = new XLSExporter("salida","");
+		assertEquals("xls",xe.getExtension());
+	}
 
 	public void testSetNombre() {
 		xe.setNombre("UNGS");
