@@ -26,6 +26,13 @@ public Pieza(Tipo tipo, Date fechaElaboracion, Date fechaVencimiento, VidaUtil v
 	this.vidaUtil= vidaUtil;
 }
 	
+public Pieza(Tipo tipo, Date fechaElaboracion) {
+	this.tipoPieza=tipo;
+	this.fechaElaboracion = fechaElaboracion;
+	this.fechaVencimiento= fechaElaboracion; //Se inicia con la misma fecha de elaboracion luego se calcula
+	this.vidaUtil= new VidaLarga();
+}
+
 	//Parser de una pieza a partir de un String
 	public Pieza(String pieza) {
 		//tipoPieza - fechaPieza

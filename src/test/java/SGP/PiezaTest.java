@@ -84,12 +84,12 @@ public class PiezaTest extends TestCase {
 	}
 	
 	public void testParser1() {
-		Pieza p = new Pieza("pata1 05/25/09");
+		Pieza p = new Pieza("pata1 05/25/09 l");
 		assertEquals("pata1",p.getTipoPieza().toString());
 	}
 	
 	public void testParser2() {
-		Pieza p = new Pieza("pata1 05/25/09");
+		Pieza p = new Pieza("pata1 05/25/09 l");
 		assertEquals(new Date("05/25/09"),p.getFechaVencimiento());
 	}
 }
