@@ -34,7 +34,7 @@ public class TXTExporter implements Exporter {
 		salida = salida + "\nHora: "+hora.format(new Date());
 		salida = salida + "\n======================INVENTARIO======================";
 		for(Pieza p: (List<Pieza>)gs.getStock()) {
-			salida = salida + "\nPieza: "+p.toString()+ "    |     Fecha de vencimiento: "+ fecha.format(p.getFechaVencimiento());
+			salida = salida + "\nPieza: "+p.toString()+ "    |     Fecha de elaboración: "+ fecha.format(p.getFechaElaboracion()) + "    |     Fecha de vencimiento: "+ fecha.format(p.getFechaVencimiento());  
 		}
 			FileWriter fw;
 			try {

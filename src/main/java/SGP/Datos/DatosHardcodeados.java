@@ -10,6 +10,9 @@ import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
 import SGP.Stock.Pieza;
 import SGP.Stock.Tipo;
+import SGP.Vencimiento.CalculadorVencimiento;
+import SGP.Vencimiento.Freezer;
+import SGP.Vencimiento.Heladera;
 
 public class DatosHardcodeados implements AbstractFactory {
 //TODO: No pudimos cargar la clase datos hardcodeados que está en el paquete Test, desde el paquete Main!
@@ -18,9 +21,47 @@ public class DatosHardcodeados implements AbstractFactory {
 
 	@SuppressWarnings("deprecation")
 	public List<Pieza> cargarPiezas() {
+CalculadorVencimiento v = new CalculadorVencimiento();
+		
+		List<Pieza>heladera= new LinkedList<Pieza>();
+		heladera.add(new Pieza("pata1 25/05/18 l"));
+		heladera.add(new Pieza("pata1 12/07/20 l"));
+		heladera.add(new Pieza("pata1 07/09/20 l"));
+		heladera.add(new Pieza("pata1 08/08/20 l"));
+		heladera.add(new Pieza("pata1 09/05/20 c"));
+		heladera.add(new Pieza("pata1 09/25/20 c"));
+		
+		for(Pieza p:heladera) {
+			v.calcularFechaVencimiento(p, new Heladera());
+		}
+		
+		List<Pieza>freezer= new LinkedList<Pieza>();
+		freezer.add(new Pieza("pata2 08/05/20 l"));
+		freezer.add(new Pieza("pata2 11/15/20 l"));
+		freezer.add(new Pieza("pata2 10/15/20 c"));
+		freezer.add(new Pieza("pata2 12/05/20 l"));
+		freezer.add(new Pieza("pata2 11/05/20 c"));
+				
+		freezer.add(new Pieza("muslo 08/05/20 c"));
+		freezer.add(new Pieza("muslo 09/05/20 c"));
+		freezer.add(new Pieza("muslo 01/25/20 c"));
+		
+		freezer.add(new Pieza("vacio 04/18/20 l"));
+		
+		freezer.add(new Pieza("falda 07/25/20 c"));
+		
+		for(Pieza p:freezer) {
+			v.calcularFechaVencimiento(p, new Freezer());
+		}
+		
 		List<Pieza>piezas= new LinkedList<Pieza>();
+		piezas.addAll(heladera);
+		piezas.addAll(freezer);
+		return piezas;
+
 		//date(año= 1900+años, mes<0 a 11>, día)
-		piezas.add(new Pieza("pata1 12/07/20 l"));
+		
+		/*piezas.add(new Pieza("pata1 12/07/20 l"));
 		piezas.add(new Pieza("pata1 07/09/20 l"));
 		piezas.add(new Pieza("pata1 08/08/20 l"));
 		piezas.add(new Pieza("pata1 09/05/20 c"));
@@ -39,7 +80,7 @@ public class DatosHardcodeados implements AbstractFactory {
 		piezas.add(new Pieza("vacio 04/18/20 l"));
 		
 		piezas.add(new Pieza("falda 07/25/20 c"));
-		return piezas;
+		return piezas;*/
 	}
 
 	public List<Pedido<Tipo>> cargarPedidos() {
