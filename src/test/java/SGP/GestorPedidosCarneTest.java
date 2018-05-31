@@ -1,9 +1,10 @@
 package SGP;
 
 import java.util.HashMap;
-import java.util.Map.Entry;
-
+import java.util.LinkedList;
+import java.util.List;
 import SGP.Pedidos.GestorPedidosCarne;
+import SGP.Pedidos.Pedido;
 import SGP.Pedidos.PedidoCarne;
 import SGP.Stock.Tipo;
 import junit.framework.TestCase;
@@ -83,7 +84,6 @@ public class GestorPedidosCarneTest extends TestCase {
 		HashMap<Tipo, Double> totales=this._gp.totalPorPieza();
 		
 		Double total1=totales.get(pata1);
-		
 		assertEquals(total1,4.0);
 	}
 
@@ -96,5 +96,25 @@ public class GestorPedidosCarneTest extends TestCase {
 
 		assertTrue(this._gp.totalPedidos()==4);
 	}
+	
+	public void testAgregarPedidos() {
+		Pedido<Tipo> a = new PedidoCarne();
+		a.agregarItem(new Tipo("pata1"), 2.0);
+		Pedido<Tipo> b = new PedidoCarne();
+		b.agregarItem(new Tipo("pata2"), 3.0);
+		List<Pedido<Tipo>> p = new LinkedList<Pedido<Tipo>>();
+		p.add(a);
+		p.add(b);
+		this._gp=new GestorPedidosCarne();
+		this._gp.agregarPedidos(p);
+		assertTrue(this._gp.get_pedidos().size()==2);
+	}
 
+	public void test() {
+		Pedido<Tipo> a = new PedidoCarne();
+		a.agregarItem(new Tipo("pata1"), 2.0);
+		this._gp=new GestorPedidosCarne();
+		this._gp.agregarPedido(a);
+		assertTrue(this._gp.toString().contains("pata1"));
+	}
 }
