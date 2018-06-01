@@ -11,14 +11,11 @@ public class CalculadorVencimiento {
 		int meses=0;
 		VidaUtil vidaUtil = p.getVidaUtil();
 		if(vidaUtil instanceof VidaLarga) {
-			System.out.println("Vida larga");
 			meses = a.obtenerValorVencimiento((VidaLarga) vidaUtil);
 		}
 		if(vidaUtil instanceof VidaCorta) {
-			System.out.println("Vida corta");
 			meses = a.obtenerValorVencimiento((VidaCorta) vidaUtil);
 		}
-		
 	    Calendar calendar = Calendar.getInstance();
 	    calendar.setTime(p.getFechaElaboracion()); //Lo configuramos con la fecha de elaboracion
         calendar.add(Calendar.MONTH, meses);  //Agregamos la cantidad de meses recibidos del almacenamiento y el tipo de vida util

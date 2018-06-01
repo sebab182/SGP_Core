@@ -27,10 +27,10 @@ public class CSVExporter implements Exporter {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void generarInforme(GestorStock gs) {
-		salida="Pieza,FechaVencimiento";
+		salida="Pieza,FechaElaboración,FechaVencimiento";
 		SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 		for(Pieza p: (List<Pieza>)gs.getStock()) {
-			salida = salida+"\n" + p.toString()+ ","+ fecha.format(p.getFechaVencimiento());
+			salida = salida+"\n" + p.toString()+ ","+fecha.format(p.getFechaElaboracion())+"," + fecha.format(p.getFechaVencimiento());
 		}
 			FileWriter fw;
 			try {

@@ -32,9 +32,9 @@ public class XLSExporter implements Exporter {
 		SimpleDateFormat fecha = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 		salida = salida+"\nFecha: "+"\t"+ fecha.format(new Date());
 		salida = salida+"\n";
-		salida=salida+"\nPieza\tFechaVencimiento";
+		salida=salida+"\nPieza\tFechaElaboración\tFechaVencimiento";
 		for(Pieza p: (List<Pieza>)gs.getStock()) {
-			salida = salida+"\n" + p.toString()+ "\t"+ fecha.format(p.getFechaVencimiento());
+			salida = salida+"\n" + p.toString()+ "\t"+ fecha.format(p.getFechaElaboracion())+ "\t"+ fecha.format(p.getFechaVencimiento());
 		}
 			FileWriter fw;
 			try {
@@ -63,6 +63,10 @@ public class XLSExporter implements Exporter {
 
 	public String getNombre() {
 		return nombreArchivo;
+	}
+	
+	public String getExtension() {
+		return extension;
 	}
 
 	public String getPath() {

@@ -74,6 +74,10 @@ public class AccountTest extends TestCase {
 		assertNotSame(new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45"),new Object());
 	}
 	
+	public void testEqualsObject8() {
+		assertFalse(new Account("test@test.com.ar","Test","PP2","smtp.gmail.com","45").equals(new Account(null,null,null,null,null)));
+	}
+	
 	public void testHashCode1() {
 		assertNotSame(24,new Account("test@test.com.ar","Test",null,"smtp.gmail.com","45").hashCode());
 	}

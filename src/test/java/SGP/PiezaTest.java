@@ -83,6 +83,12 @@ public class PiezaTest extends TestCase {
 		assertFalse(p.equals(new Object()));
 	}	
 	
+	public void testEquals9() {
+		Pieza a = new Pieza(null,new Date(118,1,21));
+		assertFalse(a.equals(p));
+	}	
+	
+	
 	public void testToString() {
 		assertEquals("muslo",p.toString());
 	}
