@@ -2,7 +2,6 @@ package SGP;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import SGP.Datos.AbstractFactory;
 import SGP.Datos.DataSource;
 import SGP.Pedidos.Pedido;

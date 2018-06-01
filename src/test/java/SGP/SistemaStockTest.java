@@ -1,5 +1,4 @@
 package SGP;
-
 import SGP.Stock.SistemaStockProxy;
 import junit.framework.TestCase;
 

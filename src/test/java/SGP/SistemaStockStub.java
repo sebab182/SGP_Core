@@ -2,7 +2,6 @@ package SGP;
 
 import java.util.HashSet;
 import java.util.List;
-
 import SGP.Datos.AbstractFactory;
 import SGP.Datos.DataSource;
 import SGP.Stock.Pieza;
