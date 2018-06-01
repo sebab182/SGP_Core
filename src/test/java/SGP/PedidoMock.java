@@ -11,12 +11,20 @@ public class PedidoMock extends Pedido<Tipo> {
 	private int _id;
 	private double _num_piezas;
 	
+	public PedidoMock(int id) {
+		this(id, 0.0, null);
+	}
+	
 	public PedidoMock(double num_piezas) {
 		this(0, num_piezas, null);
 	}
 	
 	public PedidoMock(Local local) {
 		this(0, 0.0, local);
+	}
+	
+	public PedidoMock(int id, double num_piezas) {
+		this(id, num_piezas, null);
 	}
 	
 	public PedidoMock(double num_piezas, Local local) {
@@ -32,6 +40,17 @@ public class PedidoMock extends Pedido<Tipo> {
 	@Override
 	public double getNumeroItems() {
 		return this._num_piezas;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		boolean ret = false;
+		if (o instanceof PedidoMock) {
+			PedidoMock p = (PedidoMock) o;
+			return this._id == p._id;
+		}
+		return ret;
+		
 	}
 
 }
