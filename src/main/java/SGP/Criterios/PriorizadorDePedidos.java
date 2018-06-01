@@ -38,7 +38,7 @@ public class PriorizadorDePedidos {
 				
 				for (List<Pedido<Tipo>> s: sublistas) {
 					if (Puntaje.hayEmpate(s, comparador.getPuntajes()))
-						priorizar(s, criterio.siguienteCriterio());
+						s = priorizar(s, criterio.siguienteCriterio());
 					for (Pedido<Tipo> p: s)
 						ret.add(p);
 				}

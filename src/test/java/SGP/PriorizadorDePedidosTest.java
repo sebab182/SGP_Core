@@ -1,7 +1,9 @@
 package SGP;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import SGP.Criterios.Criterio;
 import SGP.Criterios.CriterioClienteFavorito;
@@ -18,55 +20,31 @@ public class PriorizadorDePedidosTest extends TestCase {
 
 	public void testPriorizar() {
 
-		assertTrue(true);
-		/*
-		int local1 = 1;
-		int local2 = 2;
-		int local3 = 3;
+		Local l1 = new Local("l1", "sss");
+		Local l2 = new Local("l2", "sss");
 		
-		List<Integer> favoritos = new LinkedList<Integer>();
-
-		favoritos.add(local3);
+		Map<Local, Integer> favoritos = new  HashMap<Local, Integer>();
+		favoritos.put(l1, 1);
+		favoritos.put(l2, 2);
 		
-		Pedido<Tipo> p1 = new PedidoCarne();
-    	p1.setLocal(local1);
-    	p1.agregarItem(new Tipo("pata1"), 2.0);
-		p1.agregarItem(new Tipo("pata3"), 1.0);
-		p1.agregarItem(new Tipo("pata4"), 1.0);
-		p1.agregarItem(new Tipo("muslo"), 1.0);
-		p1.agregarItem(new Tipo("vacio"), 2.0);	
-		
-    	Pedido<Tipo> p2 = new PedidoCarne();
-    	p2.setLocal(local2);
-    	p2.agregarItem(new Tipo("pata3"), 1.0);
-		p2.agregarItem(new Tipo("pata4"), 1.0);
-		p2.agregarItem(new Tipo("muslo"), 1.0);
-		p2.agregarItem(new Tipo("vacio"), 3.0);
-		
-		Pedido<Tipo> p3 = new PedidoCarne();
-		p3.setLocal(local3);
-		p3.agregarItem(new Tipo("pata3"), 1.0);
-		
-		List<Pedido<Tipo>> pedidos = new LinkedList<Pedido<Tipo>>();
+		List <Pedido<Tipo>> pedidos = new LinkedList<Pedido<Tipo>>();
+		Pedido<Tipo> p1 = new PedidoMock(1, 1.0);
+		Pedido<Tipo> p2 = new PedidoMock(2, 2.0, l1);
+		Pedido<Tipo> p3 = new PedidoMock(3, 3.0);
+		Pedido<Tipo> p4 = new PedidoMock(4, 2.0, l2);
 		pedidos.add(p1);
 		pedidos.add(p2);
 		pedidos.add(p3);
+		pedidos.add(p4);
+		Criterio c1 = new CriterioMenosPiezas();
+		Criterio c2 = new CriterioClienteFavorito(favoritos);
+		c1.combinar(c2);
+		pedidos = PriorizadorDePedidos.priorizar(pedidos, c1);
 		
-    	List<Criterio> criterios = new LinkedList<Criterio>();
-    	criterios.add(new CriterioMenosPiezas(2));
-    	criterios.add(new CriterioClienteFavorito(favoritos));
-		Criterio c = new CriterioCompuesto(criterios);
-		
-		PriorizadorDePedidos pp = new PriorizadorDePedidos();
-		pp.priorizar(pedidos, c);
-		
-		List<Pedido<Tipo>> ordenados = pp.priorizar(pedidos, c);
-		
-
-		assertEquals(ordenados.get(0), p3);
-		assertEquals(ordenados.get(1), p2);
-		assertEquals(ordenados.get(2), p1);
-		*/
+		assertEquals(p1, pedidos.get(0));
+		assertEquals(p4, pedidos.get(1));
+		assertEquals(p2, pedidos.get(2));
+		assertEquals(p3, pedidos.get(3));
 	}
 	
 }

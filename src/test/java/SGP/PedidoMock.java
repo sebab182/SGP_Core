@@ -43,6 +43,11 @@ public class PedidoMock extends Pedido<Tipo> {
 	}
 	
 	@Override
+	public String toString() {
+		return Integer.toString(this._id);
+	}
+	
+	@Override
 	public boolean equals(Object o) {
 		boolean ret = false;
 		if (o instanceof PedidoMock) {
