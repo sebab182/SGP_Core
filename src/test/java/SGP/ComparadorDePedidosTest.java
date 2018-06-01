@@ -2,6 +2,7 @@ package SGP;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import SGP.Criterios.ComparadorDePedidos;
 import SGP.Criterios.Criterio;
@@ -12,6 +13,23 @@ import junit.framework.TestCase;
 
 public class ComparadorDePedidosTest extends TestCase {
 
+	public void testGetPuntajes() {
+		List <Pedido<Tipo>> pedidos = new LinkedList<Pedido<Tipo>>();
+		Pedido<Tipo> p1 = new PedidoMock(1, 1.0);
+		Pedido<Tipo> p2 = new PedidoMock(2, 2.0);
+		Pedido<Tipo> p3 = new PedidoMock(3, 1.0);
+		pedidos.add(p1);
+		pedidos.add(p2);
+		pedidos.add(p3);
+		Criterio c = new CriterioMenosPiezas();
+		ComparadorDePedidos cp= new ComparadorDePedidos(pedidos, c);
+		Map<Pedido<Tipo>, Integer> p = cp.getPuntajes();
+		
+		assertEquals(-1, p.get(p1).intValue());
+		assertEquals(-2, p.get(p2).intValue());
+		assertEquals(-1, p.get(p3).intValue());
+	}
+	
 	public void testCompare() {
 		List <Pedido<Tipo>> pedidos = new LinkedList<Pedido<Tipo>>();
 		Pedido<Tipo> p1 = new PedidoMock(1, 1.0);
