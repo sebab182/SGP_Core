@@ -11,14 +11,14 @@ import SGP.Stock.Tipo;
 
 public class Puntaje {
 	
-	static Map<Pedido<Tipo>, Integer> puntuar(List<Pedido<Tipo>> pedidos, Criterio criterio) {
+	public static Map<Pedido<Tipo>, Integer> puntuar(List<Pedido<Tipo>> pedidos, Criterio criterio) {
 		Map<Pedido<Tipo>, Integer> puntajes = new HashMap<Pedido<Tipo>, Integer>();
 		for (Pedido<Tipo> p: pedidos)
 			puntajes.put(p, criterio.puntuar(p));
 		return puntajes;
 	}
 	
-	static boolean hayEmpate(List<Pedido<Tipo>> pedidos, Map<Pedido<Tipo>, Integer> puntajes) {
+	public static boolean hayEmpate(List<Pedido<Tipo>> pedidos, Map<Pedido<Tipo>, Integer> puntajes) {
 		List<Integer> control = new LinkedList<Integer>();
 		
 		if (pedidos.size() > 1) {
@@ -33,7 +33,7 @@ public class Puntaje {
 		
 	}
 	
-	static List<List<Pedido<Tipo>>> sublistasDeEmpates(List<Pedido<Tipo>> pedidos, Map<Pedido<Tipo>, Integer> puntajes) {
+	public static List<List<Pedido<Tipo>>> sublistasDeEmpates(List<Pedido<Tipo>> pedidos, Map<Pedido<Tipo>, Integer> puntajes) {
 		
 		List<List<Pedido<Tipo>>> sublistas = new LinkedList<List<Pedido<Tipo>>>();
 		List<Integer> indexlist = new LinkedList<Integer>();
