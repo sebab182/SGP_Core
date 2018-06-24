@@ -65,18 +65,18 @@ public class DatosHardcodeados implements AbstractFactory {
 		Pedido<Tipo> a = new PedidoCarne();
 		Local l1 = new Local("Los Polvorines","lpolvorines@gmail.com");
 		a.setLocal(l1);
-		a.agregarItem(new Tipo("muslo"), 3.0);
-		a.agregarItem(new Tipo("pata1"), 5.0);
-		a.agregarItem(new Tipo("pata2"), 5.0);
+		a.agregarItem(new Tipo("muslo"), 3);
+		a.agregarItem(new Tipo("pata1"), 5);
+		a.agregarItem(new Tipo("pata2"), 5);
 		pedidos.add(a);
 		
 		Pedido<Tipo> b = new PedidoCarne();
 		Local l2 = new Local("Munro","lmunro@gmail.com");
 		b.setLocal(l2);
-		b.agregarItem(new Tipo("vacio"), 4.0);
-		b.agregarItem(new Tipo("muslo"), 7.0);
-		b.agregarItem(new Tipo("pata1"), 3.0);
-		b.agregarItem(new Tipo("pata2"), 4.0);
+		b.agregarItem(new Tipo("vacio"), 4);
+		b.agregarItem(new Tipo("muslo"), 7);
+		b.agregarItem(new Tipo("pata1"), 3);
+		b.agregarItem(new Tipo("pata2"), 4);
 		pedidos.add(b);		
 		return pedidos;
 	}

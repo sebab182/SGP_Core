@@ -48,14 +48,14 @@ public class GestorPedidosCarne implements IntGestorPedidos<Pedido<Tipo>> {
 		return ultimo;
 	}
 
-	public HashMap<Tipo, Double> totalPorPieza() {
+	public HashMap<Tipo, Integer> totalPorPieza() {
 		
-		HashMap<Tipo, Double> totales=new HashMap<Tipo, Double>();
+		HashMap<Tipo, Integer> totales= new HashMap<Tipo, Integer>();
 		
 		//Calculo el total por cada pieza en TODOS los pedidos
 		for(Pedido<Tipo> a:this._pedidos)
 		{
-			for(Entry<Tipo, Double> item: a._items.entrySet())
+			for(Entry<Tipo, Integer> item: a._items.entrySet())
 			{
 				
 				if(totales.containsKey(item.getKey()))

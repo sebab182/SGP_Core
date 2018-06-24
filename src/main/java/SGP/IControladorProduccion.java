@@ -9,6 +9,6 @@ import SGP.Stock.Pieza;
 public interface IControladorProduccion {
 
 	public List<Pieza> sobrantes();
-	public Double calcularFaena(GestorPedidosCarne pedidos, GestorStockPiezas stock);
+	public Integer calcularFaena(GestorPedidosCarne pedidos, GestorStockPiezas stock);
 	
 }

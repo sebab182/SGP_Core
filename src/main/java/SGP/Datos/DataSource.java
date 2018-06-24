@@ -16,12 +16,13 @@ public class DataSource {
 			BufferedReader in = new BufferedReader(new FileReader(path+"//"+nombreTXT)); //Leo el archivo
 			String source = in.readLine(); //Leo el tipo de factory a cargar
 			in.close(); //Cierro el archivo
-			if(source.equals("test")) {
+			factory = source;
+			/*if(source.equals("test")) {
 				factory = DatosHardcodeados.class.getName(); //Cargando datos hardcodeados
 			}
 			else {
 				factory = DatosSerializable.class.getName(); //Cargando datos serializados
-			}	
+			}*/	
 		} catch (IOException e) {
 			System.out.println("Se produjo el siguiente error: "+e.getMessage());
 		}

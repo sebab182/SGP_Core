@@ -5,17 +5,17 @@ import java.util.Map.Entry;
 
 public abstract class Pedido<T>{
 	Local _Local;	
-	Map<T, Double> _items;
+	Map<T, Integer> _items;
 	int _nivelAprobacion;
 	
 	public double getNumeroItems() {
 		double ret = 0;
-		for (Entry<T, Double> e: this._items.entrySet())
+		for (Entry<T, Integer> e: this._items.entrySet())
 			ret = ret + e.getValue();
 		return ret;
 	}
 	
-	public void agregarItem(T item, Double valor)
+	public void agregarItem(T item, Integer valor)
 	{
 		//TODO controlar
 		this._items.put(item, valor);
@@ -39,11 +39,11 @@ public abstract class Pedido<T>{
 		this._Local=l;
 	}	
 	
-	public Map<T, Double> get_items() {
+	public Map<T, Integer> get_items() {
 		return _items;
 	}
 
-	public void set_items(Map<T, Double> _items) {
+	public void set_items(Map<T, Integer> _items) {
 		this._items = _items;
 	}
 

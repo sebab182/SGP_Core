@@ -36,17 +36,17 @@ public class ControlProduccionTest extends TestCase {
 		this._gp=new GestorPedidosCarne();
 		
 		PedidoCarne p1=new PedidoCarne();
-		p1.agregarItem(pata1, 2.0);
-		p1.agregarItem(pata3, 1.0);
+		p1.agregarItem(pata1, 2);
+		p1.agregarItem(pata3, 1);
 		
 		PedidoCarne p2=new PedidoCarne();
-		p2.agregarItem(pata1, 1.0);
-		p2.agregarItem(pata2, 3.0);		
+		p2.agregarItem(pata1, 1);
+		p2.agregarItem(pata2, 3);		
 
 		PedidoCarne p3=new PedidoCarne();
-		p3.agregarItem(pata1, 1.0);
-		p3.agregarItem(pata2, 2.0);		
-		p3.agregarItem(pata3, 3.0);
+		p3.agregarItem(pata1, 1);
+		p3.agregarItem(pata2, 2);		
+		p3.agregarItem(pata3, 3);
 		
 		this._gp.agregarPedido(p1);
 		this._gp.agregarPedido(p2);
@@ -57,8 +57,8 @@ public class ControlProduccionTest extends TestCase {
 	}
 	
 	public void testCalcularFaena() {
-		Double a=_cp.calcularFaena(_gp, _gs);
-		assertEquals(a,3.0);
+		Integer a=_cp.calcularFaena(_gp, _gs);
+		assertEquals(a,new Integer(3));
 		
 	}
 

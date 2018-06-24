@@ -67,14 +67,14 @@ public class DistribuidorTest extends TestCase {
 		GestorPedidosCarne gpc = new GestorPedidosCarne();
 		
 		Pedido<Tipo> a = new PedidoCarne();
-		a.agregarItem(new Tipo("muslo"), 3.0);
-		a.agregarItem(new Tipo("pata1"), 2.0);
-		a.agregarItem(new Tipo("vacio"), 2.0);
+		a.agregarItem(new Tipo("muslo"), 3);
+		a.agregarItem(new Tipo("pata1"), 2);
+		a.agregarItem(new Tipo("vacio"), 2);
 		gpc.agregarPedido(a);
 			
 		Pedido<Tipo> b = new PedidoCarne();
-		b.agregarItem(new Tipo("pata1"), 3.0);
-		b.agregarItem(new Tipo("muslo"), 2.0);			
+		b.agregarItem(new Tipo("pata1"), 3);
+		b.agregarItem(new Tipo("muslo"), 2);			
 		gpc.agregarPedido(b);
 
 		return gpc.get_pedidos();
@@ -89,21 +89,21 @@ public class DistribuidorTest extends TestCase {
 	public HashSet<Pedido<Tipo>> cargarPedidosTestNiveles() {
 		GestorPedidosCarne gpc = new GestorPedidosCarne();
 		Pedido<Tipo> a = new PedidoCarne(100);
-		a.agregarItem(new Tipo("pata1"), 1.0);
-		a.agregarItem(new Tipo("vacio"), 1.0);
-		a.agregarItem(new Tipo("falda"), 1.0);
+		a.agregarItem(new Tipo("pata1"), 1);
+		a.agregarItem(new Tipo("vacio"), 1);
+		a.agregarItem(new Tipo("falda"), 1);
 		gpc.agregarPedido(a);
 		
 		Pedido<Tipo> b = new PedidoCarne(50);
-		b.agregarItem(new Tipo("pata1"), 1.0);
-		b.agregarItem(new Tipo("vacio"), 1.0);
-		b.agregarItem(new Tipo("falda"), 1.0);
+		b.agregarItem(new Tipo("pata1"), 1);
+		b.agregarItem(new Tipo("vacio"), 1);
+		b.agregarItem(new Tipo("falda"), 1);
 		gpc.agregarPedido(b);		
 		
 		Pedido<Tipo> c = new PedidoCarne(30);
-		c.agregarItem(new Tipo("pata1"), 1.0);
-		c.agregarItem(new Tipo("vacio"), 1.0);
-		c.agregarItem(new Tipo("muslo"), 1.0);
+		c.agregarItem(new Tipo("pata1"), 1);
+		c.agregarItem(new Tipo("vacio"), 1);
+		c.agregarItem(new Tipo("muslo"), 1);
 
 		gpc.agregarPedido(c);
 		return gpc.get_pedidos();

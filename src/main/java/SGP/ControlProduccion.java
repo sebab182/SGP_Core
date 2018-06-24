@@ -13,19 +13,19 @@ import SGP.Stock.Tipo;
 public class ControlProduccion implements IControladorProduccion {
 
 	@Override
-	public  Double calcularFaena(GestorPedidosCarne pedidos, GestorStockPiezas stock) {
-		Double faenar=0.0;
+	public  Integer calcularFaena(GestorPedidosCarne pedidos, GestorStockPiezas stock) {
+		Integer faenar=0;
 		
-		HashMap<Tipo, Double> totalPedido= pedidos.totalPorPieza();
-		HashMap<Tipo, Double> PedidoFaltante= new HashMap<Tipo, Double>();
+		HashMap<Tipo, Integer> totalPedido= pedidos.totalPorPieza();
+		HashMap<Tipo, Integer> PedidoFaltante= new HashMap<Tipo, Integer>();
 		
-		for(Entry<Tipo, Double> item: totalPedido.entrySet())
+		for(Entry<Tipo, Integer> item: totalPedido.entrySet())
 		{
-			Double saldo= reducirStock(item.getKey(), item.getValue(),stock);
+			Integer saldo= reducirStock(item.getKey(), item.getValue(),stock);
 			PedidoFaltante.put(item.getKey(), saldo);
 		}
 	
-		for(Entry<Tipo, Double> item: PedidoFaltante.entrySet())
+		for(Entry<Tipo, Integer> item: PedidoFaltante.entrySet())
 		{
 			if(item.getValue()>faenar)
 				faenar=item.getValue();
@@ -39,7 +39,7 @@ public class ControlProduccion implements IControladorProduccion {
 	}
 
 	
-	private Double reducirStock(Tipo tipo, Double cantidadPedida,  GestorStockPiezas stock)
+	private Integer reducirStock(Tipo tipo, Integer cantidadPedida,  GestorStockPiezas stock)
 	{
 		LinkedList<Pieza> quitarS = new LinkedList<Pieza>();
 		

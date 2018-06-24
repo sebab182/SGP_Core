@@ -13,34 +13,34 @@ public class PedidoCarneTest extends TestCase {
 	}
 	
 	public void testVaciarPedido() {
-		pc.agregarItem(new Tipo("muslo"), 3.0);
+		pc.agregarItem(new Tipo("muslo"), 3);
 		assertTrue(pc.get_items().containsKey(new Tipo("muslo")));
 		pc.vaciarPedido();
 		assertTrue(pc.get_items().isEmpty());
 	}
 
 	public void testAgregarItemTipoDouble() {
-		pc.agregarItem(new Tipo("muslo"), 3.0);
+		pc.agregarItem(new Tipo("muslo"), 3);
 		assertTrue(pc.get_items().containsKey(new Tipo("muslo")));
 	}
 
 	public void testQuitarItemTipo() {
-		pc.agregarItem(new Tipo("muslo"), 3.0);
+		pc.agregarItem(new Tipo("muslo"), 3);
 		assertTrue(pc.get_items().containsKey(new Tipo("muslo")));
 		pc.quitarItem(new Tipo("muslo"));
 		assertTrue(pc.get_items().isEmpty());
 	}
 
 	public void testItemsPedidos() {
-		pc.agregarItem(new Tipo("muslo"), 3.0);
-		pc.agregarItem(new Tipo("vacio"), 3.0);
+		pc.agregarItem(new Tipo("muslo"), 3);
+		pc.agregarItem(new Tipo("vacio"), 3);
 		assertTrue(pc.get_items().containsKey(new Tipo("vacio")));
 		assertTrue(pc.get_items().containsKey(new Tipo("muslo")));
 	}
 
 	public void testToString() {
-		pc.agregarItem(new Tipo("muslo"), 3.0);
-		assertEquals(pc.toString(),"{muslo=3.0}");
+		pc.agregarItem(new Tipo("muslo"), 3);
+		assertEquals(pc.toString(),"{muslo=3}");
 	}
 	
 	public void testsetAprobacion() {

@@ -13,7 +13,7 @@ public class PedidoCarne extends Pedido<Tipo> implements Serializable{
 	public PedidoCarne(int aprobacion)
 	{
 		super();
-		this._items=new HashMap<Tipo, Double>();
+		this._items=new HashMap<Tipo, Integer>();
 		this._nivelAprobacion=aprobacion;
 	}	
 	
@@ -21,12 +21,12 @@ public class PedidoCarne extends Pedido<Tipo> implements Serializable{
 	public PedidoCarne()
 	{
 		super();
-		this._items=new HashMap<Tipo, Double>();
+		this._items=new HashMap<Tipo, Integer>();
 		this._nivelAprobacion=100;
 	}
 		
 	@Override
-	public void agregarItem(Tipo item, Double cantidad) {
+	public void agregarItem(Tipo item, Integer cantidad) {
 		super.agregarItem(item, cantidad);
 	}
 
@@ -40,7 +40,7 @@ public class PedidoCarne extends Pedido<Tipo> implements Serializable{
 		super.vaciarPedido();
 	}
 	
-	public Map<Tipo, Double> itemsPedidos()
+	public Map<Tipo, Integer> itemsPedidos()
 	{
 		return this._items;
 	}

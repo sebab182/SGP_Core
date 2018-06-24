@@ -41,19 +41,19 @@ public class DatosSerializable implements AbstractFactory {
 	public List<Pedido<Tipo>> cargarPedidos() {
 		List<Pedido<Tipo>>pedidos= new LinkedList<Pedido<Tipo>>();
 		Pedido<Tipo> a = new PedidoCarne();
-		a.agregarItem(new Tipo("muslo"), 3.0);
-		a.agregarItem(new Tipo("pata"), 5.0);
+		a.agregarItem(new Tipo("muslo"), 3);
+		a.agregarItem(new Tipo("pata"), 5);
 		pedidos.add(a);
 		
 		Pedido<Tipo> b = new PedidoCarne();
-		b.agregarItem(new Tipo("vacio"), 4.0);
-		b.agregarItem(new Tipo("muslo"), 7.0);
-		b.agregarItem(new Tipo("pata"), 3.0);
+		b.agregarItem(new Tipo("vacio"), 4);
+		b.agregarItem(new Tipo("muslo"), 7);
+		b.agregarItem(new Tipo("pata"), 3);
 		pedidos.add(b);	
 		
 		Pedido<Tipo> c = new PedidoCarne();
-		c.agregarItem(new Tipo("lomo"), 8.0);
-		c.agregarItem(new Tipo("pata"), 2.0);
+		c.agregarItem(new Tipo("lomo"), 8);
+		c.agregarItem(new Tipo("pata"), 2);
 		pedidos.add(c);
 		
 		try
